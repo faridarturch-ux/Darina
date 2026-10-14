@@ -1,448 +1,412 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#090b24">
+<meta name="theme-color" content="#080b25">
 <title>Для Дарины ❤️</title>
-
 <style>
 * {
   box-sizing: border-box;
 }
-
+:root {
+  --pink: #ff91c8;
+  --light: #ffe7f3;
+  --night: #080b25;
+}
 html {
   scroll-behavior: smooth;
 }
-
 body {
   margin: 0;
-  color: #fff4fb;
-  font-family: Georgia, "Times New Roman", serif;
+  color: var(--light);
   background:
-    radial-gradient(ellipse at 50% 0%, #29225d 0%, transparent 55%),
-    linear-gradient(180deg, #08091e, #171235 48%, #090a21);
+    radial-gradient(ellipse at top, #252052 0%, #11132f 40%, #050817 100%);
+  font-family: Georgia, "Times New Roman", serif;
+  text-align: center;
   overflow-x: hidden;
 }
-
-.stars {
+.stars, .hearts {
   position: fixed;
   inset: 0;
   pointer-events: none;
+  overflow: hidden;
+}
+.stars {
   z-index: 0;
-  background-image:
-    radial-gradient(2px 2px at 20% 30%, white 98%, transparent),
-    radial-gradient(1px 1px at 70% 20%, white 98%, transparent),
-    radial-gradient(2px 2px at 80% 70%, #ffcaed 98%, transparent),
-    radial-gradient(1px 1px at 35% 80%, white 98%, transparent),
-    radial-gradient(1px 1px at 55% 45%, white 98%, transparent);
-  background-size: 190px 190px, 240px 240px,
-                   170px 170px, 220px 220px, 130px 130px;
-  animation: twinkle 5s ease-in-out infinite alternate;
 }
-
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 8px white;
+  animation: twinkle 2s infinite alternate;
+}
 @keyframes twinkle {
-  from { opacity: .35; }
-  to { opacity: 1; }
+  from { opacity: .2; transform: scale(.7); }
+  to { opacity: 1; transform: scale(1.5); }
 }
-
+.hearts {
+  z-index: 1;
+}
+.floating-heart {
+  position: absolute;
+  bottom: -40px;
+  color: #ff91c8;
+  opacity: .6;
+  animation: rise linear infinite;
+}
+@keyframes rise {
+  from { transform: translateY(0) rotate(0deg); opacity: 0; }
+  15% { opacity: .7; }
+  to { transform: translateY(-110vh) rotate(35deg); opacity: 0; }
+}
 main {
   position: relative;
-  z-index: 1;
-  width: min(100% - 30px, 760px);
-  margin: auto;
+  z-index: 2;
+  width: min(100% - 28px, 760px);
+  margin: 0 auto;
   padding-bottom: 65px;
 }
-
 .hero {
-  min-height: 94vh;
+  min-height: 95vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-  padding: 60px 5px 45px;
+  justify-content: center;
+  padding: 55px 0 35px;
 }
-
-.moon {
-  font-size: 52px;
-  filter: drop-shadow(0 0 22px #ffe4ff);
-  animation: float 4s ease-in-out infinite;
-}
-
-@keyframes float {
-  50% { transform: translateY(-9px); }
-}
-
 .eyebrow {
-  color: #e5b9e9;
-  letter-spacing: 4px;
+  color: #d6c8ff;
+  letter-spacing: 3px;
   text-transform: uppercase;
   font: 11px Arial, sans-serif;
-  margin-top: 25px;
 }
-
 h1 {
-  font-size: clamp(43px, 11vw, 76px);
-  font-weight: normal;
-  line-height: 1.12;
+  font-size: clamp(42px, 12vw, 76px);
+  line-height: 1.08;
   margin: 20px 0;
-  color: #ffe3f4;
-  text-shadow: 0 0 35px #d45fba70;
+  color: #fff0fa;
+  text-shadow: 0 0 22px #ff75bd88, 0 0 55px #aa83ff55;
 }
-
 .subtitle {
-  max-width: 470px;
-  font-size: 18px;
+  font-size: 19px;
   line-height: 1.8;
-  color: #e2d6f7;
+  max-width: 520px;
+  color: #e6ddff;
 }
-
-.heart {
-  color: #ff8fca;
-  animation: heartbeat 1.5s infinite;
+.big-heart {
+  font-size: 52px;
   display: inline-block;
+  animation: heartbeat 1.5s infinite;
+  filter: drop-shadow(0 0 15px #ff5fa8);
 }
-
 @keyframes heartbeat {
   0%, 100% { transform: scale(1); }
-  15% { transform: scale(1.2); }
+  15% { transform: scale(1.16); }
   30% { transform: scale(1); }
-  45% { transform: scale(1.13); }
+  45% { transform: scale(1.1); }
 }
-
-.button {
-  display: inline-block;
-  border: 1px solid #edb6e7;
-  color: white;
-  text-decoration: none;
-  background: #9c4e9a42;
-  padding: 14px 23px;
-  border-radius: 40px;
-  font-size: 15px;
-  margin-top: 22px;
-  cursor: pointer;
-  transition: .3s;
+.scroll-note {
+  margin-top: 35px;
+  color: #c9bde9;
+  font: 12px Arial, sans-serif;
+  letter-spacing: 2px;
 }
-
-.button:hover {
-  background: #b65aa766;
-  box-shadow: 0 0 25px #d87dcb55;
-}
-
 section {
-  padding: 48px 0;
-  scroll-margin-top: 20px;
+  margin: 28px 0;
+  padding: 27px 19px;
+  border: 1px solid #ffffff20;
+  border-radius: 24px;
+  background: linear-gradient(145deg, #ffffff0d, #ffffff04);
+  box-shadow: 0 12px 40px #00000020;
+  backdrop-filter: blur(5px);
 }
-
 h2 {
-  font-size: clamp(29px, 7vw, 42px);
-  text-align: center;
+  color: #ffb9dd;
+  font-size: clamp(27px, 7vw, 37px);
+  margin: 0 0 20px;
   font-weight: normal;
-  color: #ffd8ef;
-  margin: 0 0 22px;
 }
-
-.intro {
-  text-align: center;
-  line-height: 1.9;
-  color: #e6dff7;
+p {
   font-size: 17px;
-  max-width: 600px;
-  margin: auto;
-}
-
-.letter {
-  margin-top: 30px;
-  padding: 28px 23px;
-  border: 1px solid #dca6e54a;
-  border-radius: 22px;
-  background: linear-gradient(145deg, #ffffff0c, #c87bd00b);
-  box-shadow: 0 0 35px #a85b8b12;
   line-height: 1.95;
-  font-size: 17px;
-  color: #f5e9fa;
 }
-
-.letter p {
-  margin: 0 0 17px;
+.love-letter {
+  color: #f8eafa;
+  text-align: left;
 }
-
-.letter p:last-child {
-  margin-bottom: 0;
+.love-letter .signature {
+  text-align: right;
+  color: #ffb9dd;
+  font-size: 21px;
 }
-
-.gallery {
+.music-card {
+  border-color: #ff9ed744;
+}
+.music-note {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+.music-help {
+  color: #d6cbe9;
+  font: 13px/1.7 Arial, sans-serif;
+}
+.youtube {
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 16 / 9;
+  margin: 20px auto 0;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #07091b;
+  border: 1px solid #ffffff22;
+}
+.youtube iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.photo-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 13px;
-  margin-top: 28px;
 }
-
-.photo {
+figure {
   margin: 0;
-  overflow: hidden;
-  border-radius: 17px;
-  border: 1px solid #eab7e54d;
-  background: #17122e;
-  box-shadow: 0 8px 25px #00000035;
+  min-width: 0;
 }
-
-.photo img {
+figure img {
   display: block;
   width: 100%;
   height: 235px;
   object-fit: cover;
-  transition: transform .5s;
+  border-radius: 15px;
+  border: 1px solid #ffffff30;
+  background: #171632;
+  box-shadow: 0 8px 22px #00000045;
 }
-
-.photo img:active {
-  transform: scale(1.04);
+figcaption {
+  padding: 10px 3px 4px;
+  font-size: 14px;
+  color: #e5cfe8;
+  line-height: 1.5;
 }
-
-.photo figcaption {
-  padding: 12px 8px;
-  text-align: center;
-  font-size: 13px;
-  color: #efd3ed;
+.final-message {
+  padding: 35px 20px;
 }
-
-.photo:last-child {
-  grid-column: 1 / -1;
+.final-message p {
+  font-size: 20px;
 }
-
-.photo:last-child img {
-  height: 270px;
+.final-heart {
+  font-size: 46px;
+  margin: 15px 0;
 }
-
-.music-card {
-  text-align: center;
-  padding: 26px 18px;
-  border-radius: 22px;
-  border: 1px solid #dca6e54a;
-  background: #ffffff09;
-}
-
-.music-note {
-  font-size: 40px;
-  margin-bottom: 10px;
-}
-
-.video {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border: 0;
-  border-radius: 13px;
-  margin-top: 20px;
-}
-
-.final {
-  text-align: center;
-  padding: 55px 10px 25px;
-}
-
-.final p {
-  line-height: 1.9;
-  font-size: 18px;
-  color: #e9d9f4;
-}
-
-.signature {
-  font-size: 25px !important;
-  color: #ffcee9 !important;
-  margin-top: 25px;
-}
-
 footer {
-  text-align: center;
-  color: #c9b6db;
-  font-size: 12px;
-  padding: 20px 0 30px;
+  position: relative;
+  z-index: 2;
+  padding: 0 15px 30px;
+  color: #aaa3ca;
+  font: 12px/1.8 Arial, sans-serif;
 }
-
 @media (max-width: 420px) {
-  .photo img { height: 185px; }
-  .photo:last-child img { height: 220px; }
-  .letter { padding: 23px 18px; }
-  .gallery { gap: 9px; }
+  main {
+    width: calc(100% - 20px);
+  }
+  section {
+    padding: 23px 13px;
+  }
+  figure img {
+    height: 190px;
+  }
+  p {
+    font-size: 16px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 </style>
 </head>
-
 <body>
-<div class="stars"></div>
-
+<div class="stars" id="stars"></div>
+<div class="hearts" id="hearts"></div>
 <main>
   <header class="hero">
-    <div class="moon">🌙</div>
-    <div class="eyebrow">Одному особенному человеку</div>
-    <h1>Для тебя,<br>моя Дарина <span class="heart">♥</span></h1>
+    <div class="eyebrow">Для самого дорогого человека</div>
+    <h1>Дарина,<br>моя любовь ❤️</h1>
     <p class="subtitle">
-      Среди миллиардов звёзд есть одна история,
-      которая для меня дороже целой вселенной.
-      И эта история — о тебе.
+      Среди миллиардов звёзд я бы всё равно искал тебя.
+      Потому что моё самое красивое небо —
+      это мир, в котором есть ты.
     </p>
-    <a class="button" href="#letter">Открой моё сердце ↓</a>
+    <div class="big-heart">♥</div>
+    <div class="scroll-note">ЛИСТАЙ НИЖЕ — ТАМ МОЁ СЕРДЦЕ ↓</div>
   </header>
-
-  <section id="letter">
+  <section class="love-letter">
     <h2>Письмо тебе 💌</h2>
-    <p class="intro">
-      Есть слова, которые хочется не просто сказать,
-      а оставить навсегда — чтобы ты могла вернуться
-      к ним в любую минуту.
+    <p>Моя родная Дарина…</p>
+    <p>
+      Иногда мне кажется, что самые важные чувства невозможно
+      уместить в слова. Как ни старайся, всё равно останется
+      что-то, что можно только почувствовать сердцем.
     </p>
-
-    <div class="letter">
-      <p>Моя любимая Дарина…</p>
-
-      <p>
-        Иногда я думаю о том, как удивительно устроена жизнь.
-        Мы живём под одним огромным небом, среди миллионов
-        людей, и всё же именно ты стала для меня человеком,
-        о котором хочется думать перед сном и вспоминать
-        с улыбкой посреди самого обычного дня.
-      </p>
-
-      <p>
-        Мне не нужны красивые обещания, чтобы знать,
-        насколько ты мне дорога. Мне хочется быть рядом
-        не только тогда, когда всё прекрасно, но и тогда,
-        когда день не задался, когда ты устала или тебе
-        просто нужно чьё-то тихое присутствие.
-      </p>
-
-      <p>
-        Я хочу, чтобы рядом со мной ты могла оставаться
-        собой. Чтобы могла смеяться до слёз, делиться
-        своими мыслями, мечтать о будущем и знать:
-        твои чувства важны, твои слова услышаны,
-        а твоя улыбка для меня бесценна.
-      </p>
-
-      <p>
-        Если бы мне дали возможность снова искать
-        среди всех дорог и всех звёзд, я бы хотел
-        однажды снова встретить тебя. Потому что
-        некоторые люди становятся не просто частью
-        нашей жизни — они меняют то, как мы чувствуем
-        весь этот мир.
-      </p>
-
-      <p>
-        Я не знаю, сколько звёзд зажжётся над нами
-        за всю нашу жизнь. Но мне хочется встречать
-        эти ночи рядом с тобой, держать тебя за руку
-        и создавать воспоминания, которые однажды
-        мы будем бережно пересматривать с улыбкой.
-      </p>
-
-      <p>
-        Спасибо тебе за то, что ты есть.
-        За твою нежность, за моменты рядом,
-        за то особенное чувство, которое невозможно
-        уместить в одно сообщение.
-      </p>
-
-      <p>
-        И если однажды ты забудешь, насколько ты
-        прекрасна и дорога, возвращайся сюда.
-        Под этим маленьким небом я оставил напоминание:
-        ты занимаешь особенное место в моём сердце.
-      </p>
-
-      <p>Я хочу беречь то, что есть между нами. ❤️</p>
-      <p>Твой человек, который очень тобой дорожит.</p>
-    </div>
-  </section>
-
-  <section id="photos">
-    <h2>Наши моменты ✨</h2>
-    <p class="intro">
-      Несколько кадров, в которых осталось
-      что-то большее, чем просто фотография.
+    <p>
+      Но я хочу попробовать. Потому что ты заслуживаешь знать,
+      насколько много значишь для меня.
     </p>
-
-    <div class="gallery">
-      <figure class="photo">
-        <img src="memory-1.jpg" alt="Наше воспоминание — 1" loading="lazy">
-        <figcaption>Когда весь мир становится тише ❤️</figcaption>
-      </figure>
-
-      <figure class="photo">
-        <img src="memory-2.jpg" alt="Наше воспоминание — 2" loading="lazy">
-        <figcaption>Ближе, чем любые слова 💋</figcaption>
-      </figure>
-
-      <figure class="photo">
-        <img src="memory-3.jpg" alt="Наши общие фотографии" loading="lazy">
-        <figcaption>Моменты, которые хочется хранить</figcaption>
-      </figure>
-
-      <figure class="photo">
-        <img src="memory-4.jpg" alt="Наше селфи" loading="lazy">
-        <figcaption>Просто мы. И это прекрасно.</figcaption>
-      </figure>
-
-      <figure class="photo">
-        <img src="memory-5.jpg" alt="Мы на фоне заката" loading="lazy">
-        <figcaption>Пусть впереди будет ещё много закатов 🌅</figcaption>
-      </figure>
-    </div>
+    <p>
+      Ты стала для меня человеком, о котором хочется думать
+      перед сном и которому хочется рассказывать обо всём.
+      Человеком, чьё сообщение способно изменить настроение,
+      а простое присутствие — сделать обычный день особенным.
+    </p>
+    <p>
+      Мне не нужны идеальные дни, в которых никогда не бывает
+      трудностей. Мне хочется настоящих дней с тобой: смеяться
+      над глупостями, поддерживать друг друга, иногда молчать,
+      держаться за руки и знать, что мы рядом.
+    </p>
+    <p>
+      Я не обещаю, что всегда буду идеальным. Но я хочу учиться
+      понимать тебя, беречь твои чувства, слышать тебя даже
+      тогда, когда ты не знаешь, как объяснить, что происходит
+      у тебя внутри.
+    </p>
+    <p>
+      Если однажды тебе станет грустно, вспомни: где-то есть
+      человек, для которого ты не просто красивая девушка.
+      Ты — та, с которой связаны самые тёплые мысли,
+      самые нежные чувства и мечты о будущем.
+    </p>
+    <p>
+      И если бы мне снова пришлось выбирать среди всех дорог,
+      я бы хотел найти ту, которая однажды привела меня к тебе.
+      Не потому, что всё в жизни заранее предрешено, а потому,
+      что я сам хочу снова и снова выбирать тебя.
+    </p>
+    <p>
+      Спасибо тебе за твою улыбку, за твою нежность, за моменты,
+      которые теперь живут в моей памяти. Спасибо за то,
+      что ты есть в моей жизни.
+    </p>
+    <p>
+      Пусть этот маленький сайт напоминает тебе: даже когда
+      над нами обычное небо, в моём сердце для тебя всегда
+      есть отдельная вселенная.
+    </p>
+    <p class="signature">
+      Я люблю тебя, Дарина. ❤️
+    </p>
   </section>
-
-  <section id="music">
-    <h2>Наша музыка 🎶</h2>
-    <div class="music-card">
-      <div class="music-note">🎧</div>
-      <p class="intro">
-        Включи эту песню и побудь немного
-        в нашем маленьком мире.
-      </p>
-
+  <section class="music-card">
+    <div class="music-note">🎵</div>
+    <h2>Наша песня</h2>
+    <p>
+      Иногда музыка говорит то, для чего не хватает слов.
+      Пусть эта мелодия напоминает тебе обо мне.
+    </p>
+    <div class="youtube">
       <iframe
-        class="video"
         src="https://www.youtube-nocookie.com/embed/7uxjK7xdkyg"
-        title="Наша песня"
+        title="Наша песня для Дарины"
         loading="lazy"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen>
       </iframe>
-
-      <p class="intro">
-        Если плеер не загрузился,
-        <a href="https://youtu.be/7uxjK7xdkyg"
-           target="_blank" rel="noopener"
-           style="color:#ffc5e9">
-          открой песню на YouTube
-        </a>.
-      </p>
+    </div>
+    <p class="music-help">
+      Нажми ▶, чтобы включить песню. Звук запускается вручную.
+    </p>
+  </section>
+  <section>
+    <h2>Наши воспоминания 📸</h2>
+    <p>
+      Маленькие мгновения, которые стали частью нашей истории.
+      Каждое из них по-своему дорого мне.
+    </p>
+    <div class="photo-grid">
+      <figure>
+        <img src="memory-1%202.jpg"
+             alt="Наше воспоминание — 1"
+             loading="lazy">
+        <figcaption>Мгновение, которое хочется сохранить ❤️</figcaption>
+      </figure>
+      <figure>
+        <img src="memory-2%202.jpg"
+             alt="Наше воспоминание — 2"
+             loading="lazy">
+        <figcaption>Ты и я — и целый мир вокруг</figcaption>
+      </figure>
+      <figure>
+        <img src="memory-3%202.jpg"
+             alt="Наше воспоминание — 3"
+             loading="lazy">
+        <figcaption>Ещё одна страница нашей истории ✨</figcaption>
+      </figure>
+      <figure>
+        <img src="memory-4%202.jpg"
+             alt="Наше воспоминание — 4"
+             loading="lazy">
+        <figcaption>То, что хочется помнить</figcaption>
+      </figure>
+      <figure>
+        <img src="memory-5%202.jpg"
+             alt="Наше воспоминание — 5"
+             loading="lazy">
+        <figcaption>И пусть таких моментов будет больше 💗</figcaption>
+      </figure>
     </div>
   </section>
-
-  <section class="final">
-    <div class="moon">🌌</div>
-    <h2>И ещё кое-что…</h2>
+  <section class="final-message">
+    <h2>И напоследок…</h2>
     <p>
-      Среди всех красивых вещей в этом мире
-      есть одна, которую я не хочу принимать
-      как должное.
+      Если бы я мог подарить тебе одну вещь,
+      я бы подарил возможность увидеть себя моими глазами.
+      Тогда ты бы поняла, почему для меня ты такая особенная.
     </p>
+    <div class="final-heart">❤️</div>
     <p>
-      Это возможность узнавать тебя,
-      быть рядом и создавать нашу историю —
-      шаг за шагом, день за днём.
+      Сколько бы звёзд ни зажигалось в ночном небе,
+      моя любимая звезда — ты, Дарина.
     </p>
-    <p class="signature">
-      Ты — моё особенное чудо, Дарина. <span class="heart">♥</span>
-    </p>
+    <p><strong>Ты — моё любимое «сегодня» и моё желанное «завтра».</strong></p>
   </section>
-
-  <footer>
-    Сделано с любовью для Дарины ❤️
-  </footer>
 </main>
+<footer>
+  Сделано с любовью для Дарины ❤️<br>
+  Одно маленькое место во вселенной — только для тебя.
+</footer>
+<script>
+(function () {
+  const stars = document.getElementById("stars");
+  const hearts = document.getElementById("hearts");
+  for (let i = 0; i < 100; i++) {
+    const star = document.createElement("span");
+    star.className = "star";
+    star.style.left = Math.random() * 100 + "%";
+    star.style.top = Math.random() * 100 + "%";
+    star.style.animationDelay = Math.random() * 3 + "s";
+    star.style.animationDuration = (1.5 + Math.random() * 3) + "s";
+    stars.appendChild(star);
+  }
+  for (let i = 0; i < 15; i++) {
+    const heart = document.createElement("span");
+    heart.className = "floating-heart";
+    heart.textContent = Math.random() > 0.5 ? "♥" : "♡";
+    heart.style.left = Math.random() * 100 + "%";
+    heart.style.fontSize = (12 + Math.random() * 19) + "px";
+    heart.style.animationDuration = (9 + Math.random() * 12) + "s";
+    heart.style.animationDelay = Math.random() * 12 + "s";
+    hearts.appendChild(heart);
+  }
+})();
+</script>
 </body>
 </html>
