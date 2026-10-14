@@ -3,514 +3,770 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#070b20">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08051b">
 <title>Для Дарины ❤️</title>
 <style>
 :root {
-  --night:#070b20;
-  --pink:#ff9fc8;
-  --lavender:#c9b8ff;
-  --white:#fff8ff;
-  --muted:#c8c6e2;
+  --pink: #ff78b7;
+  --purple: #b99aff;
+  --glass: rgba(255,255,255,.075);
+  --border: rgba(255,255,255,.16);
 }
-* { box-sizing:border-box; }
-html { scroll-behavior:smooth; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
-  margin:0;
-  background:var(--night);
-  color:var(--white);
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  overflow-x:hidden;
-  line-height:1.7;
-}
-button { font:inherit; }
-button:focus-visible, a:focus-visible {
-  outline:2px solid var(--pink);
-  outline-offset:5px;
+  margin: 0;
+  min-height: 100vh;
+  color: #fff5fb;
+  background: #08051b;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  overflow-x: hidden;
 }
 #sky {
-  position:fixed; inset:0; z-index:-2; overflow:hidden;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -3;
+}
+.aurora {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
   background:
-    radial-gradient(ellipse at 20% 20%,#242457 0,transparent 42%),
-    radial-gradient(ellipse at 85% 55%,#341a51 0,transparent 40%),
-    linear-gradient(180deg,#050819,#10132f 55%,#080a1c);
+    radial-gradient(ellipse at 15% 15%, rgba(120,50,180,.25), transparent 45%),
+    radial-gradient(ellipse at 85% 30%, rgba(210,40,120,.17), transparent 42%),
+    radial-gradient(ellipse at 50% 100%, rgba(55,40,160,.24), transparent 48%);
 }
-#stars,#hearts {
-  position:absolute; inset:0; width:100%; height:100%;
-  pointer-events:none;
-}
-.nebula {
-  position:absolute; width:75vw; height:75vw; border-radius:50%;
-  filter:blur(75px); opacity:.14;
-  background:#b47cff; animation:nebula 14s ease-in-out infinite alternate;
-}
-.nebula.one { top:5%; left:-30%; }
-.nebula.two { right:-35%; top:50%; background:#ff6fb4; animation-delay:-7s; }
-@keyframes nebula { to { transform:translate(35px,-25px) scale(1.15); } }
-.star {
-  position:absolute; width:2px; height:2px; border-radius:50%;
-  background:white; box-shadow:0 0 8px #fff;
-  animation:twinkle var(--duration,3s) ease-in-out infinite alternate;
-}
-@keyframes twinkle { from {opacity:.2;transform:scale(.7)} to {opacity:1;transform:scale(1.7)} }
-.wrap { width:min(760px,100%); margin:auto; padding:0 22px; }
-section { padding:85px 0; position:relative; }
-.hero {
-  min-height:100svh; display:flex; flex-direction:column;
-  align-items:center; justify-content:center; text-align:center;
-  padding-top:65px; padding-bottom:65px;
+header {
+  text-align: center;
+  padding: 48px 18px 24px;
 }
 .eyebrow {
-  text-transform:uppercase; letter-spacing:4px; font-size:.72rem;
-  color:var(--lavender);
+  color: #d6c2ff;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 11px;
 }
-h1,h2,h3,p { margin-top:0; }
 h1 {
-  font-family:Georgia,serif; font-weight:400;
-  font-size:clamp(3.1rem,12vw,6.1rem); line-height:1.03;
-  margin:20px 0; letter-spacing:-2px;
-  background:linear-gradient(120deg,#fff,#ffb8d7 48%,#c7b8ff);
-  color:transparent; background-clip:text; -webkit-background-clip:text;
-  text-shadow:0 0 45px #d48bff22;
+  font-size: clamp(36px, 9vw, 68px);
+  line-height: 1.05;
+  margin: 17px 0;
+  background: linear-gradient(100deg, #fff, #ff8ac8, #c6a8ff, #fff);
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+@keyframes shimmer {
+  to { background-position: 250% center; }
+}
+.subtitle {
+  max-width: 570px;
+  margin: 0 auto;
+  color: #d7cde9;
+  line-height: 1.7;
+  font-size: 15px;
+}
+main {
+  width: min(760px, 92%);
+  margin: 0 auto 60px;
+}
+.panel {
+  margin: 18px 0;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: var(--glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 12px 40px rgba(0,0,0,.18);
 }
 h2 {
-  font-family:Georgia,serif; font-weight:400;
-  font-size:clamp(2rem,7vw,3.3rem); line-height:1.18;
-  text-align:center; margin-bottom:24px;
+  font-size: 23px;
+  margin: 0 0 12px;
 }
-h3 { font-family:Georgia,serif; font-size:1.4rem; font-weight:400; }
-p { color:var(--muted); }
-.lead { font-size:1.1rem; max-width:550px; }
-.glow-heart {
-  font-size:2.8rem; filter:drop-shadow(0 0 20px #ff8ac5);
-  animation:heartbeat 2s ease-in-out infinite;
+h3 { margin: 0 0 10px; }
+p { line-height: 1.7; }
+.muted { color: #c8bddb; font-size: 14px; }
+.pill {
+  display: inline-block;
+  border: 1px solid rgba(255,120,183,.35);
+  background: rgba(255,120,183,.12);
+  color: #ffc3e0;
+  border-radius: 999px;
+  padding: 7px 12px;
+  font-size: 12px;
+  margin-bottom: 14px;
 }
-@keyframes heartbeat { 50% { transform:scale(1.13); } }
-.btn {
-  display:inline-flex; justify-content:center; align-items:center;
-  gap:9px; min-height:49px; padding:12px 21px;
-  border:1px solid #ffffff38; border-radius:999px;
-  background:#ffffff0d; color:var(--white);
-  text-decoration:none; cursor:pointer;
-  transition:transform .25s,background .25s,border-color .25s;
-  -webkit-tap-highlight-color:transparent;
+button, .upload-label {
+  border: 0;
+  border-radius: 14px;
+  padding: 13px 17px;
+  color: #240b23;
+  background: linear-gradient(120deg, #ff9ccc, #d0b5ff);
+  font-weight: 750;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform .2s, opacity .2s;
+  -webkit-tap-highlight-color: transparent;
 }
-.btn:hover { transform:translateY(-2px); background:#ffffff19; border-color:#ffacd8aa; }
-.btn.primary {
-  background:linear-gradient(110deg,#f58cbd,#b7a4ff);
-  border:0; color:#19112c; font-weight:650;
-  box-shadow:0 8px 35px #dc87cf2c;
+button:active { transform: scale(.97); }
+button:disabled { opacity: .38; cursor: not-allowed; }
+button.secondary {
+  color: #fff;
+  background: rgba(255,255,255,.09);
+  border: 1px solid var(--border);
 }
-.btn-row { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-top:25px; }
-.card {
-  padding:25px; border:1px solid #ffffff17; border-radius:25px;
-  background:linear-gradient(145deg,#ffffff0c,#ffffff04);
-  box-shadow:0 18px 65px #00000018;
-  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+button.option {
+  width: 100%;
+  display: block;
+  text-align: left;
+  margin: 9px 0;
+  color: #fff;
+  background: rgba(255,255,255,.065);
+  border: 1px solid var(--border);
+  font-weight: 500;
 }
-.letter {
-  font-family:Georgia,serif; font-size:1.12rem; line-height:1.95;
-  white-space:normal;
+button.option:hover { border-color: var(--pink); }
+button.option.correct {
+  background: rgba(66,190,135,.17);
+  border-color: #69e0ae;
 }
-.letter p { color:#e4dff5; }
-.highlight { color:#ffd1e5; }
-.center { text-align:center; }
-.divider {
-  width:75px; height:1px; margin:27px auto;
-  background:linear-gradient(90deg,transparent,var(--pink),transparent);
+button.option.wrong {
+  background: rgba(255,70,110,.13);
+  border-color: #ff6b91;
 }
-.section-note { text-align:center; max-width:550px; margin:0 auto 35px; }
-.music-card { text-align:center; }
-.music-orb {
-  width:95px; height:95px; margin:5px auto 22px; border-radius:50%;
-  display:grid; place-items:center; font-size:2.3rem;
-  background:radial-gradient(circle,#f6b4e7,#8f7bdd 60%,#27244f);
-  box-shadow:0 0 45px #d79bff44;
-  animation:heartbeat 3s infinite;
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
 }
-.music-frame { width:100%; margin-top:18px; overflow:hidden; border-radius:15px; }
-.music-frame iframe { display:block; width:100%; aspect-ratio:16/9; border:0; }
-.gallery {
-  display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px;
+.progress-wrap {
+  height: 7px;
+  background: rgba(255,255,255,.1);
+  border-radius: 99px;
+  overflow: hidden;
+  margin: 12px 0 20px;
 }
-.photo {
-  padding:8px 8px 14px; background:#fffaf5;
-  border-radius:5px; color:#32263d; cursor:pointer;
-  transform:rotate(var(--tilt,1deg));
-  transition:transform .3s; box-shadow:0 12px 32px #0005;
+#progress {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--pink), var(--purple));
+  transition: width .4s;
 }
-.photo:nth-child(even) { --tilt:-1.6deg; }
-.photo:nth-child(3) { --tilt:1.4deg; }
-.photo:nth-child(5) { grid-column:1/-1; width:76%; justify-self:center; }
-.photo:hover { transform:rotate(0) translateY(-4px); }
-.photo img { display:block; width:100%; aspect-ratio:4/5; object-fit:cover; background:#25203d; }
-.photo:nth-child(5) img { aspect-ratio:5/3; }
-.photo figcaption { font-family:Georgia,serif; text-align:center; padding:10px 3px 0; font-size:.9rem; }
-.timeline { display:grid; gap:15px; }
-.memory {
-  position:relative; padding:20px 20px 20px 48px;
-  border-left:1px solid #cbb8ff55; margin-left:12px;
+.status {
+  min-height: 25px;
+  color: #ffd0e6;
+  font-size: 14px;
+  margin-top: 13px;
 }
-.memory:before {
-  content:""; position:absolute; width:11px; height:11px;
-  border-radius:50%; background:var(--pink); left:-6px; top:26px;
-  box-shadow:0 0 15px var(--pink);
+.hidden { display: none !important; }
+.symbol-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 9px;
+  margin-top: 18px;
 }
-.memory h3 { margin:0 0 7px; }
-.memory p { margin-bottom:0; }
-.quiz-options { display:grid; gap:12px; margin-top:22px; }
-.quiz-options .btn { border-radius:16px; text-align:left; justify-content:flex-start; }
-.feedback { min-height:30px; text-align:center; margin-top:18px; color:#ffd1e5; }
-#constellation {
-  display:none; width:min(100%,390px); margin:18px auto 10px;
-  overflow:visible;
+.star-tile {
+  min-height: 65px;
+  padding: 10px 4px;
+  border-radius: 15px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.055);
+  color: #e7d8ff;
+  font-size: 24px;
 }
-#constellation.show { display:block; }
-.constellation-line {
-  stroke:#ffd0ed; stroke-width:1.5; fill:none;
-  stroke-dasharray:450; stroke-dashoffset:450;
-  animation:draw 3.2s ease forwards;
-  filter:drop-shadow(0 0 5px #ffa9de);
+.star-tile.found {
+  color: #fff;
+  background: rgba(255,120,183,.2);
+  border-color: var(--pink);
 }
-@keyframes draw { to { stroke-dashoffset:0; } }
-.constellation-star {
-  fill:#fff4ff; filter:drop-shadow(0 0 6px #ff9bdb);
-  animation:twinkle 1.3s infinite alternate;
+.star-tile.missed { opacity: .45; }
+.clue-box {
+  padding: 14px;
+  border-radius: 15px;
+  border: 1px dashed rgba(255,190,225,.35);
+  background: rgba(255,120,183,.055);
+  color: #f5d9ea;
+  line-height: 1.7;
+  margin: 14px 0;
 }
-#specialMessage { display:none; }
-#specialMessage.show { display:block; animation:reveal 1.4s ease both; }
-@keyframes reveal { from { opacity:0; transform:translateY(18px); } to {opacity:1;transform:none;} }
-.secret-letter { display:none; margin-top:22px; }
-.secret-letter.open { display:block; animation:reveal 1s ease both; }
-.final-card { text-align:center; padding:35px 23px; }
-.final-quote {
-  font-family:Georgia,serif; font-size:clamp(1.7rem,6vw,2.5rem);
-  color:#ffe0ef; line-height:1.4;
+input[type="text"] {
+  width: 100%;
+  min-width: 0;
+  padding: 14px;
+  color: white;
+  background: rgba(0,0,0,.22);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-size: 16px;
+  outline: none;
 }
-footer { text-align:center; padding:25px 20px 45px; color:#8f8baa; font-size:.85rem; }
-#lightbox {
-  display:none; position:fixed; inset:0; z-index:20;
-  background:#030511ed; align-items:center; justify-content:center; padding:20px;
+input[type="text"]:focus { border-color: var(--pink); }
+.secret-note {
+  white-space: pre-line;
+  line-height: 1.9;
+  color: #ffe5f2;
 }
-#lightbox.open { display:flex; }
-#lightbox img { max-width:100%; max-height:82svh; object-fit:contain; border-radius:8px; }
-#lightbox button { position:absolute; top:18px; right:18px; }
-.floating-heart {
-  position:fixed; z-index:30; pointer-events:none; bottom:-40px;
-  animation:floatUp var(--dur,5s) ease-out forwards;
-  filter:drop-shadow(0 0 7px #ff7fbe);
+.envelope-area {
+  text-align: center;
+  padding: 10px 0 4px;
+}
+.envelope {
+  position: relative;
+  width: 210px;
+  height: 140px;
+  margin: 35px auto 24px;
+  background: #d95791;
+  border-radius: 8px;
+  box-shadow: 0 15px 45px rgba(255,80,160,.2);
+  cursor: pointer;
+  perspective: 600px;
+}
+.envelope:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #f58bb8;
+  clip-path: polygon(0 0, 50% 58%, 100% 0);
+  transform-origin: top;
+  transition: transform .8s;
+  z-index: 3;
+}
+.envelope:after {
+  content: "❤️";
+  position: absolute;
+  z-index: 4;
+  top: 53px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 27px;
+  transition: opacity .3s;
+}
+.envelope.open:before {
+  transform: rotateX(180deg);
+}
+.envelope.open:after { opacity: 0; }
+.paper {
+  position: absolute;
+  z-index: 2;
+  left: 10px;
+  right: 10px;
+  top: 12px;
+  height: 112px;
+  padding: 14px 8px;
+  color: #7d2453;
+  background: #fff4fa;
+  border-radius: 5px;
+  font-size: 13px;
+  transition: transform .8s;
+}
+.envelope.open .paper { transform: translateY(-78px); }
+.final-letter {
+  margin-top: 28px;
+  padding: 22px;
+  border: 1px solid rgba(255,160,210,.4);
+  border-radius: 20px;
+  background: rgba(255,120,183,.09);
+  text-align: left;
+  animation: appear .9s ease both;
+}
+@keyframes appear {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.heart {
+  position: fixed;
+  bottom: -30px;
+  pointer-events: none;
+  z-index: 4;
+  animation: floatUp 6s linear forwards;
 }
 @keyframes floatUp {
-  0% { transform:translate(0,0) rotate(0) scale(.5); opacity:0; }
-  12% { opacity:1; }
-  100% { transform:translate(var(--drift,20px),-115vh) rotate(35deg) scale(1.2); opacity:0; }
+  to { transform: translateY(-110vh) rotate(25deg); opacity: 0; }
 }
-.reveal { opacity:0; transform:translateY(24px); transition:opacity .9s,transform .9s; }
-.reveal.visible { opacity:1; transform:none; }
-@media (max-width:430px) {
-  section { padding:65px 0; }
-  .wrap { padding:0 17px; }
-  .card { padding:21px; }
-  .gallery { gap:10px; }
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 10px;
+  margin-top: 15px;
 }
-@media (prefers-reduced-motion:reduce) {
-  *,*::before,*::after { animation-duration:.01ms!important; animation-iteration-count:1!important; scroll-behavior:auto!important; transition-duration:.01ms!important; }
-  .reveal { opacity:1; transform:none; }
+.gallery img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+}
+.gallery:empty { display: none; }
+input[type="file"] { max-width: 100%; color: #d7cde9; }
+.upload-row { margin: 14px 0; }
+footer {
+  text-align: center;
+  padding: 5px 15px 35px;
+  color: #b8a9cf;
+  font-size: 12px;
+}
+@media (max-width: 420px) {
+  .panel { padding: 19px; border-radius: 20px; }
+  .symbol-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+  .star-tile { min-height: 58px; }
+  header { padding-top: 35px; }
 }
 </style>
 </head>
 <body>
-<div id="sky" aria-hidden="true">
-  <div class="nebula one"></div><div class="nebula two"></div>
-  <div id="stars"></div><div id="hearts"></div>
-</div>
+<canvas id="sky"></canvas>
+<div class="aurora"></div>
+
+<header>
+  <div class="eyebrow">маленькая вселенная для одного человека</div>
+  <h1>Дарина ❤️</h1>
+  <p class="subtitle">
+    Я спрятал здесь кое-что важное. Чтобы добраться до финала,
+    придётся смотреть внимательно, думать и не сдаваться.
+    Готова проверить, насколько хорошо ты знаешь язык моего сердца?
+  </p>
+</header>
 
 <main>
-  <section class="hero">
-    <div class="wrap">
-      <div class="eyebrow">Моей любимой · Моей Дарине</div>
-      <div class="glow-heart" aria-hidden="true">♥</div>
-      <h1>Для тебя,<br>Дарина</h1>
-      <p class="lead">Если бы вся Вселенная замолчала, я всё равно нашёл бы слова, чтобы сказать тебе, как сильно ты мне дорога.</p>
-      <div class="divider"></div>
-      <p>Эта маленькая вселенная — только для тебя.</p>
-      <div class="btn-row">
-        <button class="btn primary" onclick="document.querySelector('#letter').scrollIntoView({behavior:'smooth'})">Открыть моё сердце ♡</button>
-        <button class="btn" onclick="playMusic()">♪ Наша песня</button>
-      </div>
+  <section class="panel" id="intro">
+    <span class="pill">МИССИЯ № 01 · ДОСТУП ОГРАНИЧЕН</span>
+    <h2>Твоя миссия начинается</h2>
+    <p>
+      В этой вселенной спрятаны четыре символа, три загадки и один код.
+      Каждый пройденный этап приближает тебя к письму, которое я приготовил
+      специально для тебя.
+    </p>
+    <div class="clue-box">
+      Правила простые: не торопись, читай подсказки и доверяй интуиции.
+      Некоторые ответы спрятаны не в кнопках, а между строк.
+    </div>
+    <button id="startBtn">Начать квест ✨</button>
+  </section>
+
+  <section class="panel hidden" id="stage1">
+    <span class="pill">ЭТАП 1 ИЗ 3 · ПОИСК</span>
+    <h2>Карта звёздного неба</h2>
+    <p>
+      Среди звёзд спрятаны четыре настоящих символа.
+      Найди их все. Ложные звёзды будут только сбивать тебя с пути.
+    </p>
+    <div class="clue-box">
+      Подсказка: ищи не самые яркие звёзды, а те, что отмечены судьбой.
+      Символы нужно собрать по порядку. Не нажимай на одну звезду дважды —
+      она ничего нового тебе не даст.
+    </div>
+    <div class="muted" id="searchCounter">Найдено символов: 0 из 4</div>
+    <div class="symbol-grid" id="starGrid"></div>
+    <div class="status" id="searchStatus" aria-live="polite"></div>
+    <div class="actions">
+      <button id="hint1" class="secondary">Подсказка</button>
+      <button id="toStage2" disabled>Продолжить →</button>
     </div>
   </section>
 
-  <section id="letter">
-    <div class="wrap reveal">
-      <div class="eyebrow center">То, что у меня внутри</div>
-      <h2>Письмо тебе</h2>
-      <div class="card letter">
-        <p>Моя родная Дарина,</p>
-        <p>Иногда мне кажется, что обычных слов просто недостаточно, чтобы объяснить, что ты для меня значишь. Я могу сколько угодно пытаться подобрать правильные фразы, но всё равно останется что-то большее — то, что я чувствую, когда думаю о тебе.</p>
-        <p><span class="highlight">Ты — самая дорогая женщина для меня.</span> Радовать тебя — значит делать счастливым себя. Твоя улыбка, твои глаза, само осознание того, что ты есть в моей жизни, способны сделать даже самый тяжёлый день светлее.</p>
-        <p>Я не обещаю, что каждый день будет идеальным. Но я хочу, чтобы ты знала: мои чувства к тебе — не просто красивые слова на красивом экране. За ними стою я. Со своими мыслями, ошибками, надеждами и огромным желанием любить тебя.</p>
-        <p>Однажды всё трудное закончится. Мы сможем снова вернуться к нашему «ты и я», быть рядом, наслаждаться друг другом, обнимать друг друга без спешки и просто любить. Я очень хочу дождаться этого времени вместе с тобой.</p>
-        <p>И потому я прошу тебя: люби меня — сильнее, чем кого-либо, сильнее, чем когда-либо. А я хочу каждый день доказывать тебе, что твоё сердце для меня — не место, где можно остановиться на время, а место, к которому я хочу возвращаться.</p>
-        <p>Спасибо тебе за то, что ты есть. За то, что ты — именно ты. За чувства, которые ты во мне пробуждаешь и которым не нужны ни звёзды, ни красивые декорации, чтобы быть настоящими.</p>
-        <p>Если бы мне пришлось снова пройти весь путь с самого начала, я бы всё равно захотел найти тебя.</p>
-        <p class="center highlight">Я люблю тебя, моя Дарина. ❤️</p>
-      </div>
+  <section class="panel hidden" id="stage2">
+    <span class="pill">ЭТАП 2 ИЗ 3 · ИСПЫТАНИЕ</span>
+    <h2>Три вопроса для сердца</h2>
+    <p>Не угадывай на скорость. Здесь важнее смысл, чем случайный выбор.</p>
+    <div class="progress-wrap"><div id="progress"></div></div>
+    <div class="muted" id="questionNumber"></div>
+    <h3 id="questionText"></h3>
+    <div id="answers"></div>
+    <div class="status" id="questionStatus" aria-live="polite"></div>
+    <div class="actions">
+      <button id="nextQuestion" disabled>Следующий вопрос →</button>
+    </div>
+    <button id="hint2" class="secondary">Мне нужна подсказка</button>
+  </section>
+
+  <section class="panel hidden" id="stage3">
+    <span class="pill">ЭТАП 3 ИЗ 3 · СЕКРЕТНЫЙ ШИФР</span>
+    <h2>Код от последней двери</h2>
+    <p>
+      Ты уже собрала слово и прошла испытание. Осталось открыть последнюю дверь.
+      Введи трёхзначный код, который спрятан в подсказках.
+    </p>
+    <div class="clue-box">
+      <strong>Зашифрованное послание:</strong><br>
+      I LOVE YOU<br><br>
+      Первая цифра — сколько сердец нужно, чтобы начать историю.<br>
+      Вторая — сколько букв в слове LOVE.<br>
+      Третья — сколько слов в признании I LOVE YOU.
+    </div>
+    <label for="secretCode" class="muted">Трёхзначный код</label>
+    <div style="margin-top:8px">
+      <input id="secretCode" type="text" inputmode="numeric" maxlength="3"
+             placeholder="•••" autocomplete="off">
+    </div>
+    <div class="status" id="codeStatus" aria-live="polite"></div>
+    <div class="actions">
+      <button id="checkCode">Открыть дверь 🔐</button>
+      <button id="hint3" class="secondary">Ещё подсказка</button>
     </div>
   </section>
 
-  <section id="music">
-    <div class="wrap reveal">
-      <div class="eyebrow center">Когда слов мало</div>
-      <h2>Наша песня</h2>
-      <div class="card music-card">
-        <div class="music-orb">♫</div>
-        <p>Пусть эта мелодия станет ещё одной частью нашей истории.</p>
-        <button id="musicButton" class="btn primary" onclick="playMusic()">▶ Включить нашу песню</button>
-        <div id="musicFrame" class="music-frame" hidden>
-          <iframe id="song" title="Наша песня" data-src="https://www.youtube-nocookie.com/embed/7uxjK7xdkyg?autoplay=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        <p style="font-size:.85rem;margin:16px 0 0">Если музыка не начнётся, нажми ▶ в самом видеоплеере.</p>
+  <section class="panel hidden" id="finalStage">
+    <span class="pill">ДОСТУП РАЗРЕШЁН · 100%</span>
+    <h2>Последний секрет 💌</h2>
+    <p>
+      Ты дошла до самого конца. Нажми на конверт — внутри то, ради чего
+      стоило пройти весь путь.
+    </p>
+    <div class="envelope-area">
+      <div class="envelope" id="envelope" role="button" tabindex="0"
+           aria-label="Открыть письмо">
+        <div class="paper">Для моей Дарины<br>Открой меня ❤️</div>
       </div>
+      <button id="openLetter">Открыть письмо 💗</button>
+    </div>
+    <div class="final-letter hidden" id="letter">
+      <h2>Моей Дарине ❤️</h2>
+      <div class="secret-note" id="typedLetter"></div>
+      <p style="text-align:center;font-size:25px">∞ ❤️ ∞</p>
+    </div>
+    <div class="actions">
+      <button id="heartsBtn" class="secondary">Звёздный дождь из сердечек 💕</button>
     </div>
   </section>
 
-  <section id="photos">
-    <div class="wrap reveal">
-      <div class="eyebrow center">Мгновения, которые хочется беречь</div>
-      <h2>Это — мы</h2>
-      <p class="section-note">Каждая фотография — маленькая частичка нашей истории. Нажми на снимок, чтобы рассмотреть его поближе.</p>
-      <div class="gallery">
-        <figure class="photo" onclick="openPhoto(this)">
-          <img src="memory-1%202.jpg" alt="Наше воспоминание — фотография 1" loading="lazy">
-          <figcaption>Одно из моих любимых мгновений ♥</figcaption>
-        </figure>
-        <figure class="photo" onclick="openPhoto(this)">
-          <img src="memory-2%202.jpg" alt="Наше воспоминание — фотография 2" loading="lazy">
-          <figcaption>Ты делаешь этот мир теплее</figcaption>
-        </figure>
-        <figure class="photo" onclick="openPhoto(this)">
-          <img src="memory-3%202.jpg" alt="Наше воспоминание — фотография 3" loading="lazy">
-          <figcaption>Моменты, к которым хочется возвращаться</figcaption>
-        </figure>
-        <figure class="photo" onclick="openPhoto(this)">
-          <img src="memory-4%202.jpg" alt="Наше воспоминание — фотография 4" loading="lazy">
-          <figcaption>Моя любимая история — наша</figcaption>
-        </figure>
-        <figure class="photo" onclick="openPhoto(this)">
-          <img src="memory-5%202.jpg" alt="Наше воспоминание — фотография 5" loading="lazy">
-          <figcaption>И впереди я хочу ещё столько мгновений с тобой</figcaption>
-        </figure>
-      </div>
-      <p class="center" style="font-size:.85rem;margin-top:25px">Наши фотографии. Наши мгновения. Наше «мы».</p>
+  <section class="panel" id="memories">
+    <span class="pill">НАШИ МОМЕНТЫ</span>
+    <h2>Галерея воспоминаний 📸</h2>
+    <p class="muted">
+      Можешь выбрать фотографии на телефоне — они появятся здесь в предпросмотре.
+      Чтобы они были доступны Дарине на опубликованном сайте, файлы нужно
+      отдельно загрузить в репозиторий.
+    </p>
+    <div class="upload-row">
+      <input id="photoInput" type="file" accept="image/*" multiple>
     </div>
+    <div class="gallery" id="gallery"></div>
   </section>
 
-  <section id="memories">
-    <div class="wrap reveal">
-      <div class="eyebrow center">Маленькая история о большом чувстве</div>
-      <h2>То, что я хочу помнить</h2>
-      <div class="timeline">
-        <div class="memory">
-          <h3>Ты появилась в моей истории</h3>
-          <p>И привычные вещи начали приобретать другой смысл. Появился человек, о котором хочется думать, которому хочется рассказывать всё и с которым хочется делить даже самые обычные дни.</p>
-        </div>
-        <div class="memory">
-          <h3>Ночь, звёзды и наша машина</h3>
-          <p>Я рассказывал тебе о звёздах, будто знал о них всё на свете. Хотя сам толком ничего не знал. Но мне хотелось говорить с тобой, смотреть на небо и продлить тот момент ещё хоть немного.</p>
-        </div>
-        <div class="memory">
-          <h3>Наше «ты и я»</h3>
-          <p>Я мечтаю о времени, когда мы сможем просто быть рядом, не торопиться, обнимать друг друга и наслаждаться тем, что мы вместе. И хочу идти к этому будущему с тобой.</p>
-        </div>
-      </div>
+  <section class="panel" id="music">
+    <span class="pill">МУЗЫКА ДЛЯ НАС</span>
+    <h2>Добавь нашу песню 🎵</h2>
+    <p class="muted">
+      Выбери аудиофайл на телефоне. Это локальный плеер для предпросмотра;
+      чтобы музыка работала у Дарины, аудиофайл тоже нужно разместить на сайте.
+    </p>
+    <div class="upload-row">
+      <input id="audioInput" type="file" accept="audio/*">
     </div>
-  </section>
-
-  <section id="secret">
-    <div class="wrap reveal">
-      <div class="eyebrow center">Только для нас двоих</div>
-      <h2>Помнишь ту ночь?</h2>
-      <div class="card">
-        <p class="center">Дорогая моя, ты помнишь место, где мы впервые вместе смотрели на звёзды?</p>
-        <div class="quiz-options">
-          <button class="btn" onclick="checkAnswer(0)">① На берегу озера, под открытым небом</button>
-          <button class="btn" onclick="checkAnswer(1)">② В моей машине, возле площадки, когда я рассказывал тебе о звёздах</button>
-          <button class="btn" onclick="checkAnswer(2)">③ На крыше дома, откуда было видно всё небо</button>
-        </div>
-        <div id="feedback" class="feedback" role="status" aria-live="polite"></div>
-
-        <div id="specialMessage">
-          <div class="divider"></div>
-          <h3 class="center">Ты помнишь, моя любовь… ✨</h3>
-          <p class="center">Мы сидели в моей машине возле площадки. Я рассказывал тебе о звёздах, хотя сам толком ничего о них не знал. Но мне так хотелось, чтобы этот момент длился дольше. Наверное, я и сам тогда не понимал, что самое красивое, на что я мог смотреть в ту ночь, сидело рядом со мной.</p>
-          <svg id="constellation" viewBox="0 0 320 270" role="img" aria-label="Сердце, составленное из сияющих звёзд">
-            <path class="constellation-line" d="M160 224 L70 143 L50 90 L91 56 L126 80 L160 112 L194 80 L229 56 L270 90 L250 143 L160 224"/>
-            <path class="constellation-line" d="M70 143 L126 80 M194 80 L250 143 M50 90 L160 112 L270 90 M91 56 L160 112 L229 56"/>
-            <circle class="constellation-star" cx="160" cy="224" r="4"/>
-            <circle class="constellation-star" cx="70" cy="143" r="4"/>
-            <circle class="constellation-star" cx="50" cy="90" r="3"/>
-            <circle class="constellation-star" cx="91" cy="56" r="4"/>
-            <circle class="constellation-star" cx="126" cy="80" r="3"/>
-            <circle class="constellation-star" cx="160" cy="112" r="5"/>
-            <circle class="constellation-star" cx="194" cy="80" r="3"/>
-            <circle class="constellation-star" cx="229" cy="56" r="4"/>
-            <circle class="constellation-star" cx="270" cy="90" r="3"/>
-            <circle class="constellation-star" cx="250" cy="143" r="4"/>
-            <text x="160" y="255" fill="#ffd6ed" text-anchor="middle" font-size="12" font-family="Georgia,serif">Моё сердце всегда найдёт тебя</text>
-          </svg>
-          <div class="center">
-            <p class="final-quote">В ту ночь я ещё не знал значения звёзд.<br>Но уже знал, что ты особенная.</p>
-            <button class="btn primary" onclick="launchHearts(55)">💗 Ещё больше сердечек!</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="secretLetter">
-    <div class="wrap reveal">
-      <div class="eyebrow center">Ещё одно маленькое признание</div>
-      <h2>Для твоего сердца</h2>
-      <div class="center">
-        <p>Здесь есть письмо, которое я хочу оставить только тебе.</p>
-        <button id="letterButton" class="btn primary" onclick="toggleSecretLetter()">💌 Открыть секретное письмо</button>
-      </div>
-      <div id="secretLetterContent" class="card secret-letter letter">
-        <p>Моя Дарина,</p>
-        <p>Если ты читаешь это, значит, ты дошла до самого сокровенного уголка моей маленькой вселенной.</p>
-        <p>Я хочу, чтобы даже в дни, когда тебе грустно, когда всё вокруг кажется сложным и далёким, ты помнила: есть человек, которому ты невероятно дорога. Человек, который хочет видеть твою улыбку, слышать твой голос, обнимать тебя и создавать с тобой воспоминания, о которых однажды мы будем говорить с теплом.</p>
-        <p>Я не знаю, что приготовит нам жизнь. Но знаю, что хочу стараться ради нашего будущего, беречь то, что между нами есть, и не забывать, как много ты для меня значишь.</p>
-        <p>И если бы мне дали прожить всё заново, со всеми дорогами, случайностями и поворотами, я бы снова искал дорогу к тебе.</p>
-        <p class="center highlight">Я бы снова выбрал тебя. ❤️</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="final">
-    <div class="wrap reveal">
-      <div class="card final-card">
-        <div class="glow-heart">♥</div>
-        <div class="eyebrow">И самое главное</div>
-        <h2>Ты — мой любимый человек</h2>
-        <p class="final-quote">Если бы всё начать заново,<br>я бы снова выбрал тебя.</p>
-        <div class="divider"></div>
-        <p>Не потому, что я знаю каждый поворот нашей истории. А потому, что даже не зная, куда приведёт дорога, я всё равно захотел бы пройти её к тебе.</p>
-        <p class="highlight">Люблю тебя, Дарина. Сегодня. Завтра. И во всех наших мечтах о будущем.</p>
-        <div class="btn-row">
-          <button class="btn primary" onclick="launchHearts(100)">❤️ Отправить тебе тысячу сердечек</button>
-          <button class="btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↟ В начало нашей истории</button>
-        </div>
-      </div>
-    </div>
+    <audio id="audioPlayer" controls class="hidden" style="width:100%;margin-top:10px"></audio>
   </section>
 </main>
 
-<footer>Сделано с любовью. Для Дарины. ❤️</footer>
-
-<div id="lightbox" role="dialog" aria-modal="true" aria-label="Увеличенная фотография" onclick="closePhoto(event)">
-  <button class="btn" onclick="closePhoto(event)" aria-label="Закрыть фотографию">✕ Закрыть</button>
-  <img id="lightboxImage" alt="Увеличенная фотография">
-</div>
+<footer>Сделано с любовью. Для Дарины — и только для неё. ❤️</footer>
 
 <script>
-(function createStars(){
-  const container=document.getElementById('stars');
-  for(let i=0;i<125;i++){
-    const s=document.createElement('i');
-    s.className='star';
-    s.style.left=(Math.random()*100)+'%';
-    s.style.top=(Math.random()*100)+'%';
-    s.style.setProperty('--duration',(2+Math.random()*4)+'s');
-    s.style.animationDelay=(-Math.random()*5)+'s';
-    if(Math.random()>.8){s.style.width='3px';s.style.height='3px';}
-    container.appendChild(s);
-  }
-})();
+/* ЗВЁЗДНОЕ НЕБО */
+const canvas = document.getElementById("sky");
+const ctx = canvas.getContext("2d");
+let stars = [];
+function resizeSky() {
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  canvas.width = innerWidth * dpr;
+  canvas.height = innerHeight * dpr;
+  canvas.style.width = innerWidth + "px";
+  canvas.style.height = innerHeight + "px";
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  stars = Array.from({length: Math.min(170, Math.floor(innerWidth / 3))}, () => ({
+    x: Math.random() * innerWidth,
+    y: Math.random() * innerHeight,
+    r: Math.random() * 1.5 + .25,
+    a: Math.random() * .7 + .2,
+    s: Math.random() * .012 + .002
+  }));
+}
+function drawSky() {
+  ctx.clearRect(0, 0, innerWidth, innerHeight);
+  stars.forEach(s => {
+    s.a += (Math.random() - .5) * s.s;
+    s.a = Math.max(.15, Math.min(1, s.a));
+    ctx.beginPath();
+    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+    ctx.fillStyle = "rgba(255,240,255," + s.a + ")";
+    ctx.fill();
+  });
+  requestAnimationFrame(drawSky);
+}
+addEventListener("resize", resizeSky);
+resizeSky();
+drawSky();
 
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
+/* ОБЩИЕ ФУНКЦИИ */
+const $ = id => document.getElementById(id);
+function show(id) { $(id).classList.remove("hidden"); }
+function hide(id) { $(id).classList.add("hidden"); }
+function setProgress(value) { $("progress").style.width = value + "%"; }
+function burstHearts(amount = 24) {
+  for (let i = 0; i < amount; i++) {
+    const h = document.createElement("div");
+    h.className = "heart";
+    h.textContent = ["❤️", "💗", "💕", "💖", "✨"][Math.floor(Math.random() * 5)];
+    h.style.left = Math.random() * 100 + "vw";
+    h.style.fontSize = (16 + Math.random() * 22) + "px";
+    h.style.animationDuration = (4 + Math.random() * 4) + "s";
+    document.body.appendChild(h);
+    setTimeout(() => h.remove(), 8500);
+  }
+}
+function moveTo(id) {
+  show(id);
+  setTimeout(() => $(id).scrollIntoView({behavior:"smooth", block:"start"}), 80);
+}
+
+/* СТАРТ */
+$("startBtn").addEventListener("click", () => {
+  hide("intro");
+  moveTo("stage1");
+  burstHearts(8);
+});
+
+/* ЭТАП 1: ПОИСК ЧЕТЫРЁХ СИМВОЛОВ */
+const tiles = [
+  {symbol:"✦", real:false},
+  {symbol:"☾", real:false},
+  {symbol:"L", real:true},
+  {symbol:"✧", real:false},
+  {symbol:"☆", real:false},
+  {symbol:"O", real:true},
+  {symbol:"✷", real:false},
+  {symbol:"☄", real:false},
+  {symbol:"V", real:true},
+  {symbol:"◇", real:false},
+  {symbol:"✺", real:false},
+  {symbol:"E", real:true}
+];
+let found = 0;
+let hintOneUsed = false;
+const grid = $("starGrid");
+tiles.forEach((tile, index) => {
+  const btn = document.createElement("button");
+  btn.className = "star-tile";
+  btn.textContent = "✧";
+  btn.setAttribute("aria-label", "Звезда " + (index + 1));
+  btn.addEventListener("click", () => {
+    if (btn.disabled) return;
+    btn.disabled = true;
+    if (tile.real) {
+      btn.classList.add("found");
+      btn.textContent = tile.symbol;
+      found++;
+      $("searchCounter").textContent = "Найдено символов: " + found + " из 4";
+      $("searchStatus").textContent = found < 4
+        ? "Есть! Символ найден. Продолжай искать. ✨"
+        : "Все символы собраны. Прочитай их по порядку: LOVE ❤️";
+      if (found === 4) {
+        $("toStage2").disabled = false;
+        burstHearts(10);
+      }
+    } else {
+      btn.classList.add("missed");
+      btn.textContent = "·";
+      $("searchStatus").textContent = "Это ложная звезда. Попробуй другую.";
     }
   });
-},{threshold:.10});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+  grid.appendChild(btn);
+});
+$("hint1").addEventListener("click", () => {
+  hintOneUsed = true;
+  $("searchStatus").textContent = "Подсказка: символы спрятаны под номерами 3, 6, 9 и 12. Читай их слева направо, сверху вниз.";
+});
+$("toStage2").addEventListener("click", () => {
+  hide("stage1");
+  moveTo("stage2");
+  renderQuestion();
+});
 
-function playMusic(){
-  const frame=document.getElementById('musicFrame');
-  const iframe=document.getElementById('song');
-  if(!iframe.src){
-    iframe.src=iframe.dataset.src;
+/* ЭТАП 2: ВОПРОСЫ */
+const questions = [
+  {
+    q: "Что становится сильнее, когда им делятся?",
+    answers: ["Одиночество", "Любовь", "Тишина", "Секрет"],
+    correct: 1,
+    hint: "Это чувство не заканчивается, когда отдаёшь его другому."
+  },
+  {
+    q: "Что нельзя купить за деньги, но можно подарить каждый день?",
+    answers: ["Новую планету", "Вечность", "Внимание и заботу", "Погоду"],
+    correct: 2,
+    hint: "Это видно в мелочах: выслушать, поддержать, быть рядом."
+  },
+  {
+    q: "Какое расстояние не мешает двум людям быть близкими?",
+    answers: ["Сто километров", "Расстояние между сердцами", "Расстояние до Луны", "Любое, если есть связь"],
+    correct: 3,
+    hint: "Дело не в километрах, а в том, выбирают ли люди друг друга."
   }
-  frame.hidden=false;
-  document.getElementById('musicButton').textContent='♪ Наша песня открыта';
-  frame.scrollIntoView({behavior:'smooth',block:'center'});
+];
+let qIndex = 0;
+let qCorrect = false;
+function renderQuestion() {
+  const q = questions[qIndex];
+  qCorrect = false;
+  $("questionNumber").textContent = "Вопрос " + (qIndex + 1) + " из " + questions.length;
+  $("questionText").textContent = q.q;
+  $("questionStatus").textContent = "";
+  $("nextQuestion").disabled = true;
+  $("nextQuestion").textContent = qIndex === questions.length - 1
+    ? "К секретному коду →" : "Следующий вопрос →";
+  setProgress((qIndex / questions.length) * 100);
+  const answers = $("answers");
+  answers.innerHTML = "";
+  q.answers.forEach((answer, index) => {
+    const btn = document.createElement("button");
+    btn.className = "option";
+    btn.textContent = answer;
+    btn.addEventListener("click", () => {
+      if (qCorrect) return;
+      if (index === q.correct) {
+        qCorrect = true;
+        btn.classList.add("correct");
+        $("questionStatus").textContent = "Верно. Ты на шаг ближе к финалу. 💗";
+        $("nextQuestion").disabled = false;
+        answers.querySelectorAll("button").forEach(b => b.disabled = true);
+      } else {
+        btn.classList.add("wrong");
+        $("questionStatus").textContent = "Не совсем. Подумай ещё и попробуй снова.";
+        setTimeout(() => btn.classList.remove("wrong"), 600);
+      }
+    });
+    answers.appendChild(btn);
+  });
 }
-
-function checkAnswer(index){
-  const feedback=document.getElementById('feedback');
-  if(index===1){
-    feedback.textContent='Ты помнишь… ❤️ Именно этот момент.';
-    document.getElementById('specialMessage').classList.add('show');
-    document.getElementById('constellation').classList.add('show');
-    launchHearts(65);
-    setTimeout(()=>{
-      document.getElementById('specialMessage').scrollIntoView({behavior:'smooth',block:'center'});
-    },250);
+$("nextQuestion").addEventListener("click", () => {
+  if (!qCorrect) return;
+  qIndex++;
+  if (qIndex < questions.length) {
+    renderQuestion();
   } else {
-    feedback.textContent='Вспомни ещё раз, любимая. Подсказка — моя машина и площадка ✨';
+    setProgress(100);
+    hide("stage2");
+    moveTo("stage3");
   }
-}
+});
+$("hint2").addEventListener("click", () => {
+  $("questionStatus").textContent = questions[qIndex].hint;
+});
 
-function launchHearts(amount){
-  const symbols=['♥','♡','❤','💗','💖'];
-  for(let i=0;i<amount;i++){
-    setTimeout(()=>{
-      const heart=document.createElement('span');
-      heart.className='floating-heart';
-      heart.textContent=symbols[Math.floor(Math.random()*symbols.length)];
-      heart.style.left=(Math.random()*100)+'vw';
-      heart.style.fontSize=(14+Math.random()*24)+'px';
-      heart.style.setProperty('--dur',(4+Math.random()*4)+'s');
-      heart.style.setProperty('--drift',((Math.random()-.5)*180)+'px');
-      document.body.appendChild(heart);
-      setTimeout(()=>heart.remove(),8500);
-    },i*35);
+/* ЭТАП 3: КОД */
+let hintThreeCount = 0;
+$("hint3").addEventListener("click", () => {
+  hintThreeCount++;
+  const hints = [
+    "Вспомни начало отношений: для истории достаточно одного сердца.",
+    "В слове LOVE посчитай каждую букву. Не пропусти ни одной.",
+    "Посчитай слова в фразе I LOVE YOU. Между ними два пробела."
+  ];
+  $("codeStatus").textContent = hints[Math.min(hintThreeCount - 1, hints.length - 1)];
+});
+function checkSecretCode() {
+  const code = $("secretCode").value.trim();
+  if (code === "143") {
+    $("codeStatus").textContent = "Код принят. Последняя дверь открывается… 💖";
+    hide("stage3");
+    moveTo("finalStage");
+    burstHearts(25);
+  } else {
+    $("codeStatus").textContent = "Код не подошёл. Проверь три подсказки и попробуй ещё раз.";
   }
 }
+$("checkCode").addEventListener("click", checkSecretCode);
+$("secretCode").addEventListener("keydown", e => {
+  if (e.key === "Enter") checkSecretCode();
+});
 
-function toggleSecretLetter(){
-  const letter=document.getElementById('secretLetterContent');
-  const button=document.getElementById('letterButton');
-  letter.classList.toggle('open');
-  const isOpen=letter.classList.contains('open');
-  button.textContent=isOpen?'💌 Закрыть письмо':'💌 Открыть секретное письмо';
-  if(isOpen){
-    launchHearts(24);
-    setTimeout(()=>letter.scrollIntoView({behavior:'smooth',block:'center'}),100);
-  }
-}
+/* ФИНАЛЬНОЕ ПИСЬМО */
+const letterText =
+`Дарина, ❤️
 
-function openPhoto(figure){
-  const img=figure.querySelector('img');
-  if(!img || !img.naturalWidth) return;
-  document.getElementById('lightboxImage').src=img.src;
-  document.getElementById('lightbox').classList.add('open');
-  document.body.style.overflow='hidden';
-}
-function closePhoto(event){
-  if(event.target.id==='lightboxImage') return;
-  document.getElementById('lightbox').classList.remove('open');
-  document.body.style.overflow='';
-}
-document.addEventListener('keydown',event=>{
-  if(event.key==='Escape'){
-    document.getElementById('lightbox').classList.remove('open');
-    document.body.style.overflow='';
+Если ты читаешь это, значит, ты прошла весь путь до конца.
+Но самое важное никогда не было спрятано в звёздах, загадках или кодах.
+
+Оно в том, что ты для меня особенная.
+В твоей улыбке, в твоём голосе, в наших разговорах и в моментах,
+которые хочется переживать снова и снова.
+
+Я не обещаю, что каждый день будет идеальным.
+Но я хочу стараться, поддерживать тебя, радовать и быть рядом,
+когда тебе хорошо и когда весь мир будто против тебя.
+
+Из всех случайностей этой огромной вселенной
+я особенно рад той, которая привела меня к тебе.
+
+Ты — моя любимая история.
+И я хочу, чтобы у неё было много-много продолжений.
+
+Я люблю тебя, Дарина. ❤️`;
+
+let letterOpened = false;
+function openEnvelope() {
+  if (letterOpened) return;
+  letterOpened = true;
+  $("envelope").classList.add("open");
+  show("letter");
+  $("openLetter").disabled = true;
+  $("openLetter").textContent = "Письмо открыто ❤️";
+  const target = $("typedLetter");
+  target.textContent = "";
+  let i = 0;
+  function typeNext() {
+    if (i < letterText.length) {
+      target.textContent += letterText.charAt(i);
+      i++;
+      setTimeout(typeNext, 27);
+    }
   }
+  typeNext();
+  burstHearts(35);
+}
+$("openLetter").addEventListener("click", openEnvelope);
+$("envelope").addEventListener("click", openEnvelope);
+$("envelope").addEventListener("keydown", e => {
+  if (e.key === "Enter" || e.key === " ") {
+    e.preventDefault();
+    openEnvelope();
+  }
+});
+$("heartsBtn").addEventListener("click", () => burstHearts(55));
+
+/* ФОТОГАЛЕРЕЯ: ЛОКАЛЬНЫЙ ПРЕДПРОСМОТР */
+let photoUrls = [];
+$("photoInput").addEventListener("change", event => {
+  photoUrls.forEach(url => URL.revokeObjectURL(url));
+  photoUrls = [];
+  const gallery = $("gallery");
+  gallery.innerHTML = "";
+  Array.from(event.target.files || []).slice(0, 12).forEach(file => {
+    if (!file.type.startsWith("image/")) return;
+    const url = URL.createObjectURL(file);
+    photoUrls.push(url);
+    const img = document.createElement("img");
+    img.src = url;
+    img.alt = "Наше воспоминание";
+    gallery.appendChild(img);
+  });
+});
+
+/* МУЗЫКА: ЛОКАЛЬНЫЙ ПРЕДПРОСМОТР */
+let audioUrl = null;
+$("audioInput").addEventListener("change", event => {
+  const file = event.target.files && event.target.files[0];
+  if (!file) return;
+  if (audioUrl) URL.revokeObjectURL(audioUrl);
+  audioUrl = URL.createObjectURL(file);
+  $("audioPlayer").src = audioUrl;
+  show("audioPlayer");
 });
 </script>
 </body>
