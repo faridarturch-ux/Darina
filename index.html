@@ -1270,4 +1270,279 @@ footer {
 })();
 </script>
 </body>
+  
+<style>
+/* Нежное сияние за текстами */
+.screen, section {
+  position: relative;
+  isolation: isolate;
+}
+
+.screen::before, section::before {
+  content: "";
+  position: absolute;
+  inset: 5% -5%;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 20% 35%,
+      rgba(150,130,255,.13), transparent 48%),
+    radial-gradient(ellipse at 80% 65%,
+      rgba(255,170,215,.12), transparent 45%);
+  filter: blur(24px);
+  animation: darinaGlow 9s ease-in-out infinite alternate;
+}
+
+@keyframes darinaGlow {
+  from { opacity: .45; transform: scale(.96); }
+  to   { opacity: 1; transform: scale(1.04); }
+}
+
+/* Плавающие световые частицы */
+.darina-sparkles {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.darina-sparkles i {
+  position: absolute;
+  bottom: -20px;
+  left: var(--x);
+  width: var(--s);
+  height: var(--s);
+  border-radius: 50%;
+  background: rgba(255,235,255,.9);
+  box-shadow: 0 0 12px 3px rgba(191,167,255,.42);
+  opacity: 0;
+  animation: sparkleRise var(--t) linear infinite;
+  animation-delay: var(--d);
+}
+
+@keyframes sparkleRise {
+  0% {
+    transform: translate3d(0,0,0) scale(.4);
+    opacity: 0;
+  }
+  15% { opacity: .65; }
+  75% { opacity: .4; }
+  100% {
+    transform: translate3d(var(--drift),-110vh,0) scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* Кинематографический переход между мирами */
+#darina-ai-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(ellipse at center,
+      rgba(79,55,128,.26), rgba(5,4,22,.96));
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 1s ease, visibility 1s ease;
+  overflow: hidden;
+}
+
+#darina-ai-transition.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+#darina-ai-transition::before {
+  content: "";
+  position: absolute;
+  width: 150vw;
+  height: 150vw;
+  max-width: 1200px;
+  max-height: 1200px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    transparent,
+    rgba(176,151,255,.2),
+    transparent,
+    rgba(255,190,225,.19),
+    transparent
+  );
+  filter: blur(35px);
+  animation: darinaPortal 8s linear infinite;
+}
+
+#darina-ai-transition img {
+  position: relative;
+  width: min(76vw, 430px);
+  height: min(58vh, 440px);
+  object-fit: cover;
+  border-radius: 24px;
+  opacity: 0;
+  transform: scale(.88) translateY(12px);
+  filter: blur(12px);
+  box-shadow: 0 0 50px rgba(190,158,255,.22);
+  transition:
+    opacity .8s ease,
+    transform 1.2s cubic-bezier(.2,.7,.2,1),
+    filter 1s ease;
+}
+
+#darina-ai-transition.active img {
+  opacity: .48;
+  transform: scale(1);
+  filter: blur(1px);
+}
+
+#darina-ai-transition span {
+  position: absolute;
+  bottom: 13%;
+  left: 8%;
+  right: 8%;
+  color: #fff0fb;
+  text-align: center;
+  font-size: clamp(15px, 4vw, 21px);
+  letter-spacing: .04em;
+  line-height: 1.6;
+  text-shadow: 0 0 20px rgba(224,192,255,.8);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .8s ease .2s, transform .8s ease .2s;
+}
+
+#darina-ai-transition.active span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes darinaPortal {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .screen::before, section::before,
+  .darina-sparkles i,
+  #darina-ai-transition::before {
+    animation: none !important;
+  }
+  #darina-ai-transition,
+  #darina-ai-transition img,
+  #darina-ai-transition span {
+    transition-duration: .15s !important;
+  }
+}
+</style>
+
+<div class="darina-sparkles" id="darinaSparkles" aria-hidden="true"></div>
+
+<div id="darina-ai-transition" aria-hidden="true">
+  <img id="darinaTransitionPhoto" alt="">
+  <span id="darinaTransitionWords">Каждый миг с тобой — моя любимая история…</span>
+</div>
+
+<script>
+(function () {
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  /* Создаём тихий звёздный дождь */
+  const sky = document.getElementById("darinaSparkles");
+
+  if (sky && !reduceMotion) {
+    for (let i = 0; i < 30; i++) {
+      const star = document.createElement("i");
+      star.style.setProperty("--x", Math.random() * 100 + "%");
+      star.style.setProperty("--s", (2 + Math.random() * 3) + "px");
+      star.style.setProperty("--t", (9 + Math.random() * 12) + "s");
+      star.style.setProperty("--d", (-Math.random() * 18) + "s");
+      star.style.setProperty("--drift", (Math.random() * 100 - 50) + "px");
+      sky.appendChild(star);
+    }
+  }
+
+  const overlay = document.getElementById("darina-ai-transition");
+  const photo = document.getElementById("darinaTransitionPhoto");
+  const words = document.getElementById("darinaTransitionWords");
+
+  const memories = [
+    "memory-1%202.jpg",
+    "memory-2%202.jpg",
+    "memory-3%202.jpg",
+    "memory-4%202.jpg",
+    "memory-5%202.jpg",
+    "assets/memory-1.jpg",
+    "assets/memory-2.jpg",
+    "assets/memory-3.jpg",
+    "assets/memory-4.jpg",
+    "assets/memory-5.jpg"
+  ];
+
+  const phrases = [
+    "Если бы звёзды умели говорить, они бы рассказали о тебе…",
+    "Среди миллиардов миров я снова выбрал бы твой.",
+    "Пусть время замедлится, когда мы рядом.",
+    "Ты — моё самое тёплое место во всей Вселенной.",
+    "Каждый миг с тобой — моя любимая история…"
+  ];
+
+  let lastPhoto = "";
+  let busy = false;
+
+  function showTransition() {
+    if (!overlay || reduceMotion || busy) return;
+
+    busy = true;
+
+    let candidates = memories.filter(src => src !== lastPhoto);
+    const chosen = candidates[
+      Math.floor(Math.random() * candidates.length)
+    ];
+
+    lastPhoto = chosen;
+    photo.onerror = function () {
+      photo.style.display = "none";
+    };
+    photo.onload = function () {
+      photo.style.display = "block";
+    };
+    photo.style.display = "block";
+    photo.src = chosen;
+
+    words.textContent =
+      phrases[Math.floor(Math.random() * phrases.length)];
+
+    overlay.classList.add("active");
+
+    window.setTimeout(() => {
+      overlay.classList.remove("active");
+      window.setTimeout(() => {
+        busy = false;
+      }, 1000);
+    }, 850);
+  }
+
+  /*
+    Подключаемся к существующему goTo,
+    не заменяя его логику переключения экранов.
+  */
+  const originalGoTo = window.goTo;
+
+  if (typeof originalGoTo === "function") {
+    window.goTo = function () {
+      const args = arguments;
+
+      if (!reduceMotion) showTransition();
+
+      return originalGoTo.apply(this, args);
+    };
+  }
+})();
+</script>
+</body>
+
 </html>
