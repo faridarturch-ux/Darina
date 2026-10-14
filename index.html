@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f8e9e7">
+<title>Наша история ❤️</title>
+<style>
+:root{--ink:#492e3c;--muted:#856a79;--rose:#b95f7e;--rose2:#e9a9b8;--paper:#fffaf7;--line:#f0d9dc}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at top,#fff8f4,#f5e4e5 65%,#ead7e1);color:var(--ink);font-family:Georgia,"Times New Roman",serif;min-height:100vh}
+button,input,textarea{font:inherit}button{cursor:pointer}
+.wrap{width:min(720px,100%);margin:auto;padding:18px 16px 44px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:4px 0 16px;font:12px/1.4 system-ui,sans-serif;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.music{border:1px solid #e5c5ce;border-radius:999px;background:#fff9f7;color:var(--ink);padding:10px 13px;font-size:12px}
+.card{background:rgba(255,250,247,.94);border:1px solid rgba(255,255,255,.9);border-radius:28px;padding:clamp(22px,6vw,42px);box-shadow:0 18px 55px #80556a18;overflow:hidden}
+.hero{text-align:center;position:relative;padding-top:32px;padding-bottom:34px}
+.kicker{font:11px system-ui,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--rose);margin:0 0 18px}
+h1{font-size:clamp(38px,9vw,64px);line-height:1.02;font-weight:normal;margin:0 auto 18px;max-width:560px;letter-spacing:-.04em}
+h2{font-size:clamp(27px,6vw,38px);line-height:1.12;font-weight:normal;margin:0 0 16px;letter-spacing:-.025em}
+p{line-height:1.65}.lead{color:var(--muted);font-size:17px;max-width:480px;margin:0 auto 24px}
+.heart{font-size:27px;color:var(--rose);margin:12px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;padding:14px 22px;background:var(--rose);color:white;box-shadow:0 8px 20px #b95f7e2b;transition:transform .2s,background .2s;font:600 14px system-ui,sans-serif}
+.btn:hover{transform:translateY(-2px);background:#a84d6c}.btn.secondary{background:#f8e8e9;color:var(--ink);box-shadow:none;border:1px solid var(--line)}
+.buttons{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}.buttons .btn{flex:1}
+.hidden{display:none!important}.progressrow{display:flex;justify-content:space-between;align-items:center;font:12px system-ui,sans-serif;color:var(--muted);margin:0 0 13px}
+.track{height:4px;background:#f0dce0;border-radius:9px;overflow:hidden;margin-bottom:26px}.fill{height:100%;width:0;background:linear-gradient(90deg,var(--rose),#e7a9b8);transition:width .35s}
+.qnum{font:11px system-ui,sans-serif;letter-spacing:.18em;color:var(--rose);text-transform:uppercase;margin:0 0 12px}
+.question{font-size:clamp(27px,6.5vw,39px);line-height:1.12;margin-bottom:14px}
+.hint{color:var(--muted);font-size:15px;margin:0 0 22px}
+.options{display:grid;gap:10px}.option{border:1px solid var(--line);border-radius:16px;padding:14px 16px;background:#fffdfb;color:var(--ink);text-align:left;line-height:1.4;transition:.2s}.option:focus,.option:hover{border-color:var(--rose2);background:#fff3f4}.option.selected{border-color:var(--rose);background:#fbe8ec;box-shadow:inset 0 0 0 1px var(--rose)}
+textarea{width:100%;min-height:100px;resize:vertical;border:1px solid var(--line);border-radius:16px;padding:14px;background:#fffdfb;color:var(--ink);outline:none}textarea:focus{border-color:var(--rose)}
+.note{font:12px/1.5 system-ui,sans-serif;color:var(--muted);margin-top:10px}
+.memorygrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0}
+.memory{min-width:0}.photo{height:190px;border-radius:18px;overflow:hidden;background:linear-gradient(135deg,#eed0d6,#f8e9dc);display:flex;align-items:center;justify-content:center;text-align:center;color:#805b6c;padding:14px;font:13px/1.5 system-ui,sans-serif}.photo img{width:100%;height:100%;object-fit:cover;display:block}.memory p{font-size:14px;margin:9px 2px 0;color:var(--muted)}
+.finaltext{font-size:18px;line-height:1.8}.signature{font-size:25px;font-style:italic;color:var(--rose);margin-top:22px}
+footer{text-align:center;color:#9d8190;font:11px system-ui,sans-serif;margin-top:18px;line-height:1.6}
+.fade{animation:fade .38s ease}@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:430px){.wrap{padding:10px 11px 30px}.top{font-size:10px}.music{padding:9px 10px}.photo{height:150px}.card{border-radius:23px}.memorygrid{gap:9px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="top"><span>маленький альбом для двоих</span><button id="musicBtn" class="music" type="button">♫ Включить музыку</button></div>
+  <section id="intro" class="card hero fade">
+    <p class="kicker">Только для тебя, Дарина</p>
+    <div class="heart">♡</div>
+    <h1>Наша история —<br>моя любимая</h1>
+    <p class="lead">Здесь спрятаны наши моменты, маленькие детали и воспоминания, которые делают нашу историю особенной.</p>
+    <button class="btn" id="startBtn">Открыть наш альбом <span>→</span></button>
+    <p class="note">Устройся поудобнее. Это маленькое путешествие — только для тебя.</p>
+  </section>
+
+  <section id="quiz" class="card hidden">
+    <div class="progressrow"><span id="stepLabel">ВОСПОМИНАНИЕ 01</span><span id="countLabel">1 из 6</span></div>
+    <div class="track"><div class="fill" id="progress"></div></div>
+    <div id="questionContent" class="fade"></div>
+    <div class="buttons">
+      <button id="backBtn" class="btn secondary" type="button">← Назад</button>
+      <button id="nextBtn" class="btn" type="button">Дальше →</button>
+    </div>
+    <p class="note">Здесь нет оценок и неправильных чувств. Просто вспоминай нас ❤️</p>
+  </section>
+
+  <section id="story" class="card hidden fade">
+    <p class="kicker">Глава последняя</p>
+    <h2>Наши моменты.<br>Наша история.</h2>
+    <p class="lead" style="margin-left:0">Некоторые дни становятся особенными не из-за места или даты, а из-за человека рядом.</p>
+    <div class="memorygrid">
+      <article class="memory"><div class="photo"><span>📷<br>Добавь ваше фото №1<br><small>замени PHOTO_1_URL в файле</small></span></div><p>«Тот самый момент, который хочется сохранить»</p></article>
+      <article class="memory"><div class="photo"><span>🌙<br>Добавь ваше фото №2<br><small>замени PHOTO_2_URL в файле</small></span></div><p>«Наш маленький мир, понятный только нам»</p></article>
+      <article class="memory"><div class="photo"><span>🌷<br>Добавь ваше фото №3<br><small>замени PHOTO_3_URL в файле</small></span></div><p>«Обычный день, который стал воспоминанием»</p></article>
+      <article class="memory"><div class="photo"><span>❤️<br>Добавь ваше фото №4<br><small>замени PHOTO_4_URL в файле</small></span></div><p>«И ещё одна причина улыбнуться»</p></article>
+    </div>
+    <div class="heart">♡</div>
+    <p class="finaltext">Дарина, я сделал эту маленькую страницу, потому что наша история для меня — не просто даты и фотографии. Это наши разговоры, взгляды, смех, прогулки и моменты, к которым хочется возвращаться.</p>
+    <p class="finaltext">Я не знаю, сколько ещё историй нам предстоит написать, но я хочу, чтобы впереди у нас было много поводов сказать: «Помнишь, как это было?»</p>
+    <p class="finaltext">Спасибо, что ты есть в моей жизни. И пусть у нас будет ещё много воспоминаний, которые однажды мы добавим в этот альбом.</p>
+    <p class="signature">Твой Фарид ❤️</p>
+    <button class="btn secondary" id="reviewBtn" type="button">Перечитать вопросы ↺</button>
+    <p class="note">P.S. Ответы из этой викторины видны только в этом браузере и автоматически тебе не отправляются.</p>
+  </section>
+  <footer>сделано с любовью · для Дарины ♡</footer>
+</main>
+<script>
+/* Настрой вопросы здесь: можно менять формулировки и варианты ответов. */
+const questions = [
+ {q:"Где мы впервые вместе смотрели на звёзды?",hint:"Вспомни ту ночь и место, где мы были рядом.",options:["На улице, под открытым небом","В поездке или вдали от дома","На знакомом нам месте","Я напишу свой вариант"],free:true},
+ {q:"Какое наше первое воспоминание приходит тебе в голову?",hint:"Это может быть встреча, прогулка или совсем маленькая деталь.",options:["Наша первая встреча","Первая долгая прогулка","Разговор, который запомнился","Другое воспоминание"],free:true},
+ {q:"Что у нас получается лучше всего?",hint:"Выбери то, что больше всего похоже на нас.",options:["Смеяться над ерундой","Говорить обо всём на свете","Поддерживать друг друга","Просто быть рядом"],free:true},
+ {q:"Какой наш день ты бы с удовольствием повторила?",hint:"Не обязательно самый грандиозный — иногда важны мелочи.",options:["День, когда мы впервые встретились","Одна из наших прогулок","День, когда мы много смеялись","Свой вариант"],free:true},
+ {q:"Какая маленькая вещь напоминает тебе обо мне?",hint:"Песня, место, фраза, запах или привычка — всё подходит.",options:["Какая-то песня","Определённое место","Моя фраза или привычка","Напишу сама"],free:true},
+ {q:"Если бы мы могли прямо сейчас отправиться куда угодно вдвоём…",hint:"Последний вопрос перед нашей историей в фотографиях.",options:["К морю на закат","За город — смотреть на звёзды","В место, где мы ещё не были","Туда, где будем только мы"],free:true}
+];
+const answers = Array(questions.length).fill({choice:"",text:""});
+let index=0;
+const $=id=>document.getElementById(id);
+function show(id){["intro","quiz","story"].forEach(x=>$(x).classList.toggle("hidden",x!==id));window.scrollTo({top:0,behavior:"smooth"});}
+function renderQuestion(){
+ const q=questions[index], a=answers[index]||{choice:"",text:""};
+ $("stepLabel").textContent="ВОСПОМИНАНИЕ "+String(index+1).padStart(2,"0);
+ $("countLabel").textContent=(index+1)+" из "+questions.length;
+ $("progress").style.width=((index+1)/questions.length*100)+"%";
+ $("backBtn").style.visibility=index===0?"hidden":"visible";
+ $("nextBtn").textContent=index===questions.length-1?"Открыть нашу историю ♡":"Дальше →";
+ const content=$("questionContent"); content.className="fade";
+ content.innerHTML="";
+ const num=document.createElement("p");num.className="qnum";num.textContent="Вопрос "+(index+1);content.append(num);
+ const title=document.createElement("h2");title.className="question";title.textContent=q.q;content.append(title);
+ const hint=document.createElement("p");hint.className="hint";hint.textContent=q.hint;content.append(hint);
+ const opts=document.createElement("div");opts.className="options";
+ q.options.forEach(opt=>{
+  const b=document.createElement("button");b.type="button";b.className="option"+(a.choice===opt?" selected":"");b.textContent=opt;
+  b.addEventListener("click",()=>{answers[index]={...answers[index],choice:opt};renderQuestion();});
+  opts.append(b);
+ });content.append(opts);
+ const ta=document.createElement("textarea");ta.placeholder="А ещё я помню… (можно написать свой ответ)";ta.value=a.text||"";
+ ta.setAttribute("aria-label","Твой ответ");ta.addEventListener("input",()=>{answers[index]={...answers[index],text:ta.value};});content.append(ta);
+}
+$("startBtn").addEventListener("click",()=>{show("quiz");renderQuestion();});
+$("nextBtn").addEventListener("click",()=>{if(index<questions.length-1){index++;show("quiz");renderQuestion();}else{show("story");}});
+$("backBtn").addEventListener("click",()=>{if(index>0){index--;renderQuestion();}});
+$("reviewBtn").addEventListener("click",()=>{index=0;show("quiz");renderQuestion();});
+
+/* Лёгкая мелодия создаётся в браузере. Телефон запускает звук только после нажатия. */
+let audioCtx=null, timer=null, playing=false, noteIndex=0;
+const melody=[261.63,329.63,392,329.63,293.66,349.23,440,349.23,261.63,329.63,392,523.25,440,392,329.63,293.66];
+function tone(){
+ if(!audioCtx||!playing)return;
+ const now=audioCtx.currentTime, osc=audioCtx.createOscillator(), gain=audioCtx.createGain();
+ osc.type="sine";osc.frequency.value=melody[noteIndex%melody.length];noteIndex++;
+ gain.gain.setValueAtTime(.0001,now);gain.gain.exponentialRampToValueAtTime(.045,now+.08);gain.gain.exponentialRampToValueAtTime(.0001,now+.85);
+ osc.connect(gain);gain.connect(audioCtx.destination);osc.start(now);osc.stop(now+.9);
+}
+$("musicBtn").addEventListener("click",async()=>{
+ try{
+  if(!audioCtx)audioCtx=new (window.AudioContext||window.webkitAudioContext)();
+  if(audioCtx.state==="suspended")await audioCtx.resume();
+  playing=!playing;
+  if(playing){tone();timer=setInterval(tone,520);$("musicBtn").textContent="♫ Выключить музыку";}
+  else{clearInterval(timer);$("musicBtn").textContent="♫ Включить музыку";}
+ }catch(e){$("musicBtn").textContent="Музыка недоступна в этом браузере";}
+});
+</script>
+</body>
+</html>
