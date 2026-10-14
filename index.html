@@ -181,3 +181,443 @@ document.addEventListener("click", function(event) {
 </script>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080b20">
+<title>Для моей Дарины ❤️</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --pink: #ffb6d5;
+  --white: #fff5fc;
+  --muted: #d5d3eb;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: var(--white);
+  font-family: -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  background:
+    radial-gradient(ellipse at 50% 0%,
+      #34275f 0%, transparent 48%),
+    linear-gradient(180deg,
+      #080b20 0%, #15112e 55%, #090c20 100%);
+}
+
+#sky {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 30px, 720px);
+  margin: auto;
+  padding: 65px 0 45px;
+}
+
+.hero {
+  text-align: center;
+  min-height: 78vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.moon {
+  font-size: 55px;
+  filter: drop-shadow(0 0 22px #f7c8ff);
+  animation: glow 3s ease-in-out infinite;
+}
+
+.eyebrow {
+  margin-top: 20px;
+  letter-spacing: 4px;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #e6c5fa;
+}
+
+h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(38px, 10vw, 67px);
+  line-height: 1.13;
+  font-weight: normal;
+  margin: 20px 0;
+  color: #ffe3f1;
+  text-shadow: 0 0 35px #ff8ac655;
+}
+
+.subtitle {
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 440px;
+  font-size: 16px;
+}
+
+.heart {
+  color: #ff9bc7;
+  font-size: 28px;
+  animation: beat 1.5s infinite;
+  margin: 18px 0;
+}
+
+.scroll {
+  margin-top: 38px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #c9b8e6;
+}
+
+.card {
+  margin: 22px 0;
+  padding: 28px 23px;
+  border: 1px solid #ffffff20;
+  border-radius: 25px;
+  background: linear-gradient(
+    145deg, #ffffff0c, #f5b6ff08
+  );
+  box-shadow: 0 12px 50px #00000020;
+  backdrop-filter: blur(8px);
+}
+
+.card h2 {
+  text-align: center;
+  color: var(--pink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: normal;
+  font-size: 27px;
+  margin: 0 0 24px;
+}
+
+.card p {
+  font-size: 16px;
+  line-height: 1.95;
+  color: #f0eaf8;
+  margin: 17px 0;
+}
+
+.center {
+  text-align: center;
+}
+
+button {
+  border: 1px solid #ffc8e0a0;
+  border-radius: 30px;
+  padding: 15px 22px;
+  color: white;
+  background: linear-gradient(
+    135deg, #a54e94, #694d9f
+  );
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 0 28px #cf7ac52b;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:active {
+  transform: scale(.98);
+}
+
+.music-note {
+  color: #dfc8f5;
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+#player {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin-top: 20px;
+  overflow: hidden;
+  border-radius: 15px;
+  background: #080b20;
+}
+
+#player iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.final {
+  text-align: center;
+  padding: 48px 10px 35px;
+}
+
+.final h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 33px;
+  font-weight: normal;
+  color: var(--pink);
+}
+
+.final p {
+  color: #e4dced;
+  line-height: 1.9;
+}
+
+.signature {
+  margin-top: 30px;
+  font-size: 21px;
+  color: #ffd7e9;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+footer {
+  text-align: center;
+  color: #aaa0c8;
+  font-size: 12px;
+  padding: 20px 0 5px;
+}
+
+@keyframes beat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.18); }
+}
+
+@keyframes glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 12px #f7c8ff);
+  }
+  50% {
+    filter: drop-shadow(0 0 30px #f7aaff);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<canvas id="sky"></canvas>
+
+<main>
+  <section class="hero">
+    <div class="moon">🌙</div>
+    <div class="eyebrow">Только для тебя</div>
+    <h1>Моя дорогая<br>Дарина</h1>
+
+    <p class="subtitle">
+      Среди миллиардов звёзд есть одна,
+      ради улыбки которой мне хочется
+      делать этот мир немного прекраснее.
+    </p>
+
+    <div class="heart">♥</div>
+    <div class="scroll">МОЁ ПРИЗНАНИЕ ТЕБЕ ↓</div>
+  </section>
+
+  <section class="card">
+    <h2>От всего моего сердца ❤️</h2>
+
+    <p>
+      Моя дорогая, я старался сделать для тебя
+      что-то особенное. Что-то, что подарит тебе
+      улыбку и напомнит, насколько ты мне дорога.
+    </p>
+
+    <p>
+      Я знаю, что в прошлом у нас было много
+      плохого. Но сейчас мне не хочется
+      возвращаться к тем временам. Я хочу
+      смотреть вперёд, любить тебя, радовать
+      тебя и создавать для нас больше
+      счастливых моментов.
+    </p>
+
+    <p>
+      Мне очень хочется, чтобы ты тоже любила
+      меня. Чтобы мы берегли друг друга,
+      чаще улыбались и ценили то хорошее,
+      что есть между нами.
+    </p>
+
+    <p>
+      Эту работу я делал ради твоей улыбки.
+      Вкладывал в неё своё время, старания
+      и самое главное — своё сердце.
+    </p>
+
+    <p class="center" style="color:#ffb6d5">
+      Всё это — от сердца. Для тебя. ❤️
+    </p>
+  </section>
+
+  <section class="card center">
+    <h2>Наша песня 🎶</h2>
+
+    <p class="music-note">
+      Иногда музыка говорит за нас то,
+      для чего не хватает слов.
+      Нажми на кнопку и послушай.
+    </p>
+
+    <button id="musicButton" type="button">
+      ♫ Включить нашу песню
+    </button>
+
+    <div id="player" class="hidden"></div>
+  </section>
+
+  <section class="card">
+    <h2>Если бы ты знала… ✨</h2>
+
+    <p>
+      Мне хочется радовать тебя не только
+      большими поступками, но и мелочами.
+      Хочется видеть твою улыбку, слышать
+      твой смех и знать, что сегодня я
+      сделал твой день чуточку лучше.
+    </p>
+
+    <p>
+      Я не обещаю, что каждый день будет
+      идеальным. Но я хочу, чтобы в наших
+      днях было больше нежности, заботы,
+      искренности и поводов обнять друг друга.
+    </p>
+  </section>
+
+  <section class="final">
+    <div class="heart">♥</div>
+
+    <h2>Для тебя, моя Дарина</h2>
+
+    <p>
+      Этот маленький мир я создал специально
+      для тебя. Пусть он напомнит тебе,
+      что кто-то очень старался подарить
+      тебе улыбку.
+    </p>
+
+    <div class="signature">
+      С любовью, от сердца ❤️
+    </div>
+  </section>
+
+  <footer>
+    Под одним небом. Среди миллионов звёзд. ✨
+  </footer>
+</main>
+
+<script>
+const canvas = document.getElementById("sky");
+const ctx = canvas.getContext("2d");
+let stars = [];
+let width = 0;
+let height = 0;
+let dpr = 1;
+
+function resizeSky() {
+  dpr = Math.min(window.devicePixelRatio || 1, 2);
+  width = window.innerWidth;
+  height = window.innerHeight;
+
+  canvas.width = width * dpr;
+  canvas.height = height * dpr;
+  canvas.style.width = width + "px";
+  canvas.style.height = height + "px";
+
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+  stars = Array.from({length: 115}, () => ({
+    x: Math.random() * width,
+    y: Math.random() * height,
+    r: Math.random() * 1.6 + 0.3,
+    a: Math.random(),
+    speed: Math.random() * 0.012 + 0.003
+  }));
+}
+
+function drawSky() {
+  ctx.clearRect(0, 0, width, height);
+
+  for (const s of stars) {
+    s.a += s.speed;
+
+    const opacity = 0.35 +
+      Math.abs(Math.sin(s.a)) * 0.65;
+
+    ctx.beginPath();
+    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(255,235,255,${opacity})`;
+    ctx.fill();
+  }
+
+  requestAnimationFrame(drawSky);
+}
+
+resizeSky();
+drawSky();
+window.addEventListener("resize", resizeSky);
+
+document.getElementById("musicButton")
+  .addEventListener("click", function() {
+    const player = document.getElementById("player");
+
+    if (player.classList.contains("hidden")) {
+      player.classList.remove("hidden");
+
+      const iframe = document.createElement("iframe");
+      iframe.src =
+        "https://www.youtube-nocookie.com/embed/7uxjK7xdkyg?autoplay=1&rel=0";
+      iframe.title = "Наша песня";
+      iframe.allow =
+        "autoplay; encrypted-media; picture-in-picture";
+      iframe.allowFullscreen = true;
+
+      player.appendChild(iframe);
+      this.textContent = "♫ Наша песня";
+      player.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+    } else {
+      const iframe = player.querySelector("iframe");
+
+      if (iframe) {
+        iframe.src = "about:blank";
+        iframe.remove();
+      }
+
+      player.classList.add("hidden");
+      this.textContent = "♫ Включить нашу песню";
+    }
+  });
+</script>
+</body>
+</html>
+
