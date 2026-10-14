@@ -1,620 +1,517 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#080b25">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#070b20">
 <title>Для Дарины ❤️</title>
 <style>
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+:root {
+  --night:#070b20;
+  --pink:#ff9fc8;
+  --lavender:#c9b8ff;
+  --white:#fff8ff;
+  --muted:#c8c6e2;
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
 body {
-  margin: 0;
-  color: #ffe7f3;
-  background: radial-gradient(ellipse at top, #252052 0%, #11132f 45%, #050817 100%);
-  font-family: Georgia, "Times New Roman", serif;
-  text-align: center;
-  overflow-x: hidden;
+  margin:0;
+  background:var(--night);
+  color:var(--white);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  overflow-x:hidden;
+  line-height:1.7;
 }
-.stars, .hearts {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
+button { font:inherit; }
+button:focus-visible, a:focus-visible {
+  outline:2px solid var(--pink);
+  outline-offset:5px;
 }
-.stars { z-index: 0; }
-.hearts { z-index: 5; }
+#sky {
+  position:fixed; inset:0; z-index:-2; overflow:hidden;
+  background:
+    radial-gradient(ellipse at 20% 20%,#242457 0,transparent 42%),
+    radial-gradient(ellipse at 85% 55%,#341a51 0,transparent 40%),
+    linear-gradient(180deg,#050819,#10132f 55%,#080a1c);
+}
+#stars,#hearts {
+  position:absolute; inset:0; width:100%; height:100%;
+  pointer-events:none;
+}
+.nebula {
+  position:absolute; width:75vw; height:75vw; border-radius:50%;
+  filter:blur(75px); opacity:.14;
+  background:#b47cff; animation:nebula 14s ease-in-out infinite alternate;
+}
+.nebula.one { top:5%; left:-30%; }
+.nebula.two { right:-35%; top:50%; background:#ff6fb4; animation-delay:-7s; }
+@keyframes nebula { to { transform:translate(35px,-25px) scale(1.15); } }
 .star {
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  background: white;
-  border-radius: 50%;
-  box-shadow: 0 0 8px white;
-  animation: twinkle 2s infinite alternate;
+  position:absolute; width:2px; height:2px; border-radius:50%;
+  background:white; box-shadow:0 0 8px #fff;
+  animation:twinkle var(--duration,3s) ease-in-out infinite alternate;
 }
-@keyframes twinkle {
-  from { opacity: .2; transform: scale(.7); }
-  to { opacity: 1; transform: scale(1.5); }
-}
-.floating-heart {
-  position: absolute;
-  bottom: -40px;
-  color: #ff91c8;
-  opacity: .7;
-  animation: rise linear forwards;
-}
-@keyframes rise {
-  from { transform: translateY(0) rotate(0deg); opacity: 0; }
-  15% { opacity: .9; }
-  to { transform: translateY(-110vh) rotate(40deg); opacity: 0; }
-}
-main {
-  position: relative;
-  z-index: 2;
-  width: min(100% - 28px, 760px);
-  margin: 0 auto;
-  padding-bottom: 45px;
-}
+@keyframes twinkle { from {opacity:.2;transform:scale(.7)} to {opacity:1;transform:scale(1.7)} }
+.wrap { width:min(760px,100%); margin:auto; padding:0 22px; }
+section { padding:85px 0; position:relative; }
 .hero {
-  min-height: 95vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 55px 0 35px;
+  min-height:100svh; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; text-align:center;
+  padding-top:65px; padding-bottom:65px;
 }
 .eyebrow {
-  color: #d6c8ff;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  font: 11px Arial, sans-serif;
+  text-transform:uppercase; letter-spacing:4px; font-size:.72rem;
+  color:var(--lavender);
 }
+h1,h2,h3,p { margin-top:0; }
 h1 {
-  font-size: clamp(42px, 12vw, 76px);
-  line-height: 1.08;
-  margin: 20px 0;
-  color: #fff0fa;
-  text-shadow: 0 0 22px #ff75bd88, 0 0 55px #aa83ff55;
+  font-family:Georgia,serif; font-weight:400;
+  font-size:clamp(3.1rem,12vw,6.1rem); line-height:1.03;
+  margin:20px 0; letter-spacing:-2px;
+  background:linear-gradient(120deg,#fff,#ffb8d7 48%,#c7b8ff);
+  color:transparent; background-clip:text; -webkit-background-clip:text;
+  text-shadow:0 0 45px #d48bff22;
 }
 h2 {
-  color: #ffb9dd;
-  font-size: clamp(27px, 7vw, 37px);
-  margin: 0 0 20px;
-  font-weight: normal;
+  font-family:Georgia,serif; font-weight:400;
+  font-size:clamp(2rem,7vw,3.3rem); line-height:1.18;
+  text-align:center; margin-bottom:24px;
 }
-p {
-  font-size: 17px;
-  line-height: 1.95;
+h3 { font-family:Georgia,serif; font-size:1.4rem; font-weight:400; }
+p { color:var(--muted); }
+.lead { font-size:1.1rem; max-width:550px; }
+.glow-heart {
+  font-size:2.8rem; filter:drop-shadow(0 0 20px #ff8ac5);
+  animation:heartbeat 2s ease-in-out infinite;
 }
-.subtitle {
-  font-size: 19px;
-  line-height: 1.8;
-  max-width: 520px;
-  color: #e6ddff;
+@keyframes heartbeat { 50% { transform:scale(1.13); } }
+.btn {
+  display:inline-flex; justify-content:center; align-items:center;
+  gap:9px; min-height:49px; padding:12px 21px;
+  border:1px solid #ffffff38; border-radius:999px;
+  background:#ffffff0d; color:var(--white);
+  text-decoration:none; cursor:pointer;
+  transition:transform .25s,background .25s,border-color .25s;
+  -webkit-tap-highlight-color:transparent;
 }
-.big-heart {
-  font-size: 52px;
-  display: inline-block;
-  animation: heartbeat 1.5s infinite;
-  filter: drop-shadow(0 0 15px #ff5fa8);
+.btn:hover { transform:translateY(-2px); background:#ffffff19; border-color:#ffacd8aa; }
+.btn.primary {
+  background:linear-gradient(110deg,#f58cbd,#b7a4ff);
+  border:0; color:#19112c; font-weight:650;
+  box-shadow:0 8px 35px #dc87cf2c;
 }
-@keyframes heartbeat {
-  0%, 100% { transform: scale(1); }
-  15% { transform: scale(1.16); }
-  30% { transform: scale(1); }
-  45% { transform: scale(1.1); }
+.btn-row { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-top:25px; }
+.card {
+  padding:25px; border:1px solid #ffffff17; border-radius:25px;
+  background:linear-gradient(145deg,#ffffff0c,#ffffff04);
+  box-shadow:0 18px 65px #00000018;
+  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
 }
-.scroll-note {
-  margin-top: 35px;
-  color: #c9bde9;
-  font: 12px Arial, sans-serif;
-  letter-spacing: 2px;
+.letter {
+  font-family:Georgia,serif; font-size:1.12rem; line-height:1.95;
+  white-space:normal;
 }
-section {
-  margin: 28px 0;
-  padding: 27px 19px;
-  border: 1px solid #ffffff20;
-  border-radius: 24px;
-  background: linear-gradient(145deg, #ffffff0d, #ffffff04);
-  box-shadow: 0 12px 40px #00000020;
-  backdrop-filter: blur(5px);
+.letter p { color:#e4dff5; }
+.highlight { color:#ffd1e5; }
+.center { text-align:center; }
+.divider {
+  width:75px; height:1px; margin:27px auto;
+  background:linear-gradient(90deg,transparent,var(--pink),transparent);
 }
-.love-letter {
-  color: #f8eafa;
-  text-align: left;
+.section-note { text-align:center; max-width:550px; margin:0 auto 35px; }
+.music-card { text-align:center; }
+.music-orb {
+  width:95px; height:95px; margin:5px auto 22px; border-radius:50%;
+  display:grid; place-items:center; font-size:2.3rem;
+  background:radial-gradient(circle,#f6b4e7,#8f7bdd 60%,#27244f);
+  box-shadow:0 0 45px #d79bff44;
+  animation:heartbeat 3s infinite;
 }
-.love-letter h2 { text-align: center; }
-.signature {
-  text-align: right;
-  color: #ffb9dd;
-  font-size: 21px;
+.music-frame { width:100%; margin-top:18px; overflow:hidden; border-radius:15px; }
+.music-frame iframe { display:block; width:100%; aspect-ratio:16/9; border:0; }
+.gallery {
+  display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px;
 }
-.music-card { border-color: #ff9ed744; }
-.music-note {
-  font-size: 38px;
-  margin-bottom: 10px;
+.photo {
+  padding:8px 8px 14px; background:#fffaf5;
+  border-radius:5px; color:#32263d; cursor:pointer;
+  transform:rotate(var(--tilt,1deg));
+  transition:transform .3s; box-shadow:0 12px 32px #0005;
 }
-.music-help {
-  color: #d6cbe9;
-  font: 13px/1.7 Arial, sans-serif;
+.photo:nth-child(even) { --tilt:-1.6deg; }
+.photo:nth-child(3) { --tilt:1.4deg; }
+.photo:nth-child(5) { grid-column:1/-1; width:76%; justify-self:center; }
+.photo:hover { transform:rotate(0) translateY(-4px); }
+.photo img { display:block; width:100%; aspect-ratio:4/5; object-fit:cover; background:#25203d; }
+.photo:nth-child(5) img { aspect-ratio:5/3; }
+.photo figcaption { font-family:Georgia,serif; text-align:center; padding:10px 3px 0; font-size:.9rem; }
+.timeline { display:grid; gap:15px; }
+.memory {
+  position:relative; padding:20px 20px 20px 48px;
+  border-left:1px solid #cbb8ff55; margin-left:12px;
 }
-.youtube {
-  width: 100%;
-  max-width: 500px;
-  aspect-ratio: 16 / 9;
-  margin: 20px auto 0;
-  overflow: hidden;
-  border-radius: 16px;
-  background: #07091b;
-  border: 1px solid #ffffff22;
+.memory:before {
+  content:""; position:absolute; width:11px; height:11px;
+  border-radius:50%; background:var(--pink); left:-6px; top:26px;
+  box-shadow:0 0 15px var(--pink);
 }
-.youtube iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
+.memory h3 { margin:0 0 7px; }
+.memory p { margin-bottom:0; }
+.quiz-options { display:grid; gap:12px; margin-top:22px; }
+.quiz-options .btn { border-radius:16px; text-align:left; justify-content:flex-start; }
+.feedback { min-height:30px; text-align:center; margin-top:18px; color:#ffd1e5; }
+#constellation {
+  display:none; width:min(100%,390px); margin:18px auto 10px;
+  overflow:visible;
 }
-.photo-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 13px;
+#constellation.show { display:block; }
+.constellation-line {
+  stroke:#ffd0ed; stroke-width:1.5; fill:none;
+  stroke-dasharray:450; stroke-dashoffset:450;
+  animation:draw 3.2s ease forwards;
+  filter:drop-shadow(0 0 5px #ffa9de);
 }
-figure {
-  margin: 0;
-  min-width: 0;
+@keyframes draw { to { stroke-dashoffset:0; } }
+.constellation-star {
+  fill:#fff4ff; filter:drop-shadow(0 0 6px #ff9bdb);
+  animation:twinkle 1.3s infinite alternate;
 }
-figure img {
-  display: block;
-  width: 100%;
-  height: 235px;
-  object-fit: cover;
-  border-radius: 15px;
-  border: 1px solid #ffffff30;
-  background: #171632;
-  box-shadow: 0 8px 22px #00000045;
+#specialMessage { display:none; }
+#specialMessage.show { display:block; animation:reveal 1.4s ease both; }
+@keyframes reveal { from { opacity:0; transform:translateY(18px); } to {opacity:1;transform:none;} }
+.secret-letter { display:none; margin-top:22px; }
+.secret-letter.open { display:block; animation:reveal 1s ease both; }
+.final-card { text-align:center; padding:35px 23px; }
+.final-quote {
+  font-family:Georgia,serif; font-size:clamp(1.7rem,6vw,2.5rem);
+  color:#ffe0ef; line-height:1.4;
 }
-figcaption {
-  padding: 10px 3px 4px;
-  font-size: 14px;
-  color: #e5cfe8;
-  line-height: 1.5;
+footer { text-align:center; padding:25px 20px 45px; color:#8f8baa; font-size:.85rem; }
+#lightbox {
+  display:none; position:fixed; inset:0; z-index:20;
+  background:#030511ed; align-items:center; justify-content:center; padding:20px;
 }
-.final-message { padding: 35px 20px; }
-.final-message p { font-size: 20px; }
-.final-heart {
-  font-size: 46px;
-  margin: 15px 0;
+#lightbox.open { display:flex; }
+#lightbox img { max-width:100%; max-height:82svh; object-fit:contain; border-radius:8px; }
+#lightbox button { position:absolute; top:18px; right:18px; }
+.floating-heart {
+  position:fixed; z-index:30; pointer-events:none; bottom:-40px;
+  animation:floatUp var(--dur,5s) ease-out forwards;
+  filter:drop-shadow(0 0 7px #ff7fbe);
 }
-/* Секретное письмо */
-.secret-box {
-  padding: 28px 18px;
-  border: 1px solid #ff91c866;
-  border-radius: 24px;
-  background: linear-gradient(145deg, #24163e, #11142f);
-  box-shadow: 0 0 30px #ff72c522;
+@keyframes floatUp {
+  0% { transform:translate(0,0) rotate(0) scale(.5); opacity:0; }
+  12% { opacity:1; }
+  100% { transform:translate(var(--drift,20px),-115vh) rotate(35deg) scale(1.2); opacity:0; }
 }
-.secret-button, .answer-button {
-  display: block;
-  width: 100%;
-  max-width: 460px;
-  margin: 12px auto;
-  border: 1px solid #ffb9dd;
-  border-radius: 50px;
-  padding: 15px 18px;
-  color: white;
-  background: linear-gradient(135deg, #a63d83, #6045a8);
-  font-size: 16px;
-  cursor: pointer;
-  font-family: inherit;
-  line-height: 1.5;
-  transition: transform .2s, box-shadow .2s;
+.reveal { opacity:0; transform:translateY(24px); transition:opacity .9s,transform .9s; }
+.reveal.visible { opacity:1; transform:none; }
+@media (max-width:430px) {
+  section { padding:65px 0; }
+  .wrap { padding:0 17px; }
+  .card { padding:21px; }
+  .gallery { gap:10px; }
 }
-.secret-button:active, .answer-button:active {
-  transform: scale(.97);
-}
-.secret-letter {
-  display: none;
-  margin-top: 24px;
-  padding: 20px;
-  border-radius: 18px;
-  background: #ffffff0b;
-  text-align: left;
-  animation: letterAppear 1s ease;
-}
-.secret-letter.open { display: block; }
-.secret-letter h2 { text-align: center; }
-.secret-letter p { line-height: 1.9; }
-@keyframes letterAppear {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-/* Секретный вопрос */
-.quiz-box {
-  border: 1px solid #d5b8ff55;
-  background: linear-gradient(150deg, #20183f, #0e1531);
-}
-.quiz-intro {
-  color: #e5dcff;
-  line-height: 1.9;
-}
-.answer-button {
-  background: #ffffff0a;
-  border-color: #cbb7ff66;
-  text-align: left;
-  border-radius: 16px;
-}
-.answer-button:hover {
-  background: #ff91c822;
-  box-shadow: 0 0 18px #ff91c822;
-}
-.answer-button:disabled {
-  opacity: .7;
-  cursor: default;
-}
-#quizFeedback {
-  min-height: 30px;
-  color: #ffb9dd;
-  font-size: 15px;
-}
-#memoryReward {
-  display: none;
-  margin-top: 25px;
-  padding: 22px 17px;
-  border: 1px solid #ffb9dd77;
-  border-radius: 20px;
-  background: linear-gradient(145deg, #3a1c52, #191638);
-  animation: letterAppear 1.2s ease;
-}
-#memoryReward.show { display: block; }
-.reward-heart {
-  font-size: 48px;
-  animation: heartbeat 1.5s infinite;
-}
-#memoryReward p { line-height: 1.9; }
-footer {
-  position: relative;
-  z-index: 2;
-  padding: 0 15px 30px;
-  color: #aaa3ca;
-  font: 12px/1.8 Arial, sans-serif;
-}
-@media (max-width: 420px) {
-  main { width: calc(100% - 20px); }
-  section { padding: 23px 13px; }
-  figure img { height: 190px; }
-  p { font-size: 16px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: .01ms !important;
-    scroll-behavior: auto !important;
-  }
+@media (prefers-reduced-motion:reduce) {
+  *,*::before,*::after { animation-duration:.01ms!important; animation-iteration-count:1!important; scroll-behavior:auto!important; transition-duration:.01ms!important; }
+  .reveal { opacity:1; transform:none; }
 }
 </style>
 </head>
 <body>
-<div class="stars" id="stars"></div>
-<div class="hearts" id="hearts"></div>
+<div id="sky" aria-hidden="true">
+  <div class="nebula one"></div><div class="nebula two"></div>
+  <div id="stars"></div><div id="hearts"></div>
+</div>
+
 <main>
-<header class="hero">
-  <div class="eyebrow">Для самого дорогого человека</div>
-  <h1>Дарина,<br>моя любовь ❤️</h1>
-  <p class="subtitle">
-    Среди миллиардов звёзд я бы всё равно искал тебя.
-    Потому что моё самое красивое небо —
-    это мир, в котором есть ты.
-  </p>
-  <div class="big-heart">♥</div>
-  <div class="scroll-note">ЛИСТАЙ НИЖЕ — ТАМ МОЁ СЕРДЦЕ ↓</div>
-</header>
-<section class="love-letter">
-  <h2>Письмо тебе 💌</h2>
-  <p>Моя родная Дарина…</p>
-  <p>
-    Иногда мне кажется, что самые важные чувства невозможно
-    уместить в слова. Как ни старайся, всё равно останется
-    что-то, что можно только почувствовать сердцем.
-  </p>
-  <p>
-    Но я хочу попробовать. Потому что ты заслуживаешь знать,
-    насколько много значишь для меня.
-  </p>
-  <p>
-    Ты стала для меня человеком, о котором хочется думать
-    перед сном и которому хочется рассказывать обо всём.
-    Человеком, чьё сообщение способно изменить настроение,
-    а простое присутствие — сделать обычный день особенным.
-  </p>
-  <p>
-    Мне не нужны идеальные дни, в которых никогда не бывает
-    трудностей. Мне хочется настоящих дней с тобой: смеяться
-    над глупостями, поддерживать друг друга, иногда молчать,
-    держаться за руки и знать, что мы рядом.
-  </p>
-  <p>
-    Я не обещаю, что всегда буду идеальным. Но я хочу учиться
-    понимать тебя, беречь твои чувства и слышать тебя.
-  </p>
-  <p>
-    Если однажды тебе станет грустно, вспомни: есть человек,
-    для которого ты не просто красивая девушка. Ты — та,
-    с которой связаны самые тёплые мысли и мечты о будущем.
-  </p>
-  <p>
-    И если бы мне снова пришлось выбирать среди всех дорог,
-    я бы хотел найти ту, которая однажды привела меня к тебе.
-    Я хочу снова и снова выбирать тебя сам.
-  </p>
-  <p>
-    Спасибо тебе за твою улыбку, за твою нежность и за моменты,
-    которые теперь живут в моей памяти.
-  </p>
-  <p>
-    Пусть этот маленький сайт напоминает тебе: даже когда
-    над нами обычное небо, в моём сердце для тебя всегда
-    есть отдельная вселенная.
-  </p>
-  <p class="signature">Я люблю тебя, Дарина. ❤️</p>
-</section>
-<section class="music-card">
-  <div class="music-note">🎵</div>
-  <h2>Наша песня</h2>
-  <p>
-    Иногда музыка говорит то, для чего не хватает слов.
-    Пусть эта мелодия напоминает тебе обо мне.
-  </p>
-  <div class="youtube">
-    <iframe
-      src="https://www.youtube-nocookie.com/embed/7uxjK7xdkyg"
-      title="Наша песня для Дарины"
-      loading="lazy"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen>
-    </iframe>
-  </div>
-  <p class="music-help">
-    Нажми ▶, чтобы включить песню. Звук запускается вручную.
-  </p>
-</section>
-<section>
-  <h2>Наши воспоминания 📸</h2>
-  <p>
-    Маленькие мгновения, которые стали частью нашей истории.
-    Каждое из них по-своему дорого мне.
-  </p>
-  <div class="photo-grid">
-    <figure>
-      <img src="memory-1%202.jpg" alt="Наше воспоминание — 1" loading="lazy">
-      <figcaption>Мгновение, которое хочется сохранить ❤️</figcaption>
-    </figure>
-    <figure>
-      <img src="memory-2%202.jpg" alt="Наше воспоминание — 2" loading="lazy">
-      <figcaption>Ты и я — и целый мир вокруг</figcaption>
-    </figure>
-    <figure>
-      <img src="memory-3%202.jpg" alt="Наше воспоминание — 3" loading="lazy">
-      <figcaption>Ещё одна страница нашей истории ✨</figcaption>
-    </figure>
-    <figure>
-      <img src="memory-4%202.jpg" alt="Наше воспоминание — 4" loading="lazy">
-      <figcaption>То, что хочется помнить</figcaption>
-    </figure>
-    <figure>
-      <img src="memory-5%202.jpg" alt="Наше воспоминание — 5" loading="lazy">
-      <figcaption>И пусть таких моментов будет больше 💗</figcaption>
-    </figure>
-  </div>
-</section>
-<section class="final-message">
-  <h2>И напоследок…</h2>
-  <p>
-    Если бы я мог подарить тебе одну вещь,
-    я бы подарил возможность увидеть себя моими глазами.
-    Тогда ты бы поняла, почему для меня ты такая особенная.
-  </p>
-  <div class="final-heart">❤️</div>
-  <p>
-    Сколько бы звёзд ни зажигалось в ночном небе,
-    моя любимая звезда — ты, Дарина.
-  </p>
-  <p>
-    <strong>Ты — моё любимое «сегодня» и моё желанное «завтра».</strong>
-  </p>
-</section>
-<!-- СЕКРЕТНЫЙ ВОПРОС -->
-<section class="quiz-box">
-  <div style="font-size:42px">🌌</div>
-  <h2>Помнишь нашу ночь?</h2>
-  <p class="quiz-intro">
-    Дорогая моя, ты помнишь место, где мы впервые
-    вместе смотрели на звёзды?
-  </p>
-  <p class="music-help">
-    Выбери ответ, который хранит наше воспоминание ❤️
-  </p>
-  <div id="quizAnswers">
-    <button class="answer-button" onclick="checkAnswer(0)">
-      💫 На берегу озера, под открытым небом
-    </button>
-    <button class="answer-button" onclick="checkAnswer(1)">
-      ❤️ В моей машине, возле площадки, когда я рассказывал тебе о звёздах
-    </button>
-    <button class="answer-button" onclick="checkAnswer(2)">
-      ✨ На крыше дома, откуда было видно всё небо
-    </button>
-  </div>
-  <p id="quizFeedback" aria-live="polite"></p>
-  <div id="memoryReward">
-    <div class="reward-heart">💖</div>
-    <h2>Ты помнишь…</h2>
-    <p>
-      Значит, тот вечер остался не только в моей памяти.
-      И ты даже не представляешь, как тепло мне от этого.
-    </p>
-    <p>
-      Моя родная, я до сих пор помню, как мы сидели
-      в моей машине возле площадки и смотрели на звёзды.
-    </p>
-    <p>
-      Я рассказывал тебе значение каждой звезды,
-      словно знал все тайны вселенной…
-      хотя, если честно, сам ничего толком не знал.
-    </p>
-    <p>
-      Но мне так хотелось, чтобы ты слушала меня,
-      чтобы этот момент длился подольше и чтобы мы
-      просто были рядом — только ты, я и огромное небо.
-    </p>
-    <p>
-      Теперь я понимаю: мне вовсе не обязательно было
-      знать значение каждой звезды. В тот вечер у меня
-      уже было самое прекрасное, на что можно смотреть.
-      Это была ты.
-    </p>
-    <p>
-      Если бы я мог вернуться в тот момент, я бы снова
-      сел рядом с тобой, снова начал рассказывать свои
-      выдуманные истории о звёздах и снова выбрал бы
-      провести этот вечер именно с тобой.
-    </p>
-    <p>
-      Потому что иногда самые важные воспоминания
-      рождаются из самых простых мгновений.
-      И тот вечер — один из них.
-    </p>
-    <p class="signature">
-      Я люблю тебя, Дарина. И я помню. ❤️
-    </p>
-    <button class="secret-button" onclick="launchHearts(70)">
-      💗 Ещё больше сердечек!
-    </button>
-  </div>
-</section>
-<!-- СЕКРЕТНОЕ ПИСЬМО -->
-<section class="secret-box">
-  <div style="font-size:42px">💌</div>
-  <h2>Для тебя есть кое-что особенное…</h2>
-  <p>Это письмо предназначено только для тебя, Дарина ❤️</p>
-  <button class="secret-button" id="secretButton" onclick="toggleSecretLetter()">
-    💖 Открыть моё письмо
-  </button>
-  <div class="secret-letter" id="secretLetter">
-    <h2>Моей Дарине ❤️</h2>
-    <p>
-      Любимая, если ты читаешь эти строки, значит,
-      ты нашла мой маленький секрет.
-    </p>
-    <p>
-      Я хотел оставить тебе не просто красивые слова на экране.
-      Я хотел, чтобы в любой момент ты могла открыть это письмо
-      и почувствовать, как сильно ты мне дорога.
-    </p>
-    <p>
-      Даже если между нами обычный день, расстояние или тысяча
-      дел, есть кое-что, что не меняется: ты занимаешь
-      особенное место в моём сердце.
-    </p>
-    <p>
-      Мне хочется быть человеком, рядом с которым ты можешь
-      смеяться без причины, рассказывать обо всём, не бояться
-      быть собой и чувствовать, что тебя любят просто за то,
-      что ты — это ты.
-    </p>
-    <p>
-      Если когда-нибудь усомнишься в том, насколько ты важна
-      для меня, вернись сюда и прочитай это ещё раз.
-    </p>
-    <p>
-      Я хочу выбирать тебя снова и снова — в обычных днях,
-      в трудностях, в наших мечтах и во всём, что нам ещё
-      предстоит прожить.
-    </p>
-    <p>Спасибо, что ты есть, моя родная.</p>
-    <p class="signature">
-      Твой человек. Всегда с любовью. ❤️
-    </p>
-  </div>
-</section>
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Моей любимой · Моей Дарине</div>
+      <div class="glow-heart" aria-hidden="true">♥</div>
+      <h1>Для тебя,<br>Дарина</h1>
+      <p class="lead">Если бы вся Вселенная замолчала, я всё равно нашёл бы слова, чтобы сказать тебе, как сильно ты мне дорога.</p>
+      <div class="divider"></div>
+      <p>Эта маленькая вселенная — только для тебя.</p>
+      <div class="btn-row">
+        <button class="btn primary" onclick="document.querySelector('#letter').scrollIntoView({behavior:'smooth'})">Открыть моё сердце ♡</button>
+        <button class="btn" onclick="playMusic()">♪ Наша песня</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="letter">
+    <div class="wrap reveal">
+      <div class="eyebrow center">То, что у меня внутри</div>
+      <h2>Письмо тебе</h2>
+      <div class="card letter">
+        <p>Моя родная Дарина,</p>
+        <p>Иногда мне кажется, что обычных слов просто недостаточно, чтобы объяснить, что ты для меня значишь. Я могу сколько угодно пытаться подобрать правильные фразы, но всё равно останется что-то большее — то, что я чувствую, когда думаю о тебе.</p>
+        <p><span class="highlight">Ты — самая дорогая женщина для меня.</span> Радовать тебя — значит делать счастливым себя. Твоя улыбка, твои глаза, само осознание того, что ты есть в моей жизни, способны сделать даже самый тяжёлый день светлее.</p>
+        <p>Я не обещаю, что каждый день будет идеальным. Но я хочу, чтобы ты знала: мои чувства к тебе — не просто красивые слова на красивом экране. За ними стою я. Со своими мыслями, ошибками, надеждами и огромным желанием любить тебя.</p>
+        <p>Однажды всё трудное закончится. Мы сможем снова вернуться к нашему «ты и я», быть рядом, наслаждаться друг другом, обнимать друг друга без спешки и просто любить. Я очень хочу дождаться этого времени вместе с тобой.</p>
+        <p>И потому я прошу тебя: люби меня — сильнее, чем кого-либо, сильнее, чем когда-либо. А я хочу каждый день доказывать тебе, что твоё сердце для меня — не место, где можно остановиться на время, а место, к которому я хочу возвращаться.</p>
+        <p>Спасибо тебе за то, что ты есть. За то, что ты — именно ты. За чувства, которые ты во мне пробуждаешь и которым не нужны ни звёзды, ни красивые декорации, чтобы быть настоящими.</p>
+        <p>Если бы мне пришлось снова пройти весь путь с самого начала, я бы всё равно захотел найти тебя.</p>
+        <p class="center highlight">Я люблю тебя, моя Дарина. ❤️</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="music">
+    <div class="wrap reveal">
+      <div class="eyebrow center">Когда слов мало</div>
+      <h2>Наша песня</h2>
+      <div class="card music-card">
+        <div class="music-orb">♫</div>
+        <p>Пусть эта мелодия станет ещё одной частью нашей истории.</p>
+        <button id="musicButton" class="btn primary" onclick="playMusic()">▶ Включить нашу песню</button>
+        <div id="musicFrame" class="music-frame" hidden>
+          <iframe id="song" title="Наша песня" data-src="https://www.youtube-nocookie.com/embed/7uxjK7xdkyg?autoplay=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <p style="font-size:.85rem;margin:16px 0 0">Если музыка не начнётся, нажми ▶ в самом видеоплеере.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="photos">
+    <div class="wrap reveal">
+      <div class="eyebrow center">Мгновения, которые хочется беречь</div>
+      <h2>Это — мы</h2>
+      <p class="section-note">Каждая фотография — маленькая частичка нашей истории. Нажми на снимок, чтобы рассмотреть его поближе.</p>
+      <div class="gallery">
+        <figure class="photo" onclick="openPhoto(this)">
+          <img src="memory-1%202.jpg" alt="Наше воспоминание — фотография 1" loading="lazy">
+          <figcaption>Одно из моих любимых мгновений ♥</figcaption>
+        </figure>
+        <figure class="photo" onclick="openPhoto(this)">
+          <img src="memory-2%202.jpg" alt="Наше воспоминание — фотография 2" loading="lazy">
+          <figcaption>Ты делаешь этот мир теплее</figcaption>
+        </figure>
+        <figure class="photo" onclick="openPhoto(this)">
+          <img src="memory-3%202.jpg" alt="Наше воспоминание — фотография 3" loading="lazy">
+          <figcaption>Моменты, к которым хочется возвращаться</figcaption>
+        </figure>
+        <figure class="photo" onclick="openPhoto(this)">
+          <img src="memory-4%202.jpg" alt="Наше воспоминание — фотография 4" loading="lazy">
+          <figcaption>Моя любимая история — наша</figcaption>
+        </figure>
+        <figure class="photo" onclick="openPhoto(this)">
+          <img src="memory-5%202.jpg" alt="Наше воспоминание — фотография 5" loading="lazy">
+          <figcaption>И впереди я хочу ещё столько мгновений с тобой</figcaption>
+        </figure>
+      </div>
+      <p class="center" style="font-size:.85rem;margin-top:25px">Наши фотографии. Наши мгновения. Наше «мы».</p>
+    </div>
+  </section>
+
+  <section id="memories">
+    <div class="wrap reveal">
+      <div class="eyebrow center">Маленькая история о большом чувстве</div>
+      <h2>То, что я хочу помнить</h2>
+      <div class="timeline">
+        <div class="memory">
+          <h3>Ты появилась в моей истории</h3>
+          <p>И привычные вещи начали приобретать другой смысл. Появился человек, о котором хочется думать, которому хочется рассказывать всё и с которым хочется делить даже самые обычные дни.</p>
+        </div>
+        <div class="memory">
+          <h3>Ночь, звёзды и наша машина</h3>
+          <p>Я рассказывал тебе о звёздах, будто знал о них всё на свете. Хотя сам толком ничего не знал. Но мне хотелось говорить с тобой, смотреть на небо и продлить тот момент ещё хоть немного.</p>
+        </div>
+        <div class="memory">
+          <h3>Наше «ты и я»</h3>
+          <p>Я мечтаю о времени, когда мы сможем просто быть рядом, не торопиться, обнимать друг друга и наслаждаться тем, что мы вместе. И хочу идти к этому будущему с тобой.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="secret">
+    <div class="wrap reveal">
+      <div class="eyebrow center">Только для нас двоих</div>
+      <h2>Помнишь ту ночь?</h2>
+      <div class="card">
+        <p class="center">Дорогая моя, ты помнишь место, где мы впервые вместе смотрели на звёзды?</p>
+        <div class="quiz-options">
+          <button class="btn" onclick="checkAnswer(0)">① На берегу озера, под открытым небом</button>
+          <button class="btn" onclick="checkAnswer(1)">② В моей машине, возле площадки, когда я рассказывал тебе о звёздах</button>
+          <button class="btn" onclick="checkAnswer(2)">③ На крыше дома, откуда было видно всё небо</button>
+        </div>
+        <div id="feedback" class="feedback" role="status" aria-live="polite"></div>
+
+        <div id="specialMessage">
+          <div class="divider"></div>
+          <h3 class="center">Ты помнишь, моя любовь… ✨</h3>
+          <p class="center">Мы сидели в моей машине возле площадки. Я рассказывал тебе о звёздах, хотя сам толком ничего о них не знал. Но мне так хотелось, чтобы этот момент длился дольше. Наверное, я и сам тогда не понимал, что самое красивое, на что я мог смотреть в ту ночь, сидело рядом со мной.</p>
+          <svg id="constellation" viewBox="0 0 320 270" role="img" aria-label="Сердце, составленное из сияющих звёзд">
+            <path class="constellation-line" d="M160 224 L70 143 L50 90 L91 56 L126 80 L160 112 L194 80 L229 56 L270 90 L250 143 L160 224"/>
+            <path class="constellation-line" d="M70 143 L126 80 M194 80 L250 143 M50 90 L160 112 L270 90 M91 56 L160 112 L229 56"/>
+            <circle class="constellation-star" cx="160" cy="224" r="4"/>
+            <circle class="constellation-star" cx="70" cy="143" r="4"/>
+            <circle class="constellation-star" cx="50" cy="90" r="3"/>
+            <circle class="constellation-star" cx="91" cy="56" r="4"/>
+            <circle class="constellation-star" cx="126" cy="80" r="3"/>
+            <circle class="constellation-star" cx="160" cy="112" r="5"/>
+            <circle class="constellation-star" cx="194" cy="80" r="3"/>
+            <circle class="constellation-star" cx="229" cy="56" r="4"/>
+            <circle class="constellation-star" cx="270" cy="90" r="3"/>
+            <circle class="constellation-star" cx="250" cy="143" r="4"/>
+            <text x="160" y="255" fill="#ffd6ed" text-anchor="middle" font-size="12" font-family="Georgia,serif">Моё сердце всегда найдёт тебя</text>
+          </svg>
+          <div class="center">
+            <p class="final-quote">В ту ночь я ещё не знал значения звёзд.<br>Но уже знал, что ты особенная.</p>
+            <button class="btn primary" onclick="launchHearts(55)">💗 Ещё больше сердечек!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="secretLetter">
+    <div class="wrap reveal">
+      <div class="eyebrow center">Ещё одно маленькое признание</div>
+      <h2>Для твоего сердца</h2>
+      <div class="center">
+        <p>Здесь есть письмо, которое я хочу оставить только тебе.</p>
+        <button id="letterButton" class="btn primary" onclick="toggleSecretLetter()">💌 Открыть секретное письмо</button>
+      </div>
+      <div id="secretLetterContent" class="card secret-letter letter">
+        <p>Моя Дарина,</p>
+        <p>Если ты читаешь это, значит, ты дошла до самого сокровенного уголка моей маленькой вселенной.</p>
+        <p>Я хочу, чтобы даже в дни, когда тебе грустно, когда всё вокруг кажется сложным и далёким, ты помнила: есть человек, которому ты невероятно дорога. Человек, который хочет видеть твою улыбку, слышать твой голос, обнимать тебя и создавать с тобой воспоминания, о которых однажды мы будем говорить с теплом.</p>
+        <p>Я не знаю, что приготовит нам жизнь. Но знаю, что хочу стараться ради нашего будущего, беречь то, что между нами есть, и не забывать, как много ты для меня значишь.</p>
+        <p>И если бы мне дали прожить всё заново, со всеми дорогами, случайностями и поворотами, я бы снова искал дорогу к тебе.</p>
+        <p class="center highlight">Я бы снова выбрал тебя. ❤️</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="final">
+    <div class="wrap reveal">
+      <div class="card final-card">
+        <div class="glow-heart">♥</div>
+        <div class="eyebrow">И самое главное</div>
+        <h2>Ты — мой любимый человек</h2>
+        <p class="final-quote">Если бы всё начать заново,<br>я бы снова выбрал тебя.</p>
+        <div class="divider"></div>
+        <p>Не потому, что я знаю каждый поворот нашей истории. А потому, что даже не зная, куда приведёт дорога, я всё равно захотел бы пройти её к тебе.</p>
+        <p class="highlight">Люблю тебя, Дарина. Сегодня. Завтра. И во всех наших мечтах о будущем.</p>
+        <div class="btn-row">
+          <button class="btn primary" onclick="launchHearts(100)">❤️ Отправить тебе тысячу сердечек</button>
+          <button class="btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↟ В начало нашей истории</button>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
-<footer>
-  Сделано с любовью для Дарины ❤️<br>
-  Одно маленькое место во вселенной — только для тебя.
-</footer>
+
+<footer>Сделано с любовью. Для Дарины. ❤️</footer>
+
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Увеличенная фотография" onclick="closePhoto(event)">
+  <button class="btn" onclick="closePhoto(event)" aria-label="Закрыть фотографию">✕ Закрыть</button>
+  <img id="lightboxImage" alt="Увеличенная фотография">
+</div>
+
 <script>
-function launchHearts(amount) {
-  const container = document.getElementById("hearts");
-  for (let i = 0; i < amount; i++) {
-    const heart = document.createElement("span");
-    heart.className = "floating-heart";
-    heart.textContent = ["♥", "♡", "💗", "💖", "✨"][Math.floor(Math.random() * 5)];
-    heart.style.left = Math.random() * 100 + "%";
-    heart.style.fontSize = (15 + Math.random() * 25) + "px";
-    heart.style.animationDuration = (2.5 + Math.random() * 3.5) + "s";
-    heart.style.animationDelay = (Math.random() * 1.2) + "s";
-    container.appendChild(heart);
-    heart.addEventListener("animationend", function () {
-      heart.remove();
-    });
-  }
-}
-function toggleSecretLetter() {
-  const letter = document.getElementById("secretLetter");
-  const button = document.getElementById("secretButton");
-  letter.classList.toggle("open");
-  if (letter.classList.contains("open")) {
-    button.textContent = "❤️ Закрыть письмо";
-    launchHearts(35);
-  } else {
-    button.textContent = "💖 Открыть моё письмо";
-  }
-}
-let answerAlreadyCorrect = false;
-function checkAnswer(choice) {
-  const feedback = document.getElementById("quizFeedback");
-  const reward = document.getElementById("memoryReward");
-  const buttons = document.querySelectorAll("#quizAnswers button");
-  if (answerAlreadyCorrect) return;
-  if (choice === 1) {
-    answerAlreadyCorrect = true;
-    feedback.textContent = "Ты помнишь наше маленькое чудо… ❤️";
-    buttons.forEach(function (button) {
-      button.disabled = true;
-    });
-    reward.classList.add("show");
-    launchHearts(100);
-    setTimeout(function () {
-      reward.scrollIntoView({ behavior: "smooth", block: "center" });
-    }, 250);
-  } else {
-    feedback.textContent =
-      "Не-а, любимая… Попробуй ещё раз. Вспомни ту ночь под звёздами ❤️";
-    launchHearts(8);
-  }
-}
-(function () {
-  const stars = document.getElementById("stars");
-  const hearts = document.getElementById("hearts");
-  for (let i = 0; i < 100; i++) {
-    const star = document.createElement("span");
-    star.className = "star";
-    star.style.left = Math.random() * 100 + "%";
-    star.style.top = Math.random() * 100 + "%";
-    star.style.animationDelay = Math.random() * 3 + "s";
-    star.style.animationDuration = (1.5 + Math.random() * 3) + "s";
-    stars.appendChild(star);
-  }
-  for (let i = 0; i < 15; i++) {
-    const heart = document.createElement("span");
-    heart.className = "floating-heart";
-    heart.textContent = Math.random() > .5 ? "♥" : "♡";
-    heart.style.left = Math.random() * 100 + "%";
-    heart.style.fontSize = (12 + Math.random() * 19) + "px";
-    heart.style.animationDuration = (9 + Math.random() * 12) + "s";
-    heart.style.animationDelay = Math.random() * 12 + "s";
-    hearts.appendChild(heart);
+(function createStars(){
+  const container=document.getElementById('stars');
+  for(let i=0;i<125;i++){
+    const s=document.createElement('i');
+    s.className='star';
+    s.style.left=(Math.random()*100)+'%';
+    s.style.top=(Math.random()*100)+'%';
+    s.style.setProperty('--duration',(2+Math.random()*4)+'s');
+    s.style.animationDelay=(-Math.random()*5)+'s';
+    if(Math.random()>.8){s.style.width='3px';s.style.height='3px';}
+    container.appendChild(s);
   }
 })();
+
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:.10});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+function playMusic(){
+  const frame=document.getElementById('musicFrame');
+  const iframe=document.getElementById('song');
+  if(!iframe.src){
+    iframe.src=iframe.dataset.src;
+  }
+  frame.hidden=false;
+  document.getElementById('musicButton').textContent='♪ Наша песня открыта';
+  frame.scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+function checkAnswer(index){
+  const feedback=document.getElementById('feedback');
+  if(index===1){
+    feedback.textContent='Ты помнишь… ❤️ Именно этот момент.';
+    document.getElementById('specialMessage').classList.add('show');
+    document.getElementById('constellation').classList.add('show');
+    launchHearts(65);
+    setTimeout(()=>{
+      document.getElementById('specialMessage').scrollIntoView({behavior:'smooth',block:'center'});
+    },250);
+  } else {
+    feedback.textContent='Вспомни ещё раз, любимая. Подсказка — моя машина и площадка ✨';
+  }
+}
+
+function launchHearts(amount){
+  const symbols=['♥','♡','❤','💗','💖'];
+  for(let i=0;i<amount;i++){
+    setTimeout(()=>{
+      const heart=document.createElement('span');
+      heart.className='floating-heart';
+      heart.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+      heart.style.left=(Math.random()*100)+'vw';
+      heart.style.fontSize=(14+Math.random()*24)+'px';
+      heart.style.setProperty('--dur',(4+Math.random()*4)+'s');
+      heart.style.setProperty('--drift',((Math.random()-.5)*180)+'px');
+      document.body.appendChild(heart);
+      setTimeout(()=>heart.remove(),8500);
+    },i*35);
+  }
+}
+
+function toggleSecretLetter(){
+  const letter=document.getElementById('secretLetterContent');
+  const button=document.getElementById('letterButton');
+  letter.classList.toggle('open');
+  const isOpen=letter.classList.contains('open');
+  button.textContent=isOpen?'💌 Закрыть письмо':'💌 Открыть секретное письмо';
+  if(isOpen){
+    launchHearts(24);
+    setTimeout(()=>letter.scrollIntoView({behavior:'smooth',block:'center'}),100);
+  }
+}
+
+function openPhoto(figure){
+  const img=figure.querySelector('img');
+  if(!img || !img.naturalWidth) return;
+  document.getElementById('lightboxImage').src=img.src;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closePhoto(event){
+  if(event.target.id==='lightboxImage') return;
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',event=>{
+  if(event.key==='Escape'){
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow='';
+  }
+});
 </script>
 </body>
 </html>
