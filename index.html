@@ -3,771 +3,767 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#08051b">
-<title>Для Дарины ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#10070b">
+<title>Дарина — наша история ❤️</title>
 <style>
-:root {
-  --pink: #ff78b7;
-  --purple: #b99aff;
-  --glass: rgba(255,255,255,.075);
-  --border: rgba(255,255,255,.16);
+:root{
+  --bg:#10070b;
+  --wine:#681d37;
+  --red:#a33a56;
+  --gold:#e6c59a;
+  --cream:#fff1e8;
+  --muted:#c8adb5;
+  --line:rgba(255,222,205,.16);
 }
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  min-height: 100vh;
-  color: #fff5fb;
-  background: #08051b;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  overflow-x: hidden;
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{
+  margin:0;background:var(--bg);color:var(--cream);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  overflow-x:hidden;
 }
-#sky {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -3;
+button,input{font:inherit}
+button{cursor:pointer;-webkit-tap-highlight-color:transparent}
+#cinema{
+  position:fixed;inset:0;width:100%;height:100%;
+  z-index:-3;pointer-events:none;
 }
-.aurora {
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  pointer-events: none;
+.ambient{
+  position:fixed;inset:0;z-index:-2;pointer-events:none;
   background:
-    radial-gradient(ellipse at 15% 15%, rgba(120,50,180,.25), transparent 45%),
-    radial-gradient(ellipse at 85% 30%, rgba(210,40,120,.17), transparent 42%),
-    radial-gradient(ellipse at 50% 100%, rgba(55,40,160,.24), transparent 48%);
+    radial-gradient(ellipse at 8% 18%,rgba(133,30,61,.32),transparent 42%),
+    radial-gradient(ellipse at 92% 60%,rgba(101,24,51,.2),transparent 43%),
+    linear-gradient(180deg,rgba(16,7,11,.2),rgba(16,7,11,.85));
 }
-header {
-  text-align: center;
-  padding: 48px 18px 24px;
+nav{
+  position:sticky;top:0;z-index:10;
+  display:flex;justify-content:center;gap:4px;flex-wrap:wrap;
+  padding:10px 5px;background:rgba(16,7,11,.88);
+  border-bottom:1px solid var(--line);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
 }
-.eyebrow {
-  color: #d6c2ff;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  font-size: 11px;
+nav a{
+  color:#e6c9d1;text-decoration:none;font-size:10px;
+  letter-spacing:.7px;padding:9px;border-radius:30px;
 }
-h1 {
-  font-size: clamp(36px, 9vw, 68px);
-  line-height: 1.05;
-  margin: 17px 0;
-  background: linear-gradient(100deg, #fff, #ff8ac8, #c6a8ff, #fff);
-  background-size: 250% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: shimmer 6s linear infinite;
+nav a:hover{background:rgba(255,255,255,.08)}
+.hero{
+  min-height:82svh;display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:70px 22px;position:relative;
 }
-@keyframes shimmer {
-  to { background-position: 250% center; }
+.hero-inner{max-width:750px;animation:fadeUp 1.2s ease both}
+.kicker,.eyebrow{
+  color:var(--gold);font-size:10px;letter-spacing:3px;text-transform:uppercase;
 }
-.subtitle {
-  max-width: 570px;
-  margin: 0 auto;
-  color: #d7cde9;
-  line-height: 1.7;
-  font-size: 15px;
+h1{
+  font-family:Georgia,"Times New Roman",serif;font-weight:400;
+  line-height:1.02;font-size:clamp(60px,14vw,108px);
+  letter-spacing:-3px;margin:24px 0;
+  background:linear-gradient(115deg,#fff4e7,#e5bd91 45%,#b85b73 75%,#fff0df);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
 }
-main {
-  width: min(760px, 92%);
-  margin: 0 auto 60px;
+.hero-sub{
+  max-width:500px;margin:0 auto 28px;
+  font-family:Georgia,serif;font-style:italic;
+  color:#e3cbd1;font-size:clamp(16px,4vw,20px);line-height:1.8;
 }
-.panel {
-  margin: 18px 0;
-  padding: 24px;
-  border: 1px solid var(--border);
-  border-radius: 24px;
-  background: var(--glass);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  box-shadow: 0 12px 40px rgba(0,0,0,.18);
+.film-line{
+  width:1px;height:65px;margin:30px auto 0;
+  background:linear-gradient(transparent,var(--gold),transparent);
 }
-h2 {
-  font-size: 23px;
-  margin: 0 0 12px;
+main{width:min(800px,92%);margin:0 auto}
+.section{padding:46px 0;scroll-margin-top:65px}
+.section-head{margin-bottom:24px}
+h2{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(30px,7vw,46px);font-weight:400;line-height:1.2;margin:12px 0;
 }
-h3 { margin: 0 0 10px; }
-p { line-height: 1.7; }
-.muted { color: #c8bddb; font-size: 14px; }
-.pill {
-  display: inline-block;
-  border: 1px solid rgba(255,120,183,.35);
-  background: rgba(255,120,183,.12);
-  color: #ffc3e0;
-  border-radius: 999px;
-  padding: 7px 12px;
-  font-size: 12px;
-  margin-bottom: 14px;
+h3{font-family:Georgia,serif;font-weight:400;font-size:23px}
+p{line-height:1.85;overflow-wrap:anywhere}
+.muted{color:var(--muted);font-size:14px}
+.gold{color:var(--gold)}
+.card{
+  background:linear-gradient(145deg,rgba(255,241,232,.07),rgba(255,241,232,.025));
+  border:1px solid var(--line);border-radius:20px;padding:22px;
+  box-shadow:0 20px 70px rgba(0,0,0,.13);
 }
-button, .upload-label {
-  border: 0;
-  border-radius: 14px;
-  padding: 13px 17px;
-  color: #240b23;
-  background: linear-gradient(120deg, #ff9ccc, #d0b5ff);
-  font-weight: 750;
-  font-size: 14px;
-  cursor: pointer;
-  transition: transform .2s, opacity .2s;
-  -webkit-tap-highlight-color: transparent;
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:14px 18px;border:1px solid var(--gold);border-radius:4px;
+  background:var(--gold);color:#261018;font-weight:750;font-size:11px;
+  letter-spacing:.7px;text-transform:uppercase;min-height:46px;
+  transition:transform .2s,background .2s;
 }
-button:active { transform: scale(.97); }
-button:disabled { opacity: .38; cursor: not-allowed; }
-button.secondary {
-  color: #fff;
-  background: rgba(255,255,255,.09);
-  border: 1px solid var(--border);
+.btn:active{transform:scale(.97)}
+.btn-outline{background:transparent;color:var(--cream);border-color:var(--line)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.center{text-align:center}
+.hidden{display:none!important}
+.rule{height:1px;background:var(--line);margin:24px 0}
+.quote{
+  font-family:Georgia,serif;font-style:italic;font-size:21px;
+  line-height:1.8;color:#f1d9d9;
 }
-button.option {
-  width: 100%;
-  display: block;
-  text-align: left;
-  margin: 9px 0;
-  color: #fff;
-  background: rgba(255,255,255,.065);
-  border: 1px solid var(--border);
-  font-weight: 500;
+.story-choice{
+  width:100%;text-align:left;padding:16px;margin:8px 0;
+  border-radius:9px;background:rgba(255,255,255,.035);
+  border:1px solid var(--line);color:var(--cream);line-height:1.6;
 }
-button.option:hover { border-color: var(--pink); }
-button.option.correct {
-  background: rgba(66,190,135,.17);
-  border-color: #69e0ae;
+.story-choice:hover,.story-choice.selected{
+  border-color:var(--gold);background:rgba(230,197,154,.08);
 }
-button.option.wrong {
-  background: rgba(255,70,110,.13);
-  border-color: #ff6b91;
+.story-result{
+  min-height:90px;padding:17px;margin-top:15px;
+  background:rgba(100,29,53,.17);border-left:2px solid var(--gold);
+  line-height:1.9;color:#f0d9df;
 }
-.actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 18px;
+.timeline{position:relative;padding-left:25px}
+.timeline:before{
+  content:"";position:absolute;left:5px;top:8px;bottom:12px;
+  width:1px;background:linear-gradient(var(--gold),rgba(230,197,154,.05));
 }
-.progress-wrap {
-  height: 7px;
-  background: rgba(255,255,255,.1);
-  border-radius: 99px;
-  overflow: hidden;
-  margin: 12px 0 20px;
+.memory{position:relative;margin:0 0 27px;padding-left:10px}
+.memory:before{
+  content:"";position:absolute;left:-24px;top:6px;
+  width:9px;height:9px;border-radius:50%;background:var(--gold);
+  box-shadow:0 0 16px rgba(230,197,154,.5);
 }
-#progress {
-  height: 100%;
-  width: 0%;
-  background: linear-gradient(90deg, var(--pink), var(--purple));
-  transition: width .4s;
+.memory-number{font-size:10px;letter-spacing:2px;color:var(--gold)}
+.memory h3{margin:8px 0}
+.memory p{margin:7px 0;color:#d7bec6;font-size:14px}
+.progress{height:3px;background:#3a2029;margin:17px 0 23px;overflow:hidden}
+.progress-inner{height:100%;width:0;background:var(--gold);transition:width .4s}
+.star-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:22px 0}
+.star{
+  min-height:58px;border-radius:8px;background:rgba(255,255,255,.035);
+  border:1px solid var(--line);color:#ead3df;font-size:22px;
 }
-.status {
-  min-height: 25px;
-  color: #ffd0e6;
-  font-size: 14px;
-  margin-top: 13px;
+.star.found{border-color:var(--gold);color:var(--gold);background:rgba(230,197,154,.1)}
+.star.missed{opacity:.4}
+.status{min-height:26px;color:var(--gold);font-size:13px;line-height:1.7;margin-top:13px}
+.answer{
+  width:100%;text-align:left;margin:7px 0;padding:14px;
+  border:1px solid var(--line);border-radius:8px;
+  color:var(--cream);background:rgba(255,255,255,.035);
 }
-.hidden { display: none !important; }
-.symbol-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 9px;
-  margin-top: 18px;
+.answer.right{border-color:#88bca0;background:rgba(60,130,91,.13)}
+.answer.wrong{border-color:#b65b6b}
+.code-input{
+  width:100%;padding:15px;background:#190a11;color:white;
+  border:1px solid var(--line);border-radius:8px;outline:none;
+  font-size:19px;letter-spacing:7px;text-align:center;
 }
-.star-tile {
-  min-height: 65px;
-  padding: 10px 4px;
-  border-radius: 15px;
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,.055);
-  color: #e7d8ff;
-  font-size: 24px;
+.code-input:focus{border-color:var(--gold)}
+.secret-box{
+  border:1px solid rgba(230,197,154,.3);
+  background:linear-gradient(140deg,rgba(100,29,53,.23),rgba(255,255,255,.02));
+  padding:22px;border-radius:15px;
 }
-.star-tile.found {
-  color: #fff;
-  background: rgba(255,120,183,.2);
-  border-color: var(--pink);
+.gallery{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:17px;
 }
-.star-tile.missed { opacity: .45; }
-.clue-box {
-  padding: 14px;
-  border-radius: 15px;
-  border: 1px dashed rgba(255,190,225,.35);
-  background: rgba(255,120,183,.055);
-  color: #f5d9ea;
-  line-height: 1.7;
-  margin: 14px 0;
+.gallery figure{margin:0;min-width:0}
+.gallery img{
+  display:block;width:100%;aspect-ratio:4/5;object-fit:cover;
+  border-radius:8px;border:1px solid var(--line);background:#1b0b12;
 }
-input[type="text"] {
-  width: 100%;
-  min-width: 0;
-  padding: 14px;
-  color: white;
-  background: rgba(0,0,0,.22);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  font-size: 16px;
-  outline: none;
+.gallery figcaption{
+  font-family:Georgia,serif;font-style:italic;color:#d9bec8;
+  font-size:13px;line-height:1.6;padding:9px 2px 14px;
 }
-input[type="text"]:focus { border-color: var(--pink); }
-.secret-note {
-  white-space: pre-line;
-  line-height: 1.9;
-  color: #ffe5f2;
+.gallery-error{
+  min-height:120px;display:grid;place-items:center;text-align:center;
+  border:1px dashed var(--line);border-radius:8px;padding:15px;
+  color:#bca3ad;font-size:12px;
 }
-.envelope-area {
-  text-align: center;
-  padding: 10px 0 4px;
+.music-disc{
+  width:86px;height:86px;border-radius:50%;margin:17px auto;
+  display:grid;place-items:center;border:1px solid rgba(230,197,154,.45);
+  background:radial-gradient(circle,#8b3850 0%,#391521 54%,#160a10 56%);
+  box-shadow:0 0 35px rgba(163,58,86,.18);font-size:25px;
 }
-.envelope {
-  position: relative;
-  width: 210px;
-  height: 140px;
-  margin: 35px auto 24px;
-  background: #d95791;
-  border-radius: 8px;
-  box-shadow: 0 15px 45px rgba(255,80,160,.2);
-  cursor: pointer;
-  perspective: 600px;
+.music-disc.playing{animation:spin 7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.envelope-wrap{padding:15px 0;text-align:center}
+.envelope{
+  width:min(250px,80%);height:155px;margin:35px auto;
+  position:relative;background:#7d2945;cursor:pointer;border-radius:5px;
+  box-shadow:0 20px 50px rgba(0,0,0,.35);perspective:600px;
 }
-.envelope:before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: #f58bb8;
-  clip-path: polygon(0 0, 50% 58%, 100% 0);
-  transform-origin: top;
-  transition: transform .8s;
-  z-index: 3;
+.envelope:before{
+  content:"";position:absolute;inset:0;background:#b44c6a;
+  clip-path:polygon(0 0,50% 58%,100% 0);transform-origin:top;
+  transition:transform .8s;z-index:3;
 }
-.envelope:after {
-  content: "❤️";
-  position: absolute;
-  z-index: 4;
-  top: 53px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 27px;
-  transition: opacity .3s;
+.envelope:after{
+  content:"♥";position:absolute;z-index:4;top:55px;left:50%;
+  transform:translateX(-50%);color:#f6d9bd;font-size:26px;
 }
-.envelope.open:before {
-  transform: rotateX(180deg);
+.paper{
+  position:absolute;z-index:2;left:12px;right:12px;top:12px;height:125px;
+  padding:15px 8px;background:#f5e5d7;color:#572036;border-radius:3px;
+  font-family:Georgia,serif;font-size:14px;transition:transform .8s;
 }
-.envelope.open:after { opacity: 0; }
-.paper {
-  position: absolute;
-  z-index: 2;
-  left: 10px;
-  right: 10px;
-  top: 12px;
-  height: 112px;
-  padding: 14px 8px;
-  color: #7d2453;
-  background: #fff4fa;
-  border-radius: 5px;
-  font-size: 13px;
-  transition: transform .8s;
+.envelope.open:before{transform:rotateX(180deg)}
+.envelope.open .paper{transform:translateY(-88px)}
+.envelope.open:after{opacity:0}
+.letter{
+  padding:23px;border:1px solid rgba(230,197,154,.35);
+  border-radius:12px;background:rgba(100,29,53,.18);
+  line-height:2;white-space:pre-line;font-family:Georgia,serif;
+  font-size:16px;animation:fadeUp .8s ease both;
 }
-.envelope.open .paper { transform: translateY(-78px); }
-.final-letter {
-  margin-top: 28px;
-  padding: 22px;
-  border: 1px solid rgba(255,160,210,.4);
-  border-radius: 20px;
-  background: rgba(255,120,183,.09);
-  text-align: left;
-  animation: appear .9s ease both;
+.final-title{
+  font-family:Georgia,serif;font-size:clamp(34px,9vw,60px);
+  line-height:1.3;color:var(--gold);font-weight:400;
 }
-@keyframes appear {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
+.heart{
+  position:fixed;bottom:-40px;z-index:8;pointer-events:none;
+  animation:rise 6s linear forwards;
 }
-.heart {
-  position: fixed;
-  bottom: -30px;
-  pointer-events: none;
-  z-index: 4;
-  animation: floatUp 6s linear forwards;
+@keyframes rise{to{transform:translateY(-115vh) rotate(30deg);opacity:0}}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
 }
-@keyframes floatUp {
-  to { transform: translateY(-110vh) rotate(25deg); opacity: 0; }
+footer{
+  text-align:center;padding:45px 20px 35px;color:#a98c96;
+  font-family:Georgia,serif;font-style:italic;font-size:14px;
 }
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0,1fr));
-  gap: 10px;
-  margin-top: 15px;
+@media(max-width:430px){
+  nav{gap:1px;padding:8px 2px}
+  nav a{font-size:9px;padding:8px 6px}
+  .hero{min-height:75svh;padding-top:55px}
+  .card{padding:18px}
+  .star-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .section{padding:34px 0}
 }
-.gallery img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 14px;
-  border: 1px solid var(--border);
-}
-.gallery:empty { display: none; }
-input[type="file"] { max-width: 100%; color: #d7cde9; }
-.upload-row { margin: 14px 0; }
-footer {
-  text-align: center;
-  padding: 5px 15px 35px;
-  color: #b8a9cf;
-  font-size: 12px;
-}
-@media (max-width: 420px) {
-  .panel { padding: 19px; border-radius: 20px; }
-  .symbol-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
-  .star-tile { min-height: 58px; }
-  header { padding-top: 35px; }
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation-duration:.01ms!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
 }
 </style>
 </head>
 <body>
-<canvas id="sky"></canvas>
-<div class="aurora"></div>
+<canvas id="cinema"></canvas>
+<div class="ambient"></div>
 
-<header>
-  <div class="eyebrow">маленькая вселенная для одного человека</div>
-  <h1>Дарина ❤️</h1>
-  <p class="subtitle">
-    Я спрятал здесь кое-что важное. Чтобы добраться до финала,
-    придётся смотреть внимательно, думать и не сдаваться.
-    Готова проверить, насколько хорошо ты знаешь язык моего сердца?
-  </p>
+<nav aria-label="Навигация">
+  <a href="#story">ИСТОРИЯ</a>
+  <a href="#memories">ПАМЯТЬ</a>
+  <a href="#music">МУЗЫКА</a>
+  <a href="#quest">КВЕСТ</a>
+  <a href="#moments">ФОТО</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker">одна история · две души · бесконечность</div>
+    <h1>Дарина</h1>
+    <p class="hero-sub">Некоторые истории начинаются совершенно случайно. А потом становятся самыми важными.</p>
+    <button class="btn" id="beginBtn">Смотреть нашу историю ↓</button>
+    <div class="film-line"></div>
+  </div>
 </header>
 
 <main>
-  <section class="panel" id="intro">
-    <span class="pill">МИССИЯ № 01 · ДОСТУП ОГРАНИЧЕН</span>
-    <h2>Твоя миссия начинается</h2>
-    <p>
-      В этой вселенной спрятаны четыре символа, три загадки и один код.
-      Каждый пройденный этап приближает тебя к письму, которое я приготовил
-      специально для тебя.
-    </p>
-    <div class="clue-box">
-      Правила простые: не торопись, читай подсказки и доверяй интуиции.
-      Некоторые ответы спрятаны не в кнопках, а между строк.
+  <section class="section" id="story">
+    <div class="section-head">
+      <div class="eyebrow">Глава первая · Начало</div>
+      <h2>С чего начинается история?</h2>
+      <p class="muted">Иногда судьба прячется там, где совсем её не ждёшь.</p>
     </div>
-    <button id="startBtn">Начать квест ✨</button>
-  </section>
-
-  <section class="panel hidden" id="stage1">
-    <span class="pill">ЭТАП 1 ИЗ 3 · ПОИСК</span>
-    <h2>Карта звёздного неба</h2>
-    <p>
-      Среди звёзд спрятаны четыре настоящих символа.
-      Найди их все. Ложные звёзды будут только сбивать тебя с пути.
-    </p>
-    <div class="clue-box">
-      Подсказка: ищи не самые яркие звёзды, а те, что отмечены судьбой.
-      Символы нужно собрать по порядку. Не нажимай на одну звезду дважды —
-      она ничего нового тебе не даст.
+    <div class="card">
+      <div class="eyebrow">Кадр № 01</div>
+      <h3>Одна игра. И начало чего-то большего.</h3>
+      <p>Всё началось с Brawl Stars. С самой обычной игры началась история, которая теперь принадлежит нам.</p>
+      <div class="rule"></div>
+      <p class="quote">«Кто бы мог подумать, что начало нашей истории будет именно таким?»</p>
     </div>
-    <div class="muted" id="searchCounter">Найдено символов: 0 из 4</div>
-    <div class="symbol-grid" id="starGrid"></div>
-    <div class="status" id="searchStatus" aria-live="polite"></div>
-    <div class="actions">
-      <button id="hint1" class="secondary">Подсказка</button>
-      <button id="toStage2" disabled>Продолжить →</button>
+    <div class="card" style="margin-top:14px">
+      <div class="eyebrow">Твой выбор</div>
+      <h3>Какой кадр ты хочешь пересмотреть?</h3>
+      <p class="muted">Выбери настроение. У каждой истории свой способ рассказать о чувствах.</p>
+      <button class="story-choice" data-story="game">🎮 Начало — наша история началась с игры.</button>
+      <button class="story-choice" data-story="kiss">❤️ Особенный момент — наш первый поцелуй в машине.</button>
+      <button class="story-choice" data-story="every">✨ Каждая минута вместе — воспоминание, которое хочется сохранить.</button>
+      <div class="story-result" id="storyResult" aria-live="polite">Выбери один из кадров, и история продолжится.</div>
     </div>
   </section>
 
-  <section class="panel hidden" id="stage2">
-    <span class="pill">ЭТАП 2 ИЗ 3 · ИСПЫТАНИЕ</span>
-    <h2>Три вопроса для сердца</h2>
-    <p>Не угадывай на скорость. Здесь важнее смысл, чем случайный выбор.</p>
-    <div class="progress-wrap"><div id="progress"></div></div>
-    <div class="muted" id="questionNumber"></div>
-    <h3 id="questionText"></h3>
-    <div id="answers"></div>
-    <div class="status" id="questionStatus" aria-live="polite"></div>
-    <div class="actions">
-      <button id="nextQuestion" disabled>Следующий вопрос →</button>
+  <section class="section" id="memories">
+    <div class="section-head">
+      <div class="eyebrow">Глава вторая · Память</div>
+      <h2>Моменты, которые остаются</h2>
+      <p class="muted">Без выдуманных дат. Только то, что действительно важно в нашей истории.</p>
     </div>
-    <button id="hint2" class="secondary">Мне нужна подсказка</button>
-  </section>
-
-  <section class="panel hidden" id="stage3">
-    <span class="pill">ЭТАП 3 ИЗ 3 · СЕКРЕТНЫЙ ШИФР</span>
-    <h2>Код от последней двери</h2>
-    <p>
-      Ты уже собрала слово и прошла испытание. Осталось открыть последнюю дверь.
-      Введи трёхзначный код, который спрятан в подсказках.
-    </p>
-    <div class="clue-box">
-      <strong>Зашифрованное послание:</strong><br>
-      I LOVE YOU<br><br>
-      Первая цифра — сколько сердец нужно, чтобы начать историю.<br>
-      Вторая — сколько букв в слове LOVE.<br>
-      Третья — сколько слов в признании I LOVE YOU.
-    </div>
-    <label for="secretCode" class="muted">Трёхзначный код</label>
-    <div style="margin-top:8px">
-      <input id="secretCode" type="text" inputmode="numeric" maxlength="3"
-             placeholder="•••" autocomplete="off">
-    </div>
-    <div class="status" id="codeStatus" aria-live="polite"></div>
-    <div class="actions">
-      <button id="checkCode">Открыть дверь 🔐</button>
-      <button id="hint3" class="secondary">Ещё подсказка</button>
+    <div class="timeline">
+      <article class="memory">
+        <div class="memory-number">КАДР 01 · НАЧАЛО</div>
+        <h3>Brawl Stars 🎮</h3>
+        <p>Всё началось с игры. С неё начинается наша история — и это уже особенная часть нашей жизни.</p>
+      </article>
+      <article class="memory">
+        <div class="memory-number">КАДР 02 · ПЕРВЫЙ ПОЦЕЛУЙ</div>
+        <h3>В машине ❤️</h3>
+        <p>Наш первый поцелуй. Момент, который хочется сохранить не просто в памяти, а в отдельной главе нашей истории.</p>
+      </article>
+      <article class="memory">
+        <div class="memory-number">КАДР 03 · ВСЕГДА</div>
+        <h3>Каждая минута вместе</h3>
+        <p>Не обязательно ждать большого события, чтобы запомнить день. Иногда самое тёплое воспоминание — просто быть рядом.</p>
+      </article>
     </div>
   </section>
 
-  <section class="panel hidden" id="finalStage">
-    <span class="pill">ДОСТУП РАЗРЕШЁН · 100%</span>
-    <h2>Последний секрет 💌</h2>
-    <p>
-      Ты дошла до самого конца. Нажми на конверт — внутри то, ради чего
-      стоило пройти весь путь.
-    </p>
-    <div class="envelope-area">
-      <div class="envelope" id="envelope" role="button" tabindex="0"
-           aria-label="Открыть письмо">
-        <div class="paper">Для моей Дарины<br>Открой меня ❤️</div>
+  <section class="section" id="music">
+    <div class="section-head">
+      <div class="eyebrow">Звуковая дорожка</div>
+      <h2>Музыка для нашей истории</h2>
+      <p class="muted">Нажми кнопку. Мелодия создаётся прямо в браузере — никакой отдельный аудиофайл не нужен.</p>
+    </div>
+    <div class="card center">
+      <div class="music-disc" id="musicDisc">♫</div>
+      <h3>Только для тебя, солнышко</h3>
+      <p class="muted">Нежная мелодия, которая звучит, пока ты листаешь нашу историю.</p>
+      <button class="btn" id="musicBtn">♫ Включить музыку</button>
+      <div class="status" id="musicStatus" aria-live="polite">Музыка выключена.</div>
+    </div>
+  </section>
+
+  <section class="section" id="quest">
+    <div class="section-head">
+      <div class="eyebrow">Секретный показ · Доступ ограничен</div>
+      <h2>Квест для Дарины</h2>
+      <p class="muted">Три этапа. Скрытые символы, вопросы и код. Финал откроется только после прохождения испытаний.</p>
+    </div>
+
+    <div class="card" id="questIntro">
+      <div class="eyebrow">Миссия 01</div>
+      <h3>Найди четыре символа</h3>
+      <p>Среди звёзд спрятаны четыре буквы. Найди их все, затем пройди следующие испытания.</p>
+      <button class="btn" id="startQuest">Начать квест ✦</button>
+    </div>
+
+    <div class="card hidden" id="stage1" style="margin-top:14px">
+      <div class="quest-top"><span>ЭТАП 1 · ПОИСК</span><span id="foundCount">0 / 4</span></div>
+      <div class="progress"><div class="progress-inner" id="progress1"></div></div>
+      <p>Найди четыре настоящих символа и прочитай их слева направо, сверху вниз.</p>
+      <div class="star-grid" id="starGrid"></div>
+      <div class="status" id="searchStatus" aria-live="polite"></div>
+      <div class="actions">
+        <button class="btn btn-outline" id="hint1">Подсказка</button>
+        <button class="btn" id="toQuestions" disabled>Продолжить →</button>
       </div>
-      <button id="openLetter">Открыть письмо 💗</button>
     </div>
-    <div class="final-letter hidden" id="letter">
-      <h2>Моей Дарине ❤️</h2>
-      <div class="secret-note" id="typedLetter"></div>
-      <p style="text-align:center;font-size:25px">∞ ❤️ ∞</p>
+
+    <div class="card hidden" id="stage2" style="margin-top:14px">
+      <div class="quest-top"><span>ЭТАП 2 · ЗАГАДКИ</span><span id="questionNumber">1 / 3</span></div>
+      <div class="progress"><div class="progress-inner" id="progress2"></div></div>
+      <h3 id="questionTitle"></h3>
+      <div id="answers"></div>
+      <div class="status" id="questionStatus" aria-live="polite"></div>
+      <div class="actions">
+        <button class="btn btn-outline" id="hint2">Подсказка</button>
+        <button class="btn" id="nextQuestion" disabled>Следующий вопрос →</button>
+      </div>
     </div>
-    <div class="actions">
-      <button id="heartsBtn" class="secondary">Звёздный дождь из сердечек 💕</button>
+
+    <div class="card hidden" id="stage3" style="margin-top:14px">
+      <div class="quest-top"><span>ЭТАП 3 · ШИФР</span><span>ПОСЛЕДНИЙ КОД</span></div>
+      <div class="progress"><div class="progress-inner" style="width:100%"></div></div>
+      <h3>Три цифры, одно признание</h3>
+      <div class="secret-box">
+        <p class="quote">I LOVE YOU</p>
+        <p>Первая цифра — число сердец, с которых начинается наша символическая история.</p>
+        <p>Вторая — число букв в слове LOVE.</p>
+        <p>Третья — число слов в фразе I LOVE YOU.</p>
+      </div>
+      <p class="muted">Введи трёхзначный код.</p>
+      <input class="code-input" id="secretCode" type="text" inputmode="numeric" maxlength="3" placeholder="•••" autocomplete="off" aria-label="Секретный код">
+      <div class="status" id="codeStatus" aria-live="polite"></div>
+      <div class="actions">
+        <button class="btn" id="checkCode">Открыть дверь 🔐</button>
+        <button class="btn btn-outline" id="hint3">Ещё подсказка</button>
+      </div>
+    </div>
+
+    <div class="card hidden center" id="questComplete" style="margin-top:14px">
+      <div class="eyebrow">Доступ разрешён</div>
+      <h3>Ты прошла весь путь. ❤️</h3>
+      <p>Последний секрет теперь доступен тебе.</p>
+      <button class="btn" id="openSecretBtn">Открыть секретный раздел →</button>
     </div>
   </section>
 
-  <section class="panel" id="memories">
-    <span class="pill">НАШИ МОМЕНТЫ</span>
-    <h2>Галерея воспоминаний 📸</h2>
-    <p class="muted">
-      Можешь выбрать фотографии на телефоне — они появятся здесь в предпросмотре.
-      Чтобы они были доступны Дарине на опубликованном сайте, файлы нужно
-      отдельно загрузить в репозиторий.
-    </p>
-    <div class="upload-row">
-      <input id="photoInput" type="file" accept="image/*" multiple>
+  <section class="section hidden" id="secret">
+    <div class="section-head">
+      <div class="eyebrow">Личное послание · Только для тебя</div>
+      <h2>Секретная комната</h2>
+      <p class="muted">Ты добралась сюда сама. А теперь остался последний кадр.</p>
     </div>
-    <div class="gallery" id="gallery"></div>
+    <div class="secret-box center">
+      <div class="secret-symbol">∞</div>
+      <p class="quote">«Из всех моментов я выбираю каждую минуту, в которой мы вместе».</p>
+      <p class="muted">История не заканчивается на последней странице. Она продолжается в каждом новом воспоминании.</p>
+      <button class="btn" id="goFinal">Посмотреть финал ❤️</button>
+    </div>
   </section>
 
-  <section class="panel" id="music">
-    <span class="pill">МУЗЫКА ДЛЯ НАС</span>
-    <h2>Добавь нашу песню 🎵</h2>
-    <p class="muted">
-      Выбери аудиофайл на телефоне. Это локальный плеер для предпросмотра;
-      чтобы музыка работала у Дарины, аудиофайл тоже нужно разместить на сайте.
-    </p>
-    <div class="upload-row">
-      <input id="audioInput" type="file" accept="audio/*">
+  <section class="section" id="moments">
+    <div class="section-head">
+      <div class="eyebrow">Фотоплёнка</div>
+      <h2>Наши моменты 📸</h2>
+      <p class="muted">Пять фотографий из прежней версии сайта — подключены автоматически.</p>
     </div>
-    <audio id="audioPlayer" controls class="hidden" style="width:100%;margin-top:10px"></audio>
+    <div class="gallery" id="gallery">
+      <figure>
+        <img src="memory-1%202.jpg" data-fallback="assets/memory-1.jpg" alt="Наше воспоминание 1" loading="lazy">
+        <figcaption>«Когда весь мир будто становится тише»</figcaption>
+      </figure>
+      <figure>
+        <img src="memory-2%202.jpg" data-fallback="assets/memory-2.jpg" alt="Наше воспоминание 2" loading="lazy">
+        <figcaption>«Момент, который хочется оставить с собой»</figcaption>
+      </figure>
+      <figure>
+        <img src="memory-3%202.jpg" data-fallback="assets/memory-3.jpg" alt="Наше воспоминание 3" loading="lazy">
+        <figcaption>«Сколько всего уже стало нашей историей»</figcaption>
+      </figure>
+      <figure>
+        <img src="memory-4%202.jpg" data-fallback="assets/memory-4.jpg" alt="Наше воспоминание 4" loading="lazy">
+        <figcaption>«Моё любимое место — рядом с тобой»</figcaption>
+      </figure>
+      <figure>
+        <img src="memory-5%202.jpg" data-fallback="assets/memory-5.jpg" alt="Наше воспоминание 5" loading="lazy">
+        <figcaption>«И пусть впереди будет ещё много тёплых моментов»</figcaption>
+      </figure>
+    </div>
+    <div class="status" id="galleryStatus" aria-live="polite"></div>
+  </section>
+
+  <section class="section hidden" id="final">
+    <div class="section-head center">
+      <div class="eyebrow">Последняя сцена</div>
+      <h2>Для моего солнышка</h2>
+      <p class="muted">Нажми на конверт. Это письмо — финал нашего маленького фильма.</p>
+    </div>
+    <div class="card center">
+      <div class="envelope-wrap">
+        <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Открыть письмо">
+          <div class="paper">Для моей Дарины<br>Открой меня ❤️</div>
+        </div>
+        <button class="btn" id="openLetter">Открыть письмо 💌</button>
+      </div>
+      <div class="letter hidden" id="letter">
+        <div class="eyebrow">Моей Дарине</div>
+        <h2 class="final-title">Я тебя люблю, солнышко.</h2>
+        <div id="typedLetter"></div>
+        <div class="rule"></div>
+        <p class="center gold" style="font-family:Georgia,serif;font-size:25px">∞ ❤️ ∞</p>
+      </div>
+      <div class="actions" style="justify-content:center">
+        <button class="btn btn-outline" id="heartRain">Дождь из сердечек ✨</button>
+      </div>
+    </div>
   </section>
 </main>
 
-<footer>Сделано с любовью. Для Дарины — и только для неё. ❤️</footer>
+<footer>
+  Для Дарины — с любовью.<br>
+  <span class="gold">Некоторые истории хочется продолжать бесконечно. ❤️</span>
+</footer>
 
 <script>
-/* ЗВЁЗДНОЕ НЕБО */
-const canvas = document.getElementById("sky");
+/* КИНОШНОЕ ЗВЁЗДНОЕ НЕБО */
+const canvas = document.getElementById("cinema");
 const ctx = canvas.getContext("2d");
 let stars = [];
-function resizeSky() {
+function resizeSky(){
   const dpr = Math.min(window.devicePixelRatio || 1, 2);
   canvas.width = innerWidth * dpr;
   canvas.height = innerHeight * dpr;
   canvas.style.width = innerWidth + "px";
   canvas.style.height = innerHeight + "px";
-  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  stars = Array.from({length: Math.min(170, Math.floor(innerWidth / 3))}, () => ({
-    x: Math.random() * innerWidth,
-    y: Math.random() * innerHeight,
-    r: Math.random() * 1.5 + .25,
-    a: Math.random() * .7 + .2,
-    s: Math.random() * .012 + .002
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  stars = Array.from({length:Math.min(150,Math.floor(innerWidth/3))},()=>({
+    x:Math.random()*innerWidth,y:Math.random()*innerHeight,
+    r:Math.random()*1.4+.2,a:Math.random()*.7+.2,
+    s:Math.random()*.015+.002
   }));
 }
-function drawSky() {
-  ctx.clearRect(0, 0, innerWidth, innerHeight);
-  stars.forEach(s => {
-    s.a += (Math.random() - .5) * s.s;
-    s.a = Math.max(.15, Math.min(1, s.a));
-    ctx.beginPath();
-    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-    ctx.fillStyle = "rgba(255,240,255," + s.a + ")";
-    ctx.fill();
+function drawSky(){
+  ctx.clearRect(0,0,innerWidth,innerHeight);
+  stars.forEach(s=>{
+    s.a += (Math.random()-.5)*s.s;
+    s.a = Math.max(.12,Math.min(1,s.a));
+    ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+    ctx.fillStyle="rgba(255,225,215,"+s.a+")";ctx.fill();
   });
   requestAnimationFrame(drawSky);
 }
-addEventListener("resize", resizeSky);
-resizeSky();
-drawSky();
+addEventListener("resize",resizeSky);
+resizeSky();drawSky();
 
-/* ОБЩИЕ ФУНКЦИИ */
 const $ = id => document.getElementById(id);
-function show(id) { $(id).classList.remove("hidden"); }
-function hide(id) { $(id).classList.add("hidden"); }
-function setProgress(value) { $("progress").style.width = value + "%"; }
-function burstHearts(amount = 24) {
-  for (let i = 0; i < amount; i++) {
-    const h = document.createElement("div");
-    h.className = "heart";
-    h.textContent = ["❤️", "💗", "💕", "💖", "✨"][Math.floor(Math.random() * 5)];
-    h.style.left = Math.random() * 100 + "vw";
-    h.style.fontSize = (16 + Math.random() * 22) + "px";
-    h.style.animationDuration = (4 + Math.random() * 4) + "s";
-    document.body.appendChild(h);
-    setTimeout(() => h.remove(), 8500);
+function show(id){$(id).classList.remove("hidden")}
+function hide(id){$(id).classList.add("hidden")}
+function scrollToId(id){
+  show(id);
+  setTimeout(()=>$(id).scrollIntoView({behavior:"smooth",block:"start"}),80);
+}
+function hearts(amount=22){
+  for(let i=0;i<amount;i++){
+    const el=document.createElement("div");
+    el.className="heart";
+    el.textContent=["❤️","💗","💕","✨","💖"][Math.floor(Math.random()*5)];
+    el.style.left=Math.random()*100+"vw";
+    el.style.fontSize=(16+Math.random()*23)+"px";
+    el.style.animationDuration=(4+Math.random()*4)+"s";
+    document.body.appendChild(el);
+    setTimeout(()=>el.remove(),8500);
   }
 }
-function moveTo(id) {
-  show(id);
-  setTimeout(() => $(id).scrollIntoView({behavior:"smooth", block:"start"}), 80);
-}
+$("beginBtn").addEventListener("click",()=>scrollToId("story"));
 
-/* СТАРТ */
-$("startBtn").addEventListener("click", () => {
-  hide("intro");
-  moveTo("stage1");
-  burstHearts(8);
+/* ИНТЕРАКТИВНАЯ ИСТОРИЯ */
+const storyLines = {
+  game:"С самого начала — Brawl Stars. Обычная игра стала первой главой истории, которую мы теперь вспоминаем с улыбкой.",
+  kiss:"Первый поцелуй в машине. Один настоящий момент, который не нуждается в выдуманных подробностях, чтобы быть особенным.",
+  every:"Каждая минута вместе. Иногда именно простые моменты становятся тем, к чему хочется возвращаться снова и снова."
+};
+document.querySelectorAll("[data-story]").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    document.querySelectorAll("[data-story]").forEach(b=>b.classList.remove("selected"));
+    btn.classList.add("selected");
+    $("storyResult").textContent=storyLines[btn.dataset.story];
+  });
 });
 
-/* ЭТАП 1: ПОИСК ЧЕТЫРЁХ СИМВОЛОВ */
-const tiles = [
-  {symbol:"✦", real:false},
-  {symbol:"☾", real:false},
-  {symbol:"L", real:true},
-  {symbol:"✧", real:false},
-  {symbol:"☆", real:false},
-  {symbol:"O", real:true},
-  {symbol:"✷", real:false},
-  {symbol:"☄", real:false},
-  {symbol:"V", real:true},
-  {symbol:"◇", real:false},
-  {symbol:"✺", real:false},
-  {symbol:"E", real:true}
-];
-let found = 0;
-let hintOneUsed = false;
-const grid = $("starGrid");
-tiles.forEach((tile, index) => {
-  const btn = document.createElement("button");
-  btn.className = "star-tile";
-  btn.textContent = "✧";
-  btn.setAttribute("aria-label", "Звезда " + (index + 1));
-  btn.addEventListener("click", () => {
-    if (btn.disabled) return;
-    btn.disabled = true;
-    if (tile.real) {
-      btn.classList.add("found");
-      btn.textContent = tile.symbol;
-      found++;
-      $("searchCounter").textContent = "Найдено символов: " + found + " из 4";
-      $("searchStatus").textContent = found < 4
-        ? "Есть! Символ найден. Продолжай искать. ✨"
-        : "Все символы собраны. Прочитай их по порядку: LOVE ❤️";
-      if (found === 4) {
-        $("toStage2").disabled = false;
-        burstHearts(10);
-      }
-    } else {
-      btn.classList.add("missed");
-      btn.textContent = "·";
-      $("searchStatus").textContent = "Это ложная звезда. Попробуй другую.";
+/* МУЗЫКА ИЗ СТАРОЙ ВЕРСИИ: МЕЛОДИЯ СОЗДАЁТСЯ В БРАУЗЕРЕ */
+let audioCtx=null,musicTimer=null,musicPlaying=false,noteIndex=0;
+const melody=[261.63,329.63,392,329.63,293.66,349.23,440,349.23,261.63,329.63,392,523.25,440,392,329.63,293.66];
+function playTone(){
+  if(!audioCtx||!musicPlaying)return;
+  const now=audioCtx.currentTime;
+  const osc=audioCtx.createOscillator();
+  const gain=audioCtx.createGain();
+  osc.type="sine";
+  osc.frequency.value=melody[noteIndex++%melody.length];
+  gain.gain.setValueAtTime(.0001,now);
+  gain.gain.exponentialRampToValueAtTime(.035,now+.08);
+  gain.gain.exponentialRampToValueAtTime(.0001,now+.85);
+  osc.connect(gain);gain.connect(audioCtx.destination);
+  osc.start(now);osc.stop(now+.9);
+}
+async function toggleMusic(){
+  try{
+    if(!audioCtx)audioCtx=new(window.AudioContext||window.webkitAudioContext)();
+    if(audioCtx.state==="suspended")await audioCtx.resume();
+    musicPlaying=!musicPlaying;
+    if(musicPlaying){
+      playTone();
+      musicTimer=setInterval(playTone,520);
+      $("musicBtn").textContent="♫ Выключить музыку";
+      $("musicDisc").classList.add("playing");
+      $("musicStatus").textContent="Мелодия играет. ❤️";
+    }else{
+      clearInterval(musicTimer);
+      $("musicBtn").textContent="♫ Включить музыку";
+      $("musicDisc").classList.remove("playing");
+      $("musicStatus").textContent="Музыка выключена.";
+    }
+  }catch(e){
+    $("musicStatus").textContent="Браузер не разрешил включить музыку. Попробуй нажать ещё раз.";
+  }
+}
+$("musicBtn").addEventListener("click",toggleMusic);
+
+/* ФОТОГАЛЕРЕЯ: СНАЧАЛА СТАРЫЕ ИМЕНА, ЗАТЕМ ПАПКА ASSETS */
+let loadedPhotos=0;
+document.querySelectorAll("#gallery img").forEach(img=>{
+  img.addEventListener("load",()=>{
+    loadedPhotos++;
+    $("galleryStatus").textContent="Фотографии загружены: "+loadedPhotos+" из 5.";
+  });
+  img.addEventListener("error",()=>{
+    if(!img.dataset.triedFallback){
+      img.dataset.triedFallback="1";
+      img.src=img.dataset.fallback;
+    }else{
+      const placeholder=document.createElement("div");
+      placeholder.className="gallery-error";
+      placeholder.textContent="Фото пока не найдено в репозитории: "+img.alt;
+      img.replaceWith(placeholder);
+      $("galleryStatus").textContent="Часть фотографий не найдена. Проверь, что прежние файлы остались в GitHub.";
     }
   });
-  grid.appendChild(btn);
-});
-$("hint1").addEventListener("click", () => {
-  hintOneUsed = true;
-  $("searchStatus").textContent = "Подсказка: символы спрятаны под номерами 3, 6, 9 и 12. Читай их слева направо, сверху вниз.";
-});
-$("toStage2").addEventListener("click", () => {
-  hide("stage1");
-  moveTo("stage2");
-  renderQuestion();
 });
 
-/* ЭТАП 2: ВОПРОСЫ */
-const questions = [
+/* КВЕСТ: ЭТАП 1 — ПОИСК */
+const tileData=[
+  {real:false,s:"✦"},{real:false,s:"☾"},{real:true,s:"L"},
+  {real:false,s:"✧"},{real:false,s:"☆"},{real:true,s:"O"},
+  {real:false,s:"✷"},{real:false,s:"☄"},{real:true,s:"V"},
+  {real:false,s:"◇"},{real:false,s:"✺"},{real:true,s:"E"}
+];
+let found=0;
+const grid=$("starGrid");
+tileData.forEach((tile,index)=>{
+  const b=document.createElement("button");
+  b.className="star";b.textContent="✧";
+  b.setAttribute("aria-label","Звезда "+(index+1));
+  b.addEventListener("click",()=>{
+    if(b.disabled)return;
+    b.disabled=true;
+    if(tile.real){
+      b.classList.add("found");b.textContent=tile.s;found++;
+      $("foundCount").textContent=found+" / 4";
+      $("progress1").style.width=(found/4*100)+"%";
+      $("searchStatus").textContent=found===4
+        ?"Символы собраны. Получилось LOVE. ❤️"
+        :"Символ найден. Ищи дальше.";
+      if(found===4){$("toQuestions").disabled=false;hearts(8)}
+    }else{
+      b.classList.add("missed");b.textContent="·";
+      $("searchStatus").textContent="Ложная звезда. Попробуй другую.";
+    }
+  });
+  grid.appendChild(b);
+});
+$("startQuest").addEventListener("click",()=>{
+  hide("questIntro");scrollToId("stage1");
+});
+$("hint1").addEventListener("click",()=>{
+  $("searchStatus").textContent="Подсказка: настоящие символы находятся на позициях 3, 6, 9 и 12. Читай слева направо, сверху вниз.";
+});
+$("toQuestions").addEventListener("click",()=>{
+  hide("stage1");scrollToId("stage2");renderQuestion();
+});
+
+/* ЭТАП 2 — ВОПРОСЫ */
+const questions=[
   {
-    q: "Что становится сильнее, когда им делятся?",
-    answers: ["Одиночество", "Любовь", "Тишина", "Секрет"],
-    correct: 1,
-    hint: "Это чувство не заканчивается, когда отдаёшь его другому."
+    q:"Что становится сильнее, когда им делятся?",
+    a:["Одиночество","Любовь","Тишина","Секрет"],
+    c:1,h:"Это чувство не заканчивается, когда отдаёшь его другому."
   },
   {
-    q: "Что нельзя купить за деньги, но можно подарить каждый день?",
-    answers: ["Новую планету", "Вечность", "Внимание и заботу", "Погоду"],
-    correct: 2,
-    hint: "Это видно в мелочах: выслушать, поддержать, быть рядом."
+    q:"Что нельзя купить за деньги, но можно подарить каждый день?",
+    a:["Новую планету","Вечность","Внимание и заботу","Погоду"],
+    c:2,h:"Это проявляется в мелочах: выслушать, поддержать, быть рядом."
   },
   {
-    q: "Какое расстояние не мешает двум людям быть близкими?",
-    answers: ["Сто километров", "Расстояние между сердцами", "Расстояние до Луны", "Любое, если есть связь"],
-    correct: 3,
-    hint: "Дело не в километрах, а в том, выбирают ли люди друг друга."
+    q:"Что важнее для настоящего воспоминания?",
+    a:["Идеальная погода","Дорогой подарок","Красивая декорация","Сам момент, проведённый вместе"],
+    c:3,h:"Иногда самая ценная часть истории — не место и не вещи, а время вместе."
   }
 ];
-let qIndex = 0;
-let qCorrect = false;
-function renderQuestion() {
-  const q = questions[qIndex];
-  qCorrect = false;
-  $("questionNumber").textContent = "Вопрос " + (qIndex + 1) + " из " + questions.length;
-  $("questionText").textContent = q.q;
-  $("questionStatus").textContent = "";
-  $("nextQuestion").disabled = true;
-  $("nextQuestion").textContent = qIndex === questions.length - 1
-    ? "К секретному коду →" : "Следующий вопрос →";
-  setProgress((qIndex / questions.length) * 100);
-  const answers = $("answers");
-  answers.innerHTML = "";
-  q.answers.forEach((answer, index) => {
-    const btn = document.createElement("button");
-    btn.className = "option";
-    btn.textContent = answer;
-    btn.addEventListener("click", () => {
-      if (qCorrect) return;
-      if (index === q.correct) {
-        qCorrect = true;
-        btn.classList.add("correct");
-        $("questionStatus").textContent = "Верно. Ты на шаг ближе к финалу. 💗";
-        $("nextQuestion").disabled = false;
-        answers.querySelectorAll("button").forEach(b => b.disabled = true);
-      } else {
-        btn.classList.add("wrong");
-        $("questionStatus").textContent = "Не совсем. Подумай ещё и попробуй снова.";
-        setTimeout(() => btn.classList.remove("wrong"), 600);
+let qIndex=0,qSolved=false;
+function renderQuestion(){
+  const q=questions[qIndex];qSolved=false;
+  $("questionNumber").textContent=(qIndex+1)+" / "+questions.length;
+  $("questionTitle").textContent=q.q;
+  $("questionStatus").textContent="";
+  $("nextQuestion").disabled=true;
+  $("nextQuestion").textContent=qIndex===questions.length-1?"К секретному коду →":"Следующий вопрос →";
+  $("progress2").style.width=(qIndex/questions.length*100)+"%";
+  const answers=$("answers");answers.innerHTML="";
+  q.a.forEach((answer,index)=>{
+    const b=document.createElement("button");
+    b.className="answer";b.textContent=answer;
+    b.addEventListener("click",()=>{
+      if(qSolved)return;
+      if(index===q.c){
+        qSolved=true;b.classList.add("right");
+        $("questionStatus").textContent="Верно. Ты на шаг ближе к финалу. ❤️";
+        $("nextQuestion").disabled=false;
+        answers.querySelectorAll("button").forEach(x=>x.disabled=true);
+      }else{
+        b.classList.add("wrong");
+        $("questionStatus").textContent="Не совсем. Подумай ещё и попробуй снова.";
+        setTimeout(()=>b.classList.remove("wrong"),600);
       }
     });
-    answers.appendChild(btn);
+    answers.appendChild(b);
   });
 }
-$("nextQuestion").addEventListener("click", () => {
-  if (!qCorrect) return;
-  qIndex++;
-  if (qIndex < questions.length) {
-    renderQuestion();
-  } else {
-    setProgress(100);
-    hide("stage2");
-    moveTo("stage3");
-  }
+$("hint2").addEventListener("click",()=>{
+  $("questionStatus").textContent=questions[qIndex].h;
 });
-$("hint2").addEventListener("click", () => {
-  $("questionStatus").textContent = questions[qIndex].hint;
+$("nextQuestion").addEventListener("click",()=>{
+  if(!qSolved)return;
+  qIndex++;
+  if(qIndex<questions.length)renderQuestion();
+  else{
+    $("progress2").style.width="100%";
+    hide("stage2");scrollToId("stage3");
+  }
 });
 
-/* ЭТАП 3: КОД */
-let hintThreeCount = 0;
-$("hint3").addEventListener("click", () => {
-  hintThreeCount++;
-  const hints = [
-    "Вспомни начало отношений: для истории достаточно одного сердца.",
-    "В слове LOVE посчитай каждую букву. Не пропусти ни одной.",
-    "Посчитай слова в фразе I LOVE YOU. Между ними два пробела."
+/* ЭТАП 3 — СЕКРЕТНЫЙ КОД */
+let hintCount=0;
+$("hint3").addEventListener("click",()=>{
+  hintCount++;
+  const hints=[
+    "Первая цифра — одно сердце.",
+    "Вторая цифра — число букв в LOVE.",
+    "Третья цифра — число слов в I LOVE YOU."
   ];
-  $("codeStatus").textContent = hints[Math.min(hintThreeCount - 1, hints.length - 1)];
+  $("codeStatus").textContent=hints[Math.min(hintCount-1,hints.length-1)];
 });
-function checkSecretCode() {
-  const code = $("secretCode").value.trim();
-  if (code === "143") {
-    $("codeStatus").textContent = "Код принят. Последняя дверь открывается… 💖";
-    hide("stage3");
-    moveTo("finalStage");
-    burstHearts(25);
-  } else {
-    $("codeStatus").textContent = "Код не подошёл. Проверь три подсказки и попробуй ещё раз.";
+function checkCode(){
+  if($("secretCode").value.trim()==="143"){
+    $("codeStatus").textContent="Код принят. Секретная дверь открыта. ❤️";
+    hide("stage3");show("questComplete");
+    scrollToId("questComplete");hearts(18);
+  }else{
+    $("codeStatus").textContent="Код не подошёл. Проверь подсказки и попробуй снова.";
   }
 }
-$("checkCode").addEventListener("click", checkSecretCode);
-$("secretCode").addEventListener("keydown", e => {
-  if (e.key === "Enter") checkSecretCode();
+$("checkCode").addEventListener("click",checkCode);
+$("secretCode").addEventListener("keydown",e=>{
+  if(e.key==="Enter")checkCode();
+});
+$("openSecretBtn").addEventListener("click",()=>{
+  scrollToId("secret");hearts(12);
+});
+$("goFinal").addEventListener("click",()=>{
+  scrollToId("final");hearts(15);
 });
 
 /* ФИНАЛЬНОЕ ПИСЬМО */
-const letterText =
-`Дарина, ❤️
-
-Если ты читаешь это, значит, ты прошла весь путь до конца.
-Но самое важное никогда не было спрятано в звёздах, загадках или кодах.
-
-Оно в том, что ты для меня особенная.
-В твоей улыбке, в твоём голосе, в наших разговорах и в моментах,
-которые хочется переживать снова и снова.
-
-Я не обещаю, что каждый день будет идеальным.
-Но я хочу стараться, поддерживать тебя, радовать и быть рядом,
-когда тебе хорошо и когда весь мир будто против тебя.
-
-Из всех случайностей этой огромной вселенной
-я особенно рад той, которая привела меня к тебе.
-
-Ты — моя любимая история.
-И я хочу, чтобы у неё было много-много продолжений.
-
-Я люблю тебя, Дарина. ❤️`;
-
-let letterOpened = false;
-function openEnvelope() {
-  if (letterOpened) return;
-  letterOpened = true;
+const letterText=
+"Солнышко, ❤️\n\n"+
+"Всё началось с Brawl Stars. Тогда мы ещё не знали, какой важной станет эта история.\n\n"+
+"Потом был наш первый поцелуй — в машине. Момент, который хочется сохранить в памяти.\n\n"+
+"И есть то, что для меня особенно ценно: каждая минута вместе с тобой.\n\n"+
+"Мне не нужны выдуманные красивые истории, чтобы сказать самое главное.\n\n"+
+"Я тебя люблю, солнышко. ❤️";
+let letterOpened=false;
+function openEnvelope(){
+  if(letterOpened)return;
+  letterOpened=true;
   $("envelope").classList.add("open");
   show("letter");
-  $("openLetter").disabled = true;
-  $("openLetter").textContent = "Письмо открыто ❤️";
-  const target = $("typedLetter");
-  target.textContent = "";
-  let i = 0;
-  function typeNext() {
-    if (i < letterText.length) {
-      target.textContent += letterText.charAt(i);
-      i++;
-      setTimeout(typeNext, 27);
+  $("openLetter").disabled=true;
+  $("openLetter").textContent="Письмо открыто ❤️";
+  const target=$("typedLetter");target.textContent="";
+  let i=0;
+  function typeNext(){
+    if(i<letterText.length){
+      target.textContent+=letterText.charAt(i++);
+      setTimeout(typeNext,28);
     }
   }
-  typeNext();
-  burstHearts(35);
+  typeNext();hearts(35);
 }
-$("openLetter").addEventListener("click", openEnvelope);
-$("envelope").addEventListener("click", openEnvelope);
-$("envelope").addEventListener("keydown", e => {
-  if (e.key === "Enter" || e.key === " ") {
-    e.preventDefault();
-    openEnvelope();
-  }
+$("openLetter").addEventListener("click",openEnvelope);
+$("envelope").addEventListener("click",openEnvelope);
+$("envelope").addEventListener("keydown",e=>{
+  if(e.key==="Enter"||e.key===" "){e.preventDefault();openEnvelope()}
 });
-$("heartsBtn").addEventListener("click", () => burstHearts(55));
-
-/* ФОТОГАЛЕРЕЯ: ЛОКАЛЬНЫЙ ПРЕДПРОСМОТР */
-let photoUrls = [];
-$("photoInput").addEventListener("change", event => {
-  photoUrls.forEach(url => URL.revokeObjectURL(url));
-  photoUrls = [];
-  const gallery = $("gallery");
-  gallery.innerHTML = "";
-  Array.from(event.target.files || []).slice(0, 12).forEach(file => {
-    if (!file.type.startsWith("image/")) return;
-    const url = URL.createObjectURL(file);
-    photoUrls.push(url);
-    const img = document.createElement("img");
-    img.src = url;
-    img.alt = "Наше воспоминание";
-    gallery.appendChild(img);
-  });
-});
-
-/* МУЗЫКА: ЛОКАЛЬНЫЙ ПРЕДПРОСМОТР */
-let audioUrl = null;
-$("audioInput").addEventListener("change", event => {
-  const file = event.target.files && event.target.files[0];
-  if (!file) return;
-  if (audioUrl) URL.revokeObjectURL(audioUrl);
-  audioUrl = URL.createObjectURL(file);
-  $("audioPlayer").src = audioUrl;
-  show("audioPlayer");
-});
+$("heartRain").addEventListener("click",()=>hearts(55));
 </script>
 </body>
 </html>
