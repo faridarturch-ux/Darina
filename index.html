@@ -2,26 +2,20 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#080b25">
 <title>Для Дарины ❤️</title>
 <style>
 * {
   box-sizing: border-box;
 }
-:root {
-  --pink: #ff91c8;
-  --light: #ffe7f3;
-  --night: #080b25;
-}
 html {
   scroll-behavior: smooth;
 }
 body {
   margin: 0;
-  color: var(--light);
-  background:
-    radial-gradient(ellipse at top, #252052 0%, #11132f 40%, #050817 100%);
+  color: #ffe7f3;
+  background: radial-gradient(ellipse at top, #252052 0%, #11132f 45%, #050817 100%);
   font-family: Georgia, "Times New Roman", serif;
   text-align: center;
   overflow-x: hidden;
@@ -32,9 +26,8 @@ body {
   pointer-events: none;
   overflow: hidden;
 }
-.stars {
-  z-index: 0;
-}
+.stars { z-index: 0; }
+.hearts { z-index: 1; }
 .star {
   position: absolute;
   width: 2px;
@@ -47,9 +40,6 @@ body {
 @keyframes twinkle {
   from { opacity: .2; transform: scale(.7); }
   to { opacity: 1; transform: scale(1.5); }
-}
-.hearts {
-  z-index: 1;
 }
 .floating-heart {
   position: absolute;
@@ -68,7 +58,7 @@ main {
   z-index: 2;
   width: min(100% - 28px, 760px);
   margin: 0 auto;
-  padding-bottom: 65px;
+  padding-bottom: 45px;
 }
 .hero {
   min-height: 95vh;
@@ -90,6 +80,16 @@ h1 {
   margin: 20px 0;
   color: #fff0fa;
   text-shadow: 0 0 22px #ff75bd88, 0 0 55px #aa83ff55;
+}
+h2 {
+  color: #ffb9dd;
+  font-size: clamp(27px, 7vw, 37px);
+  margin: 0 0 20px;
+  font-weight: normal;
+}
+p {
+  font-size: 17px;
+  line-height: 1.95;
 }
 .subtitle {
   font-size: 19px;
@@ -124,21 +124,14 @@ section {
   box-shadow: 0 12px 40px #00000020;
   backdrop-filter: blur(5px);
 }
-h2 {
-  color: #ffb9dd;
-  font-size: clamp(27px, 7vw, 37px);
-  margin: 0 0 20px;
-  font-weight: normal;
-}
-p {
-  font-size: 17px;
-  line-height: 1.95;
-}
 .love-letter {
   color: #f8eafa;
   text-align: left;
 }
-.love-letter .signature {
+.love-letter h2 {
+  text-align: center;
+}
+.signature {
   text-align: right;
   color: #ffb9dd;
   font-size: 21px;
@@ -204,6 +197,51 @@ figcaption {
   font-size: 46px;
   margin: 15px 0;
 }
+/* Секретное письмо */
+.secret-box {
+  margin: 28px 0;
+  padding: 28px 18px;
+  border: 1px solid #ff91c866;
+  border-radius: 24px;
+  background: linear-gradient(145deg, #24163e, #11142f);
+  box-shadow: 0 0 30px #ff72c522;
+}
+.secret-button {
+  border: 1px solid #ffb9dd;
+  border-radius: 50px;
+  padding: 15px 24px;
+  color: white;
+  background: linear-gradient(135deg, #a63d83, #6045a8);
+  font-size: 17px;
+  cursor: pointer;
+  box-shadow: 0 0 20px #ff91c844;
+  font-family: inherit;
+}
+.secret-button:active {
+  transform: scale(.96);
+}
+.secret-letter {
+  display: none;
+  margin-top: 24px;
+  padding: 20px;
+  border-radius: 18px;
+  background: #ffffff0b;
+  text-align: left;
+  animation: letterAppear 1s ease;
+}
+.secret-letter.open {
+  display: block;
+}
+.secret-letter h2 {
+  text-align: center;
+}
+.secret-letter p {
+  line-height: 1.9;
+}
+@keyframes letterAppear {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 footer {
   position: relative;
   z-index: 2;
@@ -227,7 +265,7 @@ footer {
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
-    animation-duration: 0.01ms !important;
+    animation-duration: .01ms !important;
     scroll-behavior: auto !important;
   }
 }
@@ -274,35 +312,28 @@ footer {
     </p>
     <p>
       Я не обещаю, что всегда буду идеальным. Но я хочу учиться
-      понимать тебя, беречь твои чувства, слышать тебя даже
-      тогда, когда ты не знаешь, как объяснить, что происходит
-      у тебя внутри.
+      понимать тебя, беречь твои чувства и слышать тебя.
     </p>
     <p>
-      Если однажды тебе станет грустно, вспомни: где-то есть
-      человек, для которого ты не просто красивая девушка.
-      Ты — та, с которой связаны самые тёплые мысли,
-      самые нежные чувства и мечты о будущем.
+      Если однажды тебе станет грустно, вспомни: есть человек,
+      для которого ты не просто красивая девушка. Ты — та,
+      с которой связаны самые тёплые мысли и мечты о будущем.
     </p>
     <p>
       И если бы мне снова пришлось выбирать среди всех дорог,
       я бы хотел найти ту, которая однажды привела меня к тебе.
-      Не потому, что всё в жизни заранее предрешено, а потому,
-      что я сам хочу снова и снова выбирать тебя.
+      Я хочу снова и снова выбирать тебя сам.
     </p>
     <p>
-      Спасибо тебе за твою улыбку, за твою нежность, за моменты,
-      которые теперь живут в моей памяти. Спасибо за то,
-      что ты есть в моей жизни.
+      Спасибо тебе за твою улыбку, за твою нежность и за моменты,
+      которые теперь живут в моей памяти.
     </p>
     <p>
       Пусть этот маленький сайт напоминает тебе: даже когда
       над нами обычное небо, в моём сердце для тебя всегда
       есть отдельная вселенная.
     </p>
-    <p class="signature">
-      Я люблю тебя, Дарина. ❤️
-    </p>
+    <p class="signature">Я люблю тебя, Дарина. ❤️</p>
   </section>
   <section class="music-card">
     <div class="music-note">🎵</div>
@@ -334,32 +365,27 @@ footer {
     <div class="photo-grid">
       <figure>
         <img src="memory-1%202.jpg"
-             alt="Наше воспоминание — 1"
-             loading="lazy">
+             alt="Наше воспоминание — 1" loading="lazy">
         <figcaption>Мгновение, которое хочется сохранить ❤️</figcaption>
       </figure>
       <figure>
         <img src="memory-2%202.jpg"
-             alt="Наше воспоминание — 2"
-             loading="lazy">
+             alt="Наше воспоминание — 2" loading="lazy">
         <figcaption>Ты и я — и целый мир вокруг</figcaption>
       </figure>
       <figure>
         <img src="memory-3%202.jpg"
-             alt="Наше воспоминание — 3"
-             loading="lazy">
+             alt="Наше воспоминание — 3" loading="lazy">
         <figcaption>Ещё одна страница нашей истории ✨</figcaption>
       </figure>
       <figure>
         <img src="memory-4%202.jpg"
-             alt="Наше воспоминание — 4"
-             loading="lazy">
+             alt="Наше воспоминание — 4" loading="lazy">
         <figcaption>То, что хочется помнить</figcaption>
       </figure>
       <figure>
         <img src="memory-5%202.jpg"
-             alt="Наше воспоминание — 5"
-             loading="lazy">
+             alt="Наше воспоминание — 5" loading="lazy">
         <figcaption>И пусть таких моментов будет больше 💗</figcaption>
       </figure>
     </div>
@@ -376,7 +402,65 @@ footer {
       Сколько бы звёзд ни зажигалось в ночном небе,
       моя любимая звезда — ты, Дарина.
     </p>
-    <p><strong>Ты — моё любимое «сегодня» и моё желанное «завтра».</strong></p>
+    <p>
+      <strong>
+        Ты — моё любимое «сегодня» и моё желанное «завтра».
+      </strong>
+    </p>
+  </section>
+  <!-- СЕКРЕТНОЕ ПИСЬМО -->
+  <section class="secret-box">
+    <div style="font-size:42px">💌</div>
+    <h2>Для тебя есть кое-что особенное…</h2>
+    <p>Это письмо предназначено только для тебя, Дарина ❤️</p>
+    <button
+      class="secret-button"
+      id="secretButton"
+      onclick="toggleSecretLetter()">
+      💖 Открыть моё письмо
+    </button>
+    <div class="secret-letter" id="secretLetter">
+      <h2>Моей Дарине ❤️</h2>
+      <p>
+        Любимая, если ты читаешь эти строки, значит,
+        ты нашла мой маленький секрет.
+      </p>
+      <p>
+        Я хотел оставить тебе не просто красивые слова на экране.
+        Я хотел, чтобы в любой момент ты могла открыть это письмо
+        и почувствовать, как сильно ты мне дорога.
+      </p>
+      <p>
+        Даже если между нами обычный день, расстояние или тысяча
+        дел, есть кое-что, что не меняется: ты занимаешь
+        особенное место в моём сердце.
+      </p>
+      <p>
+        Мне хочется быть человеком, рядом с которым ты можешь
+        смеяться без причины, рассказывать обо всём, не бояться
+        быть собой и чувствовать, что тебя любят не за идеальность,
+        а просто за то, что ты — это ты.
+      </p>
+      <p>
+        Я не знаю, сколько звёзд над нами прямо сейчас.
+        Но знаю одно: ни одна из них не сделает мою жизнь
+        такой тёплой, как ты.
+      </p>
+      <p>
+        Если когда-нибудь усомнишься в том, насколько ты важна
+        для меня, вернись сюда и прочитай это ещё раз.
+      </p>
+      <p>
+        Я выбираю тебя не только в красивые моменты.
+        Я хочу выбирать тебя снова и снова — в обычных днях,
+        в трудностях, в наших мечтах и во всём, что нам ещё
+        предстоит прожить.
+      </p>
+      <p>Спасибо, что ты есть, моя родная.</p>
+      <p class="signature">
+        Твой человек. Всегда с любовью. ❤️
+      </p>
+    </div>
   </section>
 </main>
 <footer>
@@ -384,6 +468,16 @@ footer {
   Одно маленькое место во вселенной — только для тебя.
 </footer>
 <script>
+function toggleSecretLetter() {
+  const letter = document.getElementById("secretLetter");
+  const button = document.getElementById("secretButton");
+  letter.classList.toggle("open");
+  if (letter.classList.contains("open")) {
+    button.textContent = "❤️ Закрыть письмо";
+  } else {
+    button.textContent = "💖 Открыть моё письмо";
+  }
+}
 (function () {
   const stars = document.getElementById("stars");
   const hearts = document.getElementById("hearts");
